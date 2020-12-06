@@ -57,8 +57,8 @@ def postDebug():
     album = upload_images(title, fileList)
     url = "https://imgur.com/a/{}".format(album['id'])
     print(url)
-  except:
-    print('something wrong with imgur')
+  except Exception as e:
+    print('something wrong with imgur {}'.format(e))
 
 
 if __name__ == "__main__":
