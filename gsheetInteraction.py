@@ -39,6 +39,7 @@ def postData(sh, data):
       if fields[i] in data:
         values.append(data[fields[i]])
       else:
+        values.append("")
         print('missing {} from data'.format(fields[i]))
     else:
       print('field {} already filled'.format(fields[i]))
