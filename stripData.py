@@ -62,7 +62,11 @@ def createGeoJson(localCsvFile, hospitalData, removePending=False):
     with open(localCsvFile) as csvFile:
         csvReader = csv.DictReader(csvFile)
         for row in csvReader:
-            countyData[row['EventResidentCounty']] = {
+          countyHeader = 'County'
+          if 'EventResidentCounty' in row:
+            countyHeader = 'EventResidentCounty'
+            
+          countyData[row[countyHeader]] = {
                 'Tested' : row['Individuals Tested'],
                 'Positive' : row['Individuals Positive'],
                 'Recovered' : row['Total Recovered'],
@@ -246,8 +250,8 @@ def getSummaryData():
     data.update({
       # 'Total Tested' : textList[1].replace(' ', ''),
       # 'Total Cases' : textList[3].replace(' ', ''),
-      'Total Recovered' : textList[5].replace(' ', ''),
-      'Total Deaths' : textList[7].replace(' ', ''),
+      # 'Total Recovered' : textList[5].replace(' ', ''),
+      # 'Total Deaths' : textList[7].replace(' ', ''),
     })
   except Exception as e:
     print('issue reading summary data {}'.format(e))
@@ -463,20 +467,33 @@ def getCaseData():
 def getDeathData():
   print('Death Data')
   data = {}
+  fileName = fileNames.deathsScreenshot
+  img = cv2.imread(fileName)
+
   try:
-    fileName = fileNames.deathsScreenshot
-    img = cv2.imread(fileName)
-    crop_img = img[2000:-200, 100:-100]
-    cv2.imwrite('Deaths_totals.png', crop_img)
+    crop_img = img[100:200, 100:-100]
+    cv2.imwrite('Deaths_total.png', crop_img)
+    text = pytesseract.image_to_string(crop_img)
+    textList = sanitizeText(text)
+    vals = convertVals(textList[1].split())
+    data['Total Deaths'] = vals[0]
+    data['Underlying Cause Deaths'] = vals[1]
+    data['Contributing Factor Deaths'] = vals[2]
+  except Exception as e:
+    print('issue reading total deaths {}'.format(e))
+
+  try:
+    crop_img = img[-150:-10, 100:-100]
+    cv2.imwrite('Deaths_breakdown.png', crop_img)
     text = pytesseract.image_to_string(crop_img)
     textList = sanitizeText(text)
     vals = convertVals(textList[1].split())
 
-    data = {
+    data.update({
       'Deaths With Preexisting Condition' : vals[0],
       'Deaths With No Preexisting Condition' : vals[1],
-      'Deaths Preexisting Condition Unknown' : vals[2],
-    }
+      'Deaths Preexisting Condition Unknown' : '0'
+    })
   except Exception as e:
     print('issue reading death breakdown {}'.format(e))
 
@@ -487,22 +504,32 @@ def getDeathData():
 def getRecoveryData():
   print('Reovery Data')
   data = {}
+  fileName = fileNames.recoveryScreenshot
+  img = cv2.imread(fileName)
 
   try:
-    fileName = fileNames.recoveryScreenshot
-    img = cv2.imread(fileName)
+    crop_img = img[100:200, 100:500]
+    cv2.imwrite('Recovery_total.png', crop_img)
+    text = pytesseract.image_to_string(crop_img)
+    textList = sanitizeText(text)
+    vals = convertVals(textList[0].split())
+    data['Total Recovered'] = vals[1]
+  except Exception as e:
+    print('issue reading total recovered {}'.format(e))
+
+  try:
     crop_img = img[2000:-200, 100:-100]
-    cv2.imwrite('Recovery_totals.png', crop_img)
+    cv2.imwrite('Recovery_breakdown.png', crop_img)
     text = pytesseract.image_to_string(crop_img)
     textList = sanitizeText(text)
 
     vals = convertVals(textList[1].split())
 
-    data = {
+    data.update({
       'Recovered With Preexisting Condition' : vals[0],
       'Recovered With No Preexisting Condition' : vals[1],
       'Recovered Preexisting Condition Unknown' : vals[2],
-    }
+    })
   except Exception as e:
     print('issue reading recovery breakdown {}'.format(e))
 
@@ -541,7 +568,7 @@ def loadAllData():
   data = {}
   local = True
 
-  data.update(getSummaryData())
+  # data.update(getSummaryData())
   data.update(getSerologyData())
   data.update(getCaseData())
   data.update(getRMCCData())
