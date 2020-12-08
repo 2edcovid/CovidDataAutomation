@@ -323,6 +323,7 @@ def getPCRData(crop_img):
     cv2.imwrite('Cases_positive_pcr.png', positivePCR)
     text = pytesseract.image_to_string(positivePCR)
     sanitizedText = sanitizeText(text)
+    pcrText = []
     for text in sanitizedText:
       newText = text.replace(' ', '')
       if newText.isnumeric():
@@ -455,6 +456,7 @@ def getCaseData():
   except Exception as e:
     print('issue reading case breakdown data {}'.format(e))
 
+  print(data)
   return data
 
 
@@ -504,6 +506,7 @@ def getRecoveryData():
   except Exception as e:
     print('issue reading recovery breakdown {}'.format(e))
 
+  print(data)
   return data
 
 
@@ -530,6 +533,7 @@ def getLTCData():
   except Exception as e:
     print('issue reading LTC data {}'.format(e))
 
+  print(data)
   return data
 
 
