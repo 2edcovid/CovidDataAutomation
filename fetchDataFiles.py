@@ -38,7 +38,7 @@ def getHospitalData():
 
 def getSummary():
     print('loading Summary Page')
-    browser = getBrowser(urls.summaryPage, height=1700, zoom=90)
+    browser = getBrowser(urls.summaryPage, height=2400, zoom=90)
     time.sleep(20)
     saveScreenshot(browser, fileNames.summaryScreenshot)
 

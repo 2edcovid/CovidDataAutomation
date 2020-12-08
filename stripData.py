@@ -62,7 +62,11 @@ def createGeoJson(localCsvFile, hospitalData, removePending=False):
     with open(localCsvFile) as csvFile:
         csvReader = csv.DictReader(csvFile)
         for row in csvReader:
-            countyData[row['EventResidentCounty']] = {
+          countyHeader = 'County'
+          if 'EventResidentCounty' in row:
+            countyHeader = 'EventResidentCounty'
+            
+          countyData[row[countyHeader]] = {
                 'Tested' : row['Individuals Tested'],
                 'Positive' : row['Individuals Positive'],
                 'Recovered' : row['Total Recovered'],
