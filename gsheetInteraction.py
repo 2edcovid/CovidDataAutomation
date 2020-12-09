@@ -52,15 +52,15 @@ def prepRedditPost(sh):
   sheetStart = 0
 
   sheetData = {
-    'New Data' : 'L32',
-    'Percentages' : 'G32',
-    '7 Day Rolling' : 'J32',
-    'Rates' : 'H32',
+    'New Data' : 'L31',
+    'Percentages' : 'J31',
+    '7 Day Rolling' : 'J31',
+    'Rates' : 'H31',
     'Month Summaries' : 'K47',
-    'Totals' : 'H32',
-    'Testing Totals' : 'I32',
-    'Testing Breakdown' : 'I32',
-    'Hospitalization' : 'H32'
+    'Totals' : 'H31',
+    'Testing Totals' : 'I31',
+    'Testing Breakdown' : 'I31',
+    'Hospitalization' : 'H31'
   }
 
   for header in sheetData:
