@@ -71,8 +71,11 @@ def createGeoJson(localCsvFile, hospitalData, removePending=False):
                 'Positive' : row['Individuals Positive'],
                 'Recovered' : row['Total Recovered'],
                 'Deaths' : row['Total Deaths'],
-                'Active' : int(row['Individuals Positive']) - (int(row['Total Recovered']) + int(row['Total Deaths']))
             }
+          try:
+            countyData[row[countyHeader]]['Active'] = int(row['Individuals Positive']) - (int(row['Total Recovered']) + int(row['Total Deaths']))
+          except:
+            countyData[row[countyHeader]]['Active'] = row['Individuals Positive']
 
     with open(fileNames.originalGeoJson, 'r') as read_file:
         data = json.load(read_file)
