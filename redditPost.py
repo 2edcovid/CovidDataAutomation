@@ -24,10 +24,13 @@ def post(reddit, sub='Iowa'):
   fileList = glob.glob("*.md")
   for fileName in fileList:
     if fileName != 'README.md' and fileName != fileNames.redditTitle:
-      with open(fileName, 'r') as f:
-        comment = f.read()
-        submission.reply(comment)
-      os.remove(fileName)
+      try:
+        with open(fileName, 'r') as f:
+          comment = f.read()
+          submission.reply(comment)
+        os.remove(fileName)
+      except:
+        print(fileName)
 
 
 reddit = praw.Reddit(client_id=clientID, client_secret=secret,
