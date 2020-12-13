@@ -31,8 +31,8 @@ def postData(sh, data):
   wks = sh[0]
   values = []
 
-  fields = wks.get_values('B1', 'AR1')[0]
-  origVals = wks.get_values('B2', 'AR2')[0]
+  fields = wks.get_values('B1', 'AT1')[0]
+  origVals = wks.get_values('B2', 'AT2')[0]
   for i in range(len(fields)):
     if not origVals[i]:
       print('inserting data in {}'.format(fields[i]))
@@ -52,15 +52,15 @@ def prepRedditPost(sh):
   sheetStart = 0
 
   sheetData = {
-    'New Data' : 'L31',
+    'New Data' : 'N31',
     'Percentages' : 'J31',
     '7 Day Rolling' : 'J31',
     'Rates' : 'H31',
-    'Month Summaries' : 'K47',
+    'Month Summaries' : 'K59',
     'Totals' : 'H31',
-    'Testing Totals' : 'I31',
-    'Testing Breakdown' : 'I31',
-    'Hospitalization' : 'H31'
+    'Testing Totals' : 'M27',
+    'Testing Breakdown' : 'Q20',
+    'Hospitalization' : 'I31'
   }
 
   for header in sheetData:
@@ -78,11 +78,11 @@ def prepRedditPost(sh):
       f.write(df.to_markdown())
      
   wks = sh[1]
-  newCases = wks.get_value('C2')
-  newDeaths = wks.get_value('F2')
+  newCases = wks.get_value('D2')
+  newDeaths = wks.get_value('I2')
 
-  wks = sh[0]
-  currentHospitalized = wks.get_value('J2')
+  wks = sh[9]
+  currentHospitalized = wks.get_value('B2')
   redditPostTitle = "{} as of 11:00am: {} New Cases, {} New Deaths, {} Currently Hospitalized.".format(time.strftime('%a. %m/%d'), newCases, newDeaths, currentHospitalized)
   print(redditPostTitle)
   with open(fileNames.redditTitle, 'w') as f:
