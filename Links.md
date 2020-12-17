@@ -2,7 +2,7 @@
 
 ### Data Analysis
 - [/u/jrhelbert on positivity rates in Iowa](https://www.reddit.com/r/Iowa/comments/k9xqfe/the_states_various_positivity_rates_explained/)
-- [/u/wiebersk with a draft historical Iowa data comparisons](https://docs.google.com/spreadsheets/d/1KmoMggVLBlvChwM0wNDHtaJY5F_N5FtfTlzNkvYSeRo/edit#gid=165832221)
+- [/u/wiebersk with a draft historical Iowa data comparisons](https://gitlab.com/wiebersk/iowa-covid-data/-/tree/master/data)
 
 ### Official Data
 - [State Dashboard](https://coronavirus.iowa.gov/)
