@@ -21,14 +21,14 @@ def post(reddit, sub='Iowa'):
 
   submission = reddit.submission(url="https://www.reddit.com/comments/{}".format(url))
 
-  fileList = glob.glob("*.md")
+  fileList = glob.glob(os.path.join(fileNames.redditCommentDir, "*.md"))
   for fileName in fileList:
     if fileName != 'README.md' and fileName != fileNames.redditTitle:
       try:
         with open(fileName, 'r') as f:
           comment = f.read()
           submission.reply(comment)
-        if (fileName not in ['Links.md', 'Maps.md']):
+        if (fileName not in [os.path.join(fileNames.redditCommentDir, 'Links.md'), os.path.join(fileNames.redditCommentDir, 'Maps.md')]):
           os.remove(fileName)
       except:
         print(fileName)
