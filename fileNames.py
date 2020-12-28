@@ -1,6 +1,7 @@
 import os
 
 storageDir = 'historical'
+redditCommentDir = 'RedditComments'
 
 mapScreenshot = "Screenshot_ArgisMap.png"
 
@@ -26,4 +27,4 @@ authJson = 'gsheetAuth.json'
 dailyJson = 'dailyData.json'
 
 imgurComment = 'imgurComment.md'
-redditTitle = 'title.md'
+redditTitle = os.path.join(redditCommentDir, 'title.md')

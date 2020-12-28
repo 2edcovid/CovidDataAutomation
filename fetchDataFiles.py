@@ -129,7 +129,7 @@ def getSerologyData():
 
 
 if __name__ == "__main__":
-
+  getOriginalMap()
   if commitChecker.stillNeedTodaysData():
     if not 'DRONE_SYSTEM_HOST' not in os.environ:
       time.sleep(30)
@@ -141,7 +141,6 @@ if __name__ == "__main__":
     getRecovery()
     getDeaths()
     getLTC()
-    getOriginalMap()
     getRMCCData()
     getSerologyData()
     getHospitalData()
