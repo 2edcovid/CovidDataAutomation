@@ -28,7 +28,8 @@ def post(reddit, sub='Iowa'):
         with open(fileName, 'r') as f:
           comment = f.read()
           submission.reply(comment)
-        os.remove(fileName)
+        if (fileName not in ['Links.md', 'Maps.md']):
+          os.remove(fileName)
       except:
         print(fileName)
 

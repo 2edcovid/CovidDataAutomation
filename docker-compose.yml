@@ -14,21 +14,9 @@ services:
       context: ./docker
       dockerfile: Dockerfile_selenium
 
-  fetch:
+  python:
     <<: *build-python
-    command: python fetchDataFiles.py
-  strip:
-    <<: *build-python
-    command: python stripData.py
-  maps:
-    <<: *build-python
-    command: python prepImgurPost.py
-  imgur:
-    <<: *build-python
-    command: python imgurPost.py
-  gsheet:
-    <<: *build-python
-    command: python gsheetInteraction.py
-  reddit:
-    <<: *build-python
-    command: python redditPost.py
+    environment: 
+    - APIKEY=$APIKEY
+    - APIID=$APIID
+    - APIPWD=$APIPWD
