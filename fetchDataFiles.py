@@ -37,23 +37,26 @@ def getHospitalData():
 
 
 def getSummary():
-    print('loading Summary Page')
-    browser = getBrowser(urls.summaryPage, height=2400, zoom=90)
-    time.sleep(20)
-    saveScreenshot(browser, fileNames.summaryScreenshot)
+    try:
+      print('loading Summary Page')
+      browser = getBrowser(urls.summaryPage, height=2400, zoom=90)
+      time.sleep(40)
 
-    
-    elements = browser.find_elements_by_class_name('cd-control-menu_container_2gtJe')
-    button = elements[-2].find_element_by_css_selector("button[class='db-button small button cd-control-menu_option_wH8G6 cd-control-menu_expand_VcWkC cd-control-menu_button_2VfJA cd-control-menu_db-button_2UMcr ng-scope']")
-    print('Clicking Download Button')
-    browser.execute_script("$(arguments[0].click());", button)
-    time.sleep(20)
+      saveScreenshot(browser, fileNames.summaryScreenshot)
 
-    timeString = time.strftime("%Y-%m-%d %H%M")
-    localPath = fileNames.storageSummaryFormat.format(timeString)
-    saveDownloadFile(browser, fileNames.storageDir, localPath)
+      elements = browser.find_elements_by_class_name('cd-control-menu_container_2gtJe')
+      button = elements[-2].find_element_by_css_selector("button[class='db-button small button cd-control-menu_option_wH8G6 cd-control-menu_expand_VcWkC cd-control-menu_button_2VfJA cd-control-menu_db-button_2UMcr ng-scope']")
+      print('Clicking Download Button')
+      browser.execute_script("$(arguments[0].click());", button)
+      time.sleep(20)
 
-    closeBrowser(browser)
+      timeString = time.strftime("%Y-%m-%d %H%M")
+      localPath = fileNames.storageSummaryFormat.format(timeString)
+      saveDownloadFile(browser, fileNames.storageDir, localPath)
+
+      closeBrowser(browser)
+    except:
+      print('issue getting summary data')
 
 
 def getAccessVals():
@@ -87,42 +90,42 @@ def getOriginalMap():
 
 def getCases():
   browser = getBrowser(urls.casePage, height=6200, zoom=90)
-  time.sleep(20)
+  time.sleep(40)
   saveScreenshot(browser, fileNames.caseScreenshot)
   closeBrowser(browser)
 
 
 def getRecovery():
   browser = getBrowser(urls.recoveredPage, height=2500)
-  time.sleep(20)
+  time.sleep(40)
   saveScreenshot(browser, fileNames.recoveryScreenshot)
   closeBrowser(browser)
 
 
 def getDeaths():
   browser = getBrowser(urls.deathsPage, height=2500)
-  time.sleep(20)
+  time.sleep(40)
   saveScreenshot(browser, fileNames.deathsScreenshot)
   closeBrowser(browser)
 
 
 def getLTC():
   browser = getBrowser(urls.ltcPage, height=400)
-  time.sleep(20)
+  time.sleep(40)
   saveScreenshot(browser, fileNames.ltcScreenshot)
   closeBrowser(browser)
 
 
 def getRMCCData():
   browser = getBrowser(urls.rmccPage, height=3300)
-  time.sleep(20)
+  time.sleep(40)
   saveScreenshot(browser, fileNames.rmccScreenshot)
   closeBrowser(browser)
 
 
 def getSerologyData():
   browser = getBrowser(urls.serologyPage, zoom=80, height=400)
-  time.sleep(20)
+  time.sleep(40)
   saveScreenshot(browser, fileNames.serologyScreenshot)
   closeBrowser(browser)
 
@@ -131,10 +134,8 @@ def getSerologyData():
 if __name__ == "__main__":
   getOriginalMap()
   if commitChecker.stillNeedTodaysData():
-    if not 'DRONE_SYSTEM_HOST' not in os.environ:
-      time.sleep(30)
-      getGeoJSON()
-      # print(getAccessVals())
+    getGeoJSON()
+    # print(getAccessVals())
 
     getSummary()
     getCases()
