@@ -3,6 +3,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.common.exceptions import TimeoutException
 import base64
 
 
@@ -86,14 +87,16 @@ def getBrowser(url, local=False, height=1062, width=1914, zoom=0):
         "plugins.always_open_pdf_externally": True #It will not show PDF directly in chrome
         })
 
-
-
       browser = webdriver.Remote("http://selenium:4444/wd/hub", desired_capabilities=options.to_capabilities())
 
   browser.set_window_position(0, 0)
   browser.set_window_size(width, height)
   time.sleep(10)
-  browser.get(url)
+  try:
+    browser.get(url)
+  except TimeoutException as e:
+    print('timeout retry')
+    browser.get(url)
   time.sleep(20)
 
   if zoom:
