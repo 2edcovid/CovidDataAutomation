@@ -41,7 +41,18 @@ def getSummary():
       print('loading Summary Page')
       browser = getBrowser(urls.summaryPage, height=2400, zoom=90)
       time.sleep(40)
-      saveScreenshot(browser, fileNames.summaryScreenshot)
+      saveScreenshot(browser, fileNames.summaryScreenshot) 
+ 
+      elements = browser.find_elements_by_class_name('cd-control-menu_container_2gtJe') 
+      button = elements[-2].find_element_by_css_selector("button[class='db-button small button cd-control-menu_option_wH8G6 cd-control-menu_expand_VcWkC cd-control-menu_button_2VfJA cd-control-menu_db-button_2UMcr ng-scope']") 
+      print('Clicking Download Button') 
+      browser.execute_script("$(arguments[0].click());", button) 
+      time.sleep(20) 
+ 
+      timeString = time.strftime("%Y-%m-%d %H%M") 
+      localPath = fileNames.storageSummaryFormat.format(timeString) 
+      saveDownloadFile(browser, fileNames.storageDir, localPath) 
+ 
       closeBrowser(browser)
     except Exception as e:
       print('issue getting summary data {}'.format(e))
@@ -64,10 +75,9 @@ def getCSVs():
       os.path.join(fileNames.storageDir,'UnderlyingCauseDeathsGraph{}.csv'.format(timeString)),
       os.path.join(fileNames.storageDir,'ContributingFactorsDeaths{}.csv'.format(timeString)),
       os.path.join(fileNames.storageDir,'ContributingFactorsDeathsGraph{}.csv'.format(timeString)),
-      fileNames.storageSummaryFormat.format(timeString)
     ]
 
-    for i in range(13):
+    for i in range(12):
       browser = getBrowser(urls.summaryPage)
       time.sleep(20)
       buttons = browser.find_elements_by_css_selector('button[aria-label="Export data"]')
@@ -158,7 +168,7 @@ if __name__ == "__main__":
     getGeoJSON()
     # print(getAccessVals())
 
-    getCSVs()
+    # getCSVs()
     getHospitalData()
     getSummary()
     getCases()
