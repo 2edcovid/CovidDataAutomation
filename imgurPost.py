@@ -44,7 +44,7 @@ def upload_images(album_title, paths):
         }
       )
       print(imageResponse.status_code)
-      os.remove(img)
+      # os.remove(img)
 
   return album
 
