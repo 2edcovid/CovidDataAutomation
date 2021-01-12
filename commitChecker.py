@@ -1,6 +1,7 @@
 from git import Repo
 import os
 import time
+import sys
 
 
 def stillNeedTodaysData():
@@ -18,19 +19,21 @@ def stillNeedTodaysData():
   return needIt
 
 
-def commitAndMerge():
+def commitAndMerge(commit_message):
   repo = Repo(os.getcwd())
   origin = repo.remotes.origin
   origin.fetch()
 
-  current_time = time.strftime("%Y-%m-%d")
   repo.index.add(repo.untracked_files)
   repo.git.add(update=True)
-  repo.index.commit(current_time)
+  repo.index.commit(commit_message)
   data = repo.heads.data 
   data.checkout() 
 
   os.system('git merge --strategy-option theirs master -m "Merge branch \'master\' into data"') 
 
 if __name__ == "__main__":
-  commitAndMerge()
+  if len(sys.argv):
+    commitAndMerge('data {}'.format(time.strftime("%Y-%m-%d")))
+  else:
+    commitAndMerge(time.strftime("%Y-%m-%d"))
