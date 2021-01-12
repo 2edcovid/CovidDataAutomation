@@ -75,28 +75,32 @@ def getDownloadedFileName(browser):
 
 
 def getBrowser(url, local=False, height=1062, width=1914, zoom=0):
-  if local:
-      browser = webdriver.Chrome()
-  else:
-      options = webdriver.ChromeOptions()
-      options.add_argument('--no-sandbox')
-      options.add_argument('--disable-dev-shm-usage')
-      options.add_experimental_option('prefs', {
-        "download.prompt_for_download": False, #To auto download the file
-        "download.directory_upgrade": True,
-        "plugins.always_open_pdf_externally": True #It will not show PDF directly in chrome
-        })
-
-      browser = webdriver.Remote("http://selenium:4444/wd/hub", desired_capabilities=options.to_capabilities())
-
-  browser.set_window_position(0, 0)
-  browser.set_window_size(width, height)
-  time.sleep(10)
+  browser = None
   try:
+    if local:
+        browser = webdriver.Chrome()
+    else:
+        options = webdriver.ChromeOptions()
+        options.add_argument('--no-sandbox')
+        options.add_argument('--disable-dev-shm-usage')
+        options.add_experimental_option('prefs', {
+          "download.prompt_for_download": False, #To auto download the file
+          "download.directory_upgrade": True,
+          "plugins.always_open_pdf_externally": True #It will not show PDF directly in chrome
+          })
+
+        browser = webdriver.Remote("http://selenium:4444/wd/hub", desired_capabilities=options.to_capabilities())      
+
+    browser.set_window_position(0, 0)
+    browser.set_window_size(width, height)
+    time.sleep(10)
+
     browser.get(url)
   except TimeoutException as e:
     print('timeout retry')
     browser.get(url)
+  except Exception as e:
+    print('issue getting {} {}'.format(url, e))
   time.sleep(20)
 
   if zoom:

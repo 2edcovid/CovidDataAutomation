@@ -13,26 +13,39 @@ steps:
   image: selenium/standalone-chrome
   detach: true
 
-- name: getData
+- name: getRawData
   image: 2edcovid/python_data_scraping:latest
   environment:
-    APIKEY:
-      from_secret: reddit_secret
-    APIID:
-      from_secret: reddit_client
-    APIPWD:
-      from_secret: reddit_pwd
-    SSHKEY:
-      from_secret: gsheet_ssh_key
     IMGUR_APIKEY:
       from_secret: imgur_key
   commands:
   - git fetch origin data:data
+  - chmod +x wait-for-it.sh
+  - ./wait-for-it.sh selenium:4444
   - python fetchDataFiles.py
+  - python imgurPost.py
+  - python commitChecker.py data
+
+- name: pushInitialData
+  image: appleboy/drone-git-push
+  when:
+    branch: [master]
+  settings:
+    ssh_key:
+      from_secret: ssh_key
+    remote_name: origin2
+    remote: git@github.com:2edcovid/CovidDataAutomation.git
+    branch: data
+    local_ref: data
+
+- name: getData
+  image: 2edcovid/python_data_scraping:latest
+  environment:
+    SSHKEY:
+      from_secret: gsheet_ssh_key
+  commands:
   - python stripData.py
   - python gsheetInteraction.py
-  - python redditPost.py
-  - python imgurPost.py
   - python commitChecker.py
 
 - name: pushData
@@ -46,6 +59,18 @@ steps:
     remote: git@github.com:2edcovid/CovidDataAutomation.git
     branch: data
     local_ref: data
+
+- name: postData
+  image: 2edcovid/python_data_scraping:latest
+  environment:
+    APIKEY:
+      from_secret: reddit_secret
+    APIID:
+      from_secret: reddit_client
+    APIPWD:
+      from_secret: reddit_pwd
+  commands:
+  - python redditPost.py
 
 
 image_pull_secrets:

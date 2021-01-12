@@ -44,7 +44,7 @@ def getVaccineData():
 def getHospitalData():
     browser = getBrowser(urls.mainPage, height=1700, zoom=90)
     time.sleep(20)
-    return getPDF(browser, 'Iowa Hospitalizations by County', fileNames.countyVaccineFormat)
+    return getPDF(browser, 'Iowa Hospitalizations by County', fileNames.countyHospitalFormat)
 
 
 

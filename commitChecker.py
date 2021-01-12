@@ -33,7 +33,7 @@ def commitAndMerge(commit_message):
   os.system('git merge --strategy-option theirs master -m "Merge branch \'master\' into data"') 
 
 if __name__ == "__main__":
-  if len(sys.argv):
+  if len(sys.argv) > 1:
     commitAndMerge('data {}'.format(time.strftime("%Y-%m-%d")))
   else:
     commitAndMerge(time.strftime("%Y-%m-%d"))
