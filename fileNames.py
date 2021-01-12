@@ -11,6 +11,7 @@ webGeoJson = 'data_file.geojson'
 storageGeoJsonFormat = os.path.join(storageDir, "data_file_{}.geojson")
 storageSummaryFormat = os.path.join(storageDir, 'Summary{}.csv')
 countyHospitalFormat = os.path.join(storageDir, 'countyHospital{}.pdf')
+countyVaccineFormat = os.path.join(storageDir, 'countyVaccine{}.pdf')
 
 rmccScreenshot = "Screenshot_RMCC.png"
 serologyScreenshot = "Screenshot_Serology.png"
