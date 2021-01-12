@@ -7,13 +7,12 @@ import urls
 import commitChecker
 
 
-def getHospitalData():
+def getPDF(browser, link_text, name_fmt):
     filePath = None
 
-    browser = getBrowser(urls.mainPage, height=1700, zoom=90)
-    time.sleep(20)
-    link = browser.find_element_by_link_text('Iowa Hospitalizations by County')
+    link = browser.find_element_by_link_text(link_text)
     html = link.get_attribute('outerHTML')
+    # print(html)
     htmlList = html.split('"')
     linkURL = htmlList[1]
     print(linkURL)
@@ -28,12 +27,25 @@ def getHospitalData():
     time.sleep(40)
 
     timeString = time.strftime("%Y-%m-%d %H%M")
-    localFilePath = fileNames.countyHospitalFormat.format(timeString)
+    localFilePath = name_fmt.format(timeString)
     if saveDownloadFile(browser, fileNames.storageDir, localFilePath):
       filePath = localFilePath
     closeBrowser(browser)
 
     return filePath
+
+
+def getVaccineData():
+    browser = getBrowser(urls.mainPage, height=1700, zoom=90)
+    time.sleep(20)
+    return getPDF(browser, 'Vaccine Administration', fileNames.countyVaccineFormat)
+
+
+def getHospitalData():
+    browser = getBrowser(urls.mainPage, height=1700, zoom=90)
+    time.sleep(20)
+    return getPDF(browser, 'Iowa Hospitalizations by County', fileNames.countyVaccineFormat)
+
 
 
 def getSummary():
@@ -170,6 +182,7 @@ if __name__ == "__main__":
 
     # getCSVs()
     getHospitalData()
+    getVaccineData()
     getSummary()
     getCases()
     getRecovery()
