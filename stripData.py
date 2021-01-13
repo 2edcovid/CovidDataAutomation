@@ -641,16 +641,15 @@ def readHospitalData():
 
 if __name__ == "__main__":
 
-  if commitChecker.stillNeedTodaysData():
-    data = loadAllData()
-    writeJson(fileNames.dailyJson, data)
+  data = loadAllData()
+  writeJson(fileNames.dailyJson, data)
 
-    hospitalData = readHospitalData()
+  hospitalData = readHospitalData()
 
-    list_of_files = glob.glob(os.path.join(fileNames.storageDir, '*.csv'))
-    list_of_files.sort()
-    csvFile = list_of_files[-1]
+  list_of_files = glob.glob(os.path.join(fileNames.storageDir, '*.csv'))
+  list_of_files.sort()
+  csvFile = list_of_files[-1]
 
-    createGeoJson(csvFile, hospitalData)
+  createGeoJson(csvFile, hospitalData)
 
-    print(data)
+  print(data)
