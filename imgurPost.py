@@ -53,7 +53,7 @@ def postDebug():
   try:
     print('Debug Screenshots')
     title = "{} Iowa COVID19 Debug Screenshots".format(time.strftime("%m/%d"))
-    fileList = glob.glob("Screenshot_*")
+    fileList = glob.glob(os.path.join(fileNames.screenshotDir, "Screenshot_*"))
     album = upload_images(title, fileList)
     url = "https://imgur.com/a/{}".format(album['id'])
     print(url)
