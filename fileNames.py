@@ -1,9 +1,10 @@
 import os
 
 storageDir = 'historical'
+screenshotDir = 'screenshots'
 redditCommentDir = 'RedditComments'
 
-mapScreenshot = "Screenshot_ArgisMap.png"
+
 
 originalGeoJson = 'IA_COVID19_Cases.geojson'
 webGeoJson = 'data_file.geojson'
@@ -13,13 +14,14 @@ storageSummaryFormat = os.path.join(storageDir, 'Summary{}.csv')
 countyHospitalFormat = os.path.join(storageDir, 'countyHospital{}.pdf')
 countyVaccineFormat = os.path.join(storageDir, 'countyVaccine{}.pdf')
 
-rmccScreenshot = "Screenshot_RMCC.png"
-serologyScreenshot = "Screenshot_Serology.png"
-summaryScreenshot = "Screenshot_Summary.png"
-caseScreenshot = "Screenshot_Cases.png"
-recoveryScreenshot = "Screenshot_Recovery.png"
-deathsScreenshot = "Screenshot_Deaths.png"
-ltcScreenshot = "Screenshot_LTC.png"
+mapScreenshot = os.path.join(screenshotDir, "Screenshot_ArgisMap.png")
+rmccScreenshot = os.path.join(screenshotDir, "Screenshot_RMCC.png")
+serologyScreenshot = os.path.join(screenshotDir, "Screenshot_Serology.png")
+summaryScreenshot = os.path.join(screenshotDir, "Screenshot_Summary.png")
+caseScreenshot = os.path.join(screenshotDir, "Screenshot_Cases.png")
+recoveryScreenshot = os.path.join(screenshotDir, "Screenshot_Recovery.png")
+deathsScreenshot = os.path.join(screenshotDir, "Screenshot_Deaths.png")
+ltcScreenshot = os.path.join(screenshotDir, "Screenshot_LTC.png")
 
 accessJson = 'accessVals.json'
 

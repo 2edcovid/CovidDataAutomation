@@ -175,6 +175,9 @@ def getSerologyData():
 
 
 if __name__ == "__main__":
+  if not os.path.exists(fileNames.screenshotDir):
+      os.makedirs(fileNames.screenshotDir)
+
   getOriginalMap()
   if commitChecker.stillNeedTodaysData():
     getGeoJSON()

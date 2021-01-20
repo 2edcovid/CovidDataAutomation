@@ -220,11 +220,11 @@ def getRMCCData():
     img = cv2.imread(fileName)
     
     crop_img = img[1160:-30, 150:-100]
-    cv2.imwrite('RMCC_crop.png', crop_img)
+    cv2.imwrite(os.path.join(fileNames.screenshotDir, 'RMCC_crop.png'), crop_img)
 
     try:
       hosp_img = crop_img[0:90, 0:320]
-      cv2.imwrite('RMCC_hospital.png', hosp_img)
+      cv2.imwrite(os.path.join(fileNames.screenshotDir, 'RMCC_hospital.png'), hosp_img)
       text = pytesseract.image_to_string(hosp_img)
       sanitizedText = sanitizeText(text)
       sanitizedText = convertVals(sanitizedText)
@@ -234,7 +234,7 @@ def getRMCCData():
     
     try:
       icu_img = crop_img[0:90, 650:950]
-      cv2.imwrite('RMCC_icu.png', icu_img)
+      cv2.imwrite(os.path.join(fileNames.screenshotDir, 'RMCC_icu.png'), icu_img)
       text = pytesseract.image_to_string(icu_img)
       sanitizedText = sanitizeText(text)
       sanitizedText = convertVals(sanitizedText)
@@ -244,7 +244,7 @@ def getRMCCData():
   
     try:
       admit_img = crop_img[0:90, 1250:1625]
-      cv2.imwrite('RMCC_admit.png', admit_img)
+      cv2.imwrite(os.path.join(fileNames.screenshotDir, 'RMCC_admit.png'), admit_img)
       text = pytesseract.image_to_string(admit_img)
       sanitizedText = sanitizeText(text)
       sanitizedText = convertVals(sanitizedText)
@@ -254,7 +254,7 @@ def getRMCCData():
     
     try:
       bed_img = crop_img[800:1200, 50:550]
-      cv2.imwrite('RMCC_bed.png', bed_img)
+      cv2.imwrite(os.path.join(fileNames.screenshotDir, 'RMCC_bed.png'), bed_img)
       text = pytesseract.image_to_string(bed_img)
       sanitizedText = sanitizeText(text)
       sanitizedText = convertVals(sanitizedText)
@@ -265,7 +265,7 @@ def getRMCCData():
     
     try:
       vent_img = crop_img[1450:1880, 50:550]
-      cv2.imwrite('RMCC_vent.png', vent_img)
+      cv2.imwrite(os.path.join(fileNames.screenshotDir, 'RMCC_vent.png'), vent_img)
       text = pytesseract.image_to_string(vent_img)
       sanitizedText = sanitizeText(text)
       sanitizedText = convertVals(sanitizedText)
@@ -291,7 +291,7 @@ def getSummaryData():
     fileName = fileNames.summaryScreenshot
     img = cv2.imread(fileName)
     crop_img = img[200:-100, 200:-1400]
-    cv2.imwrite('Summary_totals.png', crop_img)
+    cv2.imwrite(os.path.join(fileNames.screenshotDir, 'Summary_totals.png'), crop_img)
     text = pytesseract.image_to_string(crop_img)
     textList = sanitizeText(text)
     data.update({
@@ -314,7 +314,7 @@ def getSerologyData():
     fileName = fileNames.serologyScreenshot
     img = cv2.imread(fileName)
     crop_img = img[100:-20, 200:-600]
-    cv2.imwrite('Serology_totals.png', crop_img)
+    cv2.imwrite(os.path.join(fileNames.screenshotDir, 'Serology_totals.png'), crop_img)
     text = pytesseract.image_to_string(crop_img)
     textList = sanitizeText(text)
     vals = convertVals(textList[1].split())
@@ -335,11 +335,11 @@ def getPCRData(crop_img):
   print('PCR Test Data')
   data = {}
   pcrImg = crop_img[100:420, 10:-10]
-  cv2.imwrite('Cases_pcr.png', pcrImg)
+  cv2.imwrite(os.path.join(fileNames.screenshotDir, 'Cases_pcr.png'), pcrImg)
 
   try:
     totalPCR = crop_img[100:420, 10:500]
-    cv2.imwrite('Cases_total_pcr.png', totalPCR)
+    cv2.imwrite(os.path.join(fileNames.screenshotDir, 'Cases_total_pcr.png'), totalPCR)
     text = pytesseract.image_to_string(totalPCR)
     sanitizedText = sanitizeText(text)
     pcrText = []
@@ -355,7 +355,7 @@ def getPCRData(crop_img):
 
   try:
     negativePCR = crop_img[100:420, 600:1100]
-    cv2.imwrite('Cases_negative_pcr.png', negativePCR)
+    cv2.imwrite(os.path.join(fileNames.screenshotDir, 'Cases_negative_pcr.png'), negativePCR)
     text = pytesseract.image_to_string(negativePCR)
     sanitizedText = sanitizeText(text)
     pcrText = []
@@ -371,7 +371,7 @@ def getPCRData(crop_img):
 
   try:
     positivePCR = crop_img[100:420, 1200:1700]
-    cv2.imwrite('Cases_positive_pcr.png', positivePCR)
+    cv2.imwrite(os.path.join(fileNames.screenshotDir, 'Cases_positive_pcr.png'), positivePCR)
     text = pytesseract.image_to_string(positivePCR)
     sanitizedText = sanitizeText(text)
     pcrText = []
@@ -393,7 +393,7 @@ def getAntigenData(crop_img):
   print('Antigen Test Data')
   data = {}
   antigenImg = crop_img[550:900, 10:-10]
-  cv2.imwrite('Cases_antigen.png', antigenImg)
+  cv2.imwrite(os.path.join(fileNames.screenshotDir, 'Cases_antigen.png'), antigenImg)
 
   try:
     text = pytesseract.image_to_string(antigenImg)
@@ -451,7 +451,7 @@ def getTestTotalsData(crop_img):
 
   try:
     totalsImg = crop_img[1000:1150, 10:-500]
-    cv2.imwrite('Cases_totals.png', totalsImg)
+    cv2.imwrite(os.path.join(fileNames.screenshotDir, 'Cases_totals.png'), totalsImg)
     text = pytesseract.image_to_string(totalsImg)
     sanitizedText = sanitizeText(text)[1].split()
     sanitizedText = convertVals(sanitizedText)
@@ -465,7 +465,7 @@ def getTestTotalsData(crop_img):
 
   try:
     individualsImg = crop_img[1450:1600, 10:-500]
-    cv2.imwrite('Cases_individuals.png', individualsImg)
+    cv2.imwrite(os.path.join(fileNames.screenshotDir, 'Cases_individuals.png'), individualsImg)
     text = pytesseract.image_to_string(individualsImg)
     sanitizedText = sanitizeText(text)[1].split()
     sanitizedText = convertVals(sanitizedText)
@@ -487,7 +487,7 @@ def getCaseData():
   fileName = fileNames.caseScreenshot
   img = cv2.imread(fileName)
   crop_img = img[100:-80, 100:-100]
-  cv2.imwrite('Cases_crop.png', crop_img)
+  cv2.imwrite(os.path.join(fileNames.screenshotDir, 'Cases_crop.png'), crop_img)
 
   data.update(getPCRData(crop_img))
   data.update(getAntigenData(crop_img))
@@ -495,7 +495,7 @@ def getCaseData():
 
   try:
     breakDownImg = crop_img[-200:-10, 10:-10]
-    cv2.imwrite('Cases_breakdown.png', breakDownImg)
+    cv2.imwrite(os.path.join(fileNames.screenshotDir, 'Cases_breakdown.png'), breakDownImg)
     text = pytesseract.image_to_string(breakDownImg)
     sanitizedText = sanitizeText(text)[1].split()
     sanitizedText = convertVals(sanitizedText)
@@ -519,7 +519,7 @@ def getDeathData():
 
   try:
     crop_img = img[100:200, 100:-100]
-    cv2.imwrite('Deaths_total.png', crop_img)
+    cv2.imwrite(os.path.join(fileNames.screenshotDir, 'Deaths_total.png'), crop_img)
     text = pytesseract.image_to_string(crop_img)
     textList = sanitizeText(text)
     vals = convertVals(textList[1].split())
@@ -531,7 +531,7 @@ def getDeathData():
 
   try:
     crop_img = img[-150:-10, 100:-100]
-    cv2.imwrite('Deaths_breakdown.png', crop_img)
+    cv2.imwrite(os.path.join(fileNames.screenshotDir, 'Deaths_breakdown.png'), crop_img)
     text = pytesseract.image_to_string(crop_img)
     textList = sanitizeText(text)
     vals = convertVals(textList[1].split())
@@ -556,7 +556,7 @@ def getRecoveryData():
 
   try:
     crop_img = img[100:200, 100:500]
-    cv2.imwrite('Recovery_total.png', crop_img)
+    cv2.imwrite(os.path.join(fileNames.screenshotDir, 'Recovery_total.png'), crop_img)
     text = pytesseract.image_to_string(crop_img)
     textList = sanitizeText(text)
     vals = convertVals(textList[0].split())
@@ -566,7 +566,7 @@ def getRecoveryData():
 
   try:
     crop_img = img[2000:-200, 100:-100]
-    cv2.imwrite('Recovery_breakdown.png', crop_img)
+    cv2.imwrite(os.path.join(fileNames.screenshotDir, 'Recovery_breakdown.png'), crop_img)
     text = pytesseract.image_to_string(crop_img)
     textList = sanitizeText(text)
 
@@ -592,7 +592,7 @@ def getLTCData():
     fileName = fileNames.ltcScreenshot
     img = cv2.imread(fileName)
     crop_img = img[150:-20, 100:-100]
-    cv2.imwrite('LTC_totals.png', crop_img)
+    cv2.imwrite(os.path.join(fileNames.screenshotDir, 'LTC_totals.png'), crop_img)
     text = pytesseract.image_to_string(crop_img)
     textList = sanitizeText(text)
 
