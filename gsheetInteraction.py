@@ -72,10 +72,10 @@ def prepRedditPost(sh):
     commentFile = os.path.join(fileNames.redditCommentDir, "{}.md".format(header))
 
     with open(commentFile, 'w') as f:
-      # print('')
-      # print('## {}'.format(header))
-      # print('')
-      # print(df.to_markdown())
+      print('')
+      print('## {}'.format(header))
+      print('')
+      print(df.to_markdown())
       
       f.write('## {}\n\n'.format(header))
       f.write(df.to_markdown())

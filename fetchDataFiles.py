@@ -38,7 +38,7 @@ def getPDF(browser, link_text, name_fmt):
 def getVaccineData():
     browser = getBrowser(urls.mainPage, height=1700, zoom=90)
     time.sleep(20)
-    return getPDF(browser, 'Vaccine Administration', fileNames.countyVaccineFormat)
+    return getPDF(browser, 'Vaccine Information', fileNames.countyVaccineFormat)
 
 
 def getHospitalData():
