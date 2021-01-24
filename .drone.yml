@@ -24,7 +24,7 @@ steps:
   - ./wait-for-it.sh selenium:4444
   - python fetchDataFiles.py
   - python imgurPost.py
-  - python commitChecker.py data
+  - python utilities/commitChecker.py data
 
 - name: pushInitialData
   image: appleboy/drone-git-push
@@ -46,7 +46,7 @@ steps:
   commands:
   - python stripData.py
   - python gsheetInteraction.py
-  - python commitChecker.py
+  - python utilities/commitChecker.py
 
 - name: pushData
   image: appleboy/drone-git-push

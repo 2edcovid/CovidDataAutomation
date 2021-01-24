@@ -10,8 +10,8 @@ import json
 import os
 import glob
 
-import fileNames
-import commitChecker
+from utilities import fileNames
+from utilities import commitChecker
 
 import logging
 logging.basicConfig(level=logging.CRITICAL)

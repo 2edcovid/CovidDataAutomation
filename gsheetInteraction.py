@@ -1,11 +1,12 @@
 import os
 import pygsheets
 import pandas as pd
-import fileNames
 import json
-import postTime
 import time
 import glob
+
+from utilities import fileNames
+from utilities import postTime
 
 filePath = fileNames.authJson
 
