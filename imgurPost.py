@@ -1,11 +1,12 @@
 import time
 import glob
 import os
-import fileNames
-import postTime
 import json
 import requests
 from base64 import b64encode
+
+from utilities import fileNames
+from utilities import postTime
 
 
 def upload_images(album_title, paths):

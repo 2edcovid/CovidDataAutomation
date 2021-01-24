@@ -1,9 +1,10 @@
 import praw
 import os
 import glob
-import fileNames
-import postTime
 import time
+
+from utilities import fileNames
+from utilities import postTime
 
 secret = os.environ['APIKEY']
 clientID = os.environ['APIID']

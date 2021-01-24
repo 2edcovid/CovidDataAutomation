@@ -1,11 +1,15 @@
-import time
-import os
-from seleniumUtils import *
-import requests
-import fileNames
-import urls
-import commitChecker
 
+import os
+import time
+import requests
+
+from utilities.seleniumUtils import *
+from utilities import fileNames
+from utilities import urls
+from utilities import commitChecker
+
+SLEEP_DURATION = 40
+SHORT_SLEEP_DURATION = 20
 
 def getPDF(browser, link_text, name_fmt):
     filePath = None
@@ -24,7 +28,7 @@ def getPDF(browser, link_text, name_fmt):
       linkURL = 'https://drive.google.com/uc?export=download&id={}'.format(fileID)
     
     browser.get(linkURL)
-    time.sleep(40)
+    time.sleep(SLEEP_DURATION)
 
     timeString = time.strftime("%Y-%m-%d %H%M")
     localFilePath = name_fmt.format(timeString)
@@ -37,13 +41,13 @@ def getPDF(browser, link_text, name_fmt):
 
 def getVaccineData():
     browser = getBrowser(urls.mainPage, height=1700, zoom=90)
-    time.sleep(20)
+    time.sleep(SHORT_SLEEP_DURATION)
     return getPDF(browser, 'Vaccine Information', fileNames.countyVaccineFormat)
 
 
 def getHospitalData():
     browser = getBrowser(urls.mainPage, height=1700, zoom=90)
-    time.sleep(20)
+    time.sleep(SHORT_SLEEP_DURATION)
     return getPDF(browser, 'Iowa Hospitalizations by County', fileNames.countyHospitalFormat)
 
 
@@ -52,14 +56,14 @@ def getSummary():
     try:
       print('loading Summary Page')
       browser = getBrowser(urls.summaryPage, height=2400, zoom=90)
-      time.sleep(40)
+      time.sleep(SLEEP_DURATION)
       saveScreenshot(browser, fileNames.summaryScreenshot) 
  
       elements = browser.find_elements_by_class_name('cd-control-menu_container_2gtJe') 
       button = elements[-2].find_element_by_css_selector("button[class='db-button small button cd-control-menu_option_wH8G6 cd-control-menu_expand_VcWkC cd-control-menu_button_2VfJA cd-control-menu_db-button_2UMcr ng-scope']") 
       print('Clicking Download Button') 
       browser.execute_script("$(arguments[0].click());", button) 
-      time.sleep(20) 
+      time.sleep(SHORT_SLEEP_DURATION) 
  
       timeString = time.strftime("%Y-%m-%d %H%M") 
       localPath = fileNames.storageSummaryFormat.format(timeString) 
@@ -91,7 +95,7 @@ def getCSVs():
 
     for i in range(12):
       browser = getBrowser(urls.summaryPage)
-      time.sleep(20)
+      time.sleep(SHORT_SLEEP_DURATION)
       buttons = browser.find_elements_by_css_selector('button[aria-label="Export data"]')
       browser.execute_script("$(arguments[0].click());", buttons[i])
       time.sleep(10)
@@ -133,42 +137,42 @@ def getOriginalMap():
 
 def getCases():
   browser = getBrowser(urls.casePage, height=6200, zoom=90)
-  time.sleep(40)
+  time.sleep(SLEEP_DURATION)
   saveScreenshot(browser, fileNames.caseScreenshot)
   closeBrowser(browser)
 
 
 def getRecovery():
   browser = getBrowser(urls.recoveredPage, height=2500)
-  time.sleep(40)
+  time.sleep(SLEEP_DURATION)
   saveScreenshot(browser, fileNames.recoveryScreenshot)
   closeBrowser(browser)
 
 
 def getDeaths():
   browser = getBrowser(urls.deathsPage, height=2500)
-  time.sleep(40)
+  time.sleep(SLEEP_DURATION)
   saveScreenshot(browser, fileNames.deathsScreenshot)
   closeBrowser(browser)
 
 
 def getLTC():
   browser = getBrowser(urls.ltcPage, height=400)
-  time.sleep(40)
+  time.sleep(SLEEP_DURATION)
   saveScreenshot(browser, fileNames.ltcScreenshot)
   closeBrowser(browser)
 
 
 def getRMCCData():
   browser = getBrowser(urls.rmccPage, height=3300)
-  time.sleep(40)
+  time.sleep(SLEEP_DURATION)
   saveScreenshot(browser, fileNames.rmccScreenshot)
   closeBrowser(browser)
 
 
 def getSerologyData():
   browser = getBrowser(urls.serologyPage, zoom=80, height=400)
-  time.sleep(40)
+  time.sleep(SLEEP_DURATION)
   saveScreenshot(browser, fileNames.serologyScreenshot)
   closeBrowser(browser)
 
@@ -179,18 +183,18 @@ if __name__ == "__main__":
       os.makedirs(fileNames.screenshotDir)
 
   getOriginalMap()
-  if commitChecker.stillNeedTodaysData():
-    getGeoJSON()
-    # print(getAccessVals())
+  # if commitChecker.stillNeedTodaysData():
+  getGeoJSON()
+  # print(getAccessVals())
 
-    # getCSVs()
-    getHospitalData()
-    getVaccineData()
-    getSummary()
-    getCases()
-    getRecovery()
-    getDeaths()
-    getLTC()
-    getRMCCData()
-    getSerologyData()
+  # getCSVs()
+  getHospitalData()
+  getVaccineData()
+  getSummary()
+  getCases()
+  getRecovery()
+  getDeaths()
+  getLTC()
+  getRMCCData()
+  getSerologyData()
     
