@@ -5,10 +5,10 @@ import json
 import time
 import glob
 
-from utilities import fileNames
-from utilities import postTime
+from utilities import file_names
+from utilities import post_time
 
-filePath = fileNames.authJson
+filePath = file_names.authJson
 
 def setupEnvAuth():
   if 'SSHKEY' in os.environ:
@@ -21,7 +21,7 @@ def setupEnvAuth():
 
 def readData():
   data = {}
-  jsonFile = fileNames.dailyJson
+  jsonFile = file_names.dailyJson
   if os.path.exists(jsonFile):
     with open(jsonFile, "r") as read_file:
       summary = json.load(read_file)
@@ -70,7 +70,7 @@ def prepRedditPost(sh):
     sheetStart += 1
     wks = sh[sheetStart]
     df = wks.get_as_df(start='A1', end=sheetData[header], index_column=1)
-    commentFile = os.path.join(fileNames.redditCommentDir, "{}.md".format(header))
+    commentFile = os.path.join(file_names.redditCommentDir, "{}.md".format(header))
 
     with open(commentFile, 'w') as f:
       print('')
@@ -89,7 +89,7 @@ def prepRedditPost(sh):
   currentHospitalized = wks.get_value('B2')
   redditPostTitle = "{} as of 11:00am: {} New Cases, {} New Deaths, {} Currently Hospitalized.".format(time.strftime('%a. %m/%d'), newCases, newDeaths, currentHospitalized)
   print(redditPostTitle)
-  with open(fileNames.redditTitle, 'w') as f:
+  with open(file_names.redditTitle, 'w') as f:
     f.write(redditPostTitle)
 
 
