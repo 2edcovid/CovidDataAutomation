@@ -1,5 +1,5 @@
 import time
-from seleniumUtils import *
+from selenium_utils import *
 import urls
 
 def getMyMaps():

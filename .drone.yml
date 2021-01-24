@@ -22,9 +22,9 @@ steps:
   - git fetch origin data:data
   - chmod +x wait-for-it.sh
   - ./wait-for-it.sh selenium:4444
-  - python fetchDataFiles.py
-  - python imgurPost.py
-  - python utilities/commitChecker.py data
+  - python fetch_data_files.py
+  - python imgur_post.py
+  - python utilities/commit_checker.py data
 
 - name: pushInitialData
   image: appleboy/drone-git-push
@@ -44,9 +44,9 @@ steps:
     SSHKEY:
       from_secret: gsheet_ssh_key
   commands:
-  - python stripData.py
-  - python gsheetInteraction.py
-  - python utilities/commitChecker.py
+  - python strip_data.py
+  - python gsheet_interaction.py
+  - python utilities/commit_checker.py
 
 - name: pushData
   image: appleboy/drone-git-push
@@ -70,7 +70,7 @@ steps:
     APIPWD:
       from_secret: reddit_pwd
   commands:
-  - python redditPost.py
+  - python reddit_post.py
 
 
 image_pull_secrets:
