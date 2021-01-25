@@ -3,7 +3,7 @@
 import os
 import csv
 import json
-import stripData
+import strip_data
 import glob
 import re
 import fileNames
@@ -55,10 +55,10 @@ def genGeoJson():
     if result:
       print(result.group(1))
     
-      list_of_pdfs = glob.glob(os.path.join('historical', 'countyHospital{} *.pdf').format(result.group(1)))
-      if len(list_of_pdfs):
-        hospitalData = stripData.readPDF(list_of_pdfs[0])
-    stripData.createGeoJson(csv_file, hospitalData)
+    list_of_pdfs = glob.glob(os.path.join('historical', 'countyHospital{} *.pdf').format(result.group(1)))
+    if len(list_of_pdfs):
+      hospitalData = strip_data.readPDF(list_of_pdfs[0])
+    strip_data.createGeoJson(csv_file, hospitalData)
 
 def cleanGeoJson():
   removeList = [

@@ -1,13 +1,13 @@
 import os
 import pygsheets
-import fileNames
+import file_names
 import json
-import postTime
+import post_time
 import time
 import glob
 import csv
 
-filePath = fileNames.authJson
+filePath = file_names.authJson
 
 
 def importData():

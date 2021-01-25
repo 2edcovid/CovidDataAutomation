@@ -1,11 +1,15 @@
-import time
-import os
-from seleniumUtils import *
-import requests
-import fileNames
-import urls
-import commitChecker
 
+import os
+import time
+import requests
+
+from utilities.selenium_utils import *
+from utilities import file_names
+from utilities import urls
+from utilities import commit_checker
+
+SLEEP_DURATION = 40
+SHORT_SLEEP_DURATION = 20
 
 def getPDF(browser, link_text, name_fmt):
     filePath = None
@@ -24,11 +28,11 @@ def getPDF(browser, link_text, name_fmt):
       linkURL = 'https://drive.google.com/uc?export=download&id={}'.format(fileID)
     
     browser.get(linkURL)
-    time.sleep(40)
+    time.sleep(SLEEP_DURATION)
 
     timeString = time.strftime("%Y-%m-%d %H%M")
     localFilePath = name_fmt.format(timeString)
-    if saveDownloadFile(browser, fileNames.storageDir, localFilePath):
+    if saveDownloadFile(browser, file_names.storageDir, localFilePath):
       filePath = localFilePath
     closeBrowser(browser)
 
@@ -37,14 +41,14 @@ def getPDF(browser, link_text, name_fmt):
 
 def getVaccineData():
     browser = getBrowser(urls.mainPage, height=1700, zoom=90)
-    time.sleep(20)
-    return getPDF(browser, 'Vaccine Information', fileNames.countyVaccineFormat)
+    time.sleep(SHORT_SLEEP_DURATION)
+    return getPDF(browser, 'Vaccine Information', file_names.countyVaccineFormat)
 
 
 def getHospitalData():
     browser = getBrowser(urls.mainPage, height=1700, zoom=90)
-    time.sleep(20)
-    return getPDF(browser, 'Iowa Hospitalizations by County', fileNames.countyHospitalFormat)
+    time.sleep(SHORT_SLEEP_DURATION)
+    return getPDF(browser, 'Iowa Hospitalizations by County', file_names.countyHospitalFormat)
 
 
 
@@ -52,18 +56,18 @@ def getSummary():
     try:
       print('loading Summary Page')
       browser = getBrowser(urls.summaryPage, height=2400, zoom=90)
-      time.sleep(40)
-      saveScreenshot(browser, fileNames.summaryScreenshot) 
+      time.sleep(SLEEP_DURATION)
+      saveScreenshot(browser, file_names.summaryScreenshot) 
  
       elements = browser.find_elements_by_class_name('cd-control-menu_container_2gtJe') 
       button = elements[-2].find_element_by_css_selector("button[class='db-button small button cd-control-menu_option_wH8G6 cd-control-menu_expand_VcWkC cd-control-menu_button_2VfJA cd-control-menu_db-button_2UMcr ng-scope']") 
       print('Clicking Download Button') 
       browser.execute_script("$(arguments[0].click());", button) 
-      time.sleep(20) 
+      time.sleep(SHORT_SLEEP_DURATION) 
  
       timeString = time.strftime("%Y-%m-%d %H%M") 
-      localPath = fileNames.storageSummaryFormat.format(timeString) 
-      saveDownloadFile(browser, fileNames.storageDir, localPath) 
+      localPath = file_names.storageSummaryFormat.format(timeString) 
+      saveDownloadFile(browser, file_names.storageDir, localPath) 
  
       closeBrowser(browser)
     except Exception as e:
@@ -75,29 +79,29 @@ def getCSVs():
     timeString = time.strftime("%Y-%m-%d %H%M")
 
     filenameLists = [
-      os.path.join(fileNames.storageDir,'IndividualsTested{}.csv'.format(timeString)),
-      os.path.join(fileNames.storageDir,'IndividualsTestedGraph{}.csv'.format(timeString)),
-      os.path.join(fileNames.storageDir,'IndividualsPositive{}.csv'.format(timeString)),
-      os.path.join(fileNames.storageDir,'IndividualsPositiveGraph{}.csv'.format(timeString)),
-      os.path.join(fileNames.storageDir,'TotalRecovered{}.csv'.format(timeString)),
-      os.path.join(fileNames.storageDir,'TotalRecoveredGraph{}.csv'.format(timeString)),
-      os.path.join(fileNames.storageDir,'TotalDeaths{}.csv'.format(timeString)),
-      os.path.join(fileNames.storageDir,'TotalDeathsGraph{}.csv'.format(timeString)),
-      os.path.join(fileNames.storageDir,'UnderlyingCauseDeaths{}.csv'.format(timeString)),
-      os.path.join(fileNames.storageDir,'UnderlyingCauseDeathsGraph{}.csv'.format(timeString)),
-      os.path.join(fileNames.storageDir,'ContributingFactorsDeaths{}.csv'.format(timeString)),
-      os.path.join(fileNames.storageDir,'ContributingFactorsDeathsGraph{}.csv'.format(timeString)),
+      os.path.join(file_names.storageDir,'IndividualsTested{}.csv'.format(timeString)),
+      os.path.join(file_names.storageDir,'IndividualsTestedGraph{}.csv'.format(timeString)),
+      os.path.join(file_names.storageDir,'IndividualsPositive{}.csv'.format(timeString)),
+      os.path.join(file_names.storageDir,'IndividualsPositiveGraph{}.csv'.format(timeString)),
+      os.path.join(file_names.storageDir,'TotalRecovered{}.csv'.format(timeString)),
+      os.path.join(file_names.storageDir,'TotalRecoveredGraph{}.csv'.format(timeString)),
+      os.path.join(file_names.storageDir,'TotalDeaths{}.csv'.format(timeString)),
+      os.path.join(file_names.storageDir,'TotalDeathsGraph{}.csv'.format(timeString)),
+      os.path.join(file_names.storageDir,'UnderlyingCauseDeaths{}.csv'.format(timeString)),
+      os.path.join(file_names.storageDir,'UnderlyingCauseDeathsGraph{}.csv'.format(timeString)),
+      os.path.join(file_names.storageDir,'ContributingFactorsDeaths{}.csv'.format(timeString)),
+      os.path.join(file_names.storageDir,'ContributingFactorsDeathsGraph{}.csv'.format(timeString)),
     ]
 
     for i in range(12):
       browser = getBrowser(urls.summaryPage)
-      time.sleep(20)
+      time.sleep(SHORT_SLEEP_DURATION)
       buttons = browser.find_elements_by_css_selector('button[aria-label="Export data"]')
       browser.execute_script("$(arguments[0].click());", buttons[i])
       time.sleep(10)
 
       localPath = filenameLists[i]
-      saveDownloadFile(browser, fileNames.storageDir, localPath)
+      saveDownloadFile(browser, file_names.storageDir, localPath)
 
     closeBrowser(browser)
 
@@ -118,7 +122,7 @@ def getAccessVals():
 def getGeoJSON():
   r = requests.get(urls.dailyGeoJson, stream=True)
   if r.status_code == 200:
-    filePath = fileNames.originalGeoJson
+    filePath = file_names.originalGeoJson
     if os.path.exists(filePath):
       os.remove(filePath)
     open(filePath, 'wb').write(r.content)
@@ -127,70 +131,70 @@ def getGeoJSON():
 
 def getOriginalMap():
   browser = getBrowser(urls.argisMap)
-  saveScreenshot(browser, fileNames.mapScreenshot)
+  saveScreenshot(browser, file_names.mapScreenshot)
   closeBrowser(browser)
 
 
 def getCases():
   browser = getBrowser(urls.casePage, height=6200, zoom=90)
-  time.sleep(40)
-  saveScreenshot(browser, fileNames.caseScreenshot)
+  time.sleep(SLEEP_DURATION)
+  saveScreenshot(browser, file_names.caseScreenshot)
   closeBrowser(browser)
 
 
 def getRecovery():
   browser = getBrowser(urls.recoveredPage, height=2500)
-  time.sleep(40)
-  saveScreenshot(browser, fileNames.recoveryScreenshot)
+  time.sleep(SLEEP_DURATION)
+  saveScreenshot(browser, file_names.recoveryScreenshot)
   closeBrowser(browser)
 
 
 def getDeaths():
   browser = getBrowser(urls.deathsPage, height=2500)
-  time.sleep(40)
-  saveScreenshot(browser, fileNames.deathsScreenshot)
+  time.sleep(SLEEP_DURATION)
+  saveScreenshot(browser, file_names.deathsScreenshot)
   closeBrowser(browser)
 
 
 def getLTC():
   browser = getBrowser(urls.ltcPage, height=400)
-  time.sleep(40)
-  saveScreenshot(browser, fileNames.ltcScreenshot)
+  time.sleep(SLEEP_DURATION)
+  saveScreenshot(browser, file_names.ltcScreenshot)
   closeBrowser(browser)
 
 
 def getRMCCData():
   browser = getBrowser(urls.rmccPage, height=3300)
-  time.sleep(40)
-  saveScreenshot(browser, fileNames.rmccScreenshot)
+  time.sleep(SLEEP_DURATION)
+  saveScreenshot(browser, file_names.rmccScreenshot)
   closeBrowser(browser)
 
 
 def getSerologyData():
   browser = getBrowser(urls.serologyPage, zoom=80, height=400)
-  time.sleep(40)
-  saveScreenshot(browser, fileNames.serologyScreenshot)
+  time.sleep(SLEEP_DURATION)
+  saveScreenshot(browser, file_names.serologyScreenshot)
   closeBrowser(browser)
 
 
 
 if __name__ == "__main__":
-  if not os.path.exists(fileNames.screenshotDir):
-      os.makedirs(fileNames.screenshotDir)
+  if not os.path.exists(file_names.screenshotDir):
+      os.makedirs(file_names.screenshotDir)
 
   getOriginalMap()
-  if commitChecker.stillNeedTodaysData():
-    getGeoJSON()
-    # print(getAccessVals())
+  # if commit_checker.stillNeedTodaysData():
+  getGeoJSON()
+  # print(getAccessVals())
 
-    # getCSVs()
-    getHospitalData()
-    getVaccineData()
-    getSummary()
-    getCases()
-    getRecovery()
-    getDeaths()
-    getLTC()
-    getRMCCData()
-    getSerologyData()
+  # getCSVs()
+  getHospitalData()
+  getVaccineData()
+  getSummary()
+  getCases()
+  getRecovery()
+  getDeaths()
+  getLTC()
+  getRMCCData()
+  getSerologyData()
     

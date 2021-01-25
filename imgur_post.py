@@ -1,11 +1,12 @@
 import time
 import glob
 import os
-import fileNames
-import postTime
 import json
 import requests
 from base64 import b64encode
+
+from utilities import file_names
+from utilities import post_time
 
 
 def upload_images(album_title, paths):
@@ -28,7 +29,7 @@ def upload_images(album_title, paths):
   album = albumResponse.json()['data']
 
   for i, img in enumerate(paths):
-    if img != fileNames.mapScreenshot:
+    if img != file_names.mapScreenshot:
       b64_image = None
       with open(img, "rb") as f:
         image_data = f.read()
@@ -53,7 +54,7 @@ def postDebug():
   try:
     print('Debug Screenshots')
     title = "{} Iowa COVID19 Debug Screenshots".format(time.strftime("%m/%d"))
-    fileList = glob.glob(os.path.join(fileNames.screenshotDir, "Screenshot_*"))
+    fileList = glob.glob(os.path.join(file_names.screenshotDir, "Screenshot_*"))
     album = upload_images(title, fileList)
     url = "https://imgur.com/a/{}".format(album['id'])
     print(url)
@@ -62,7 +63,7 @@ def postDebug():
 
 
 if __name__ == "__main__":
-  if postTime.shouldPost():
+  if post_time.shouldPost():
     postDebug()
   
   
