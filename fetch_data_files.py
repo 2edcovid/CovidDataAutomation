@@ -183,18 +183,18 @@ if __name__ == "__main__":
       os.makedirs(file_names.screenshotDir)
 
   getOriginalMap()
-  # if commit_checker.stillNeedTodaysData():
-  getGeoJSON()
-  # print(getAccessVals())
+  if commit_checker.stillNeedTodaysData():
+    getGeoJSON()
+    # print(getAccessVals())
 
-  # getCSVs()
-  getHospitalData()
-  getVaccineData()
-  getSummary()
-  getCases()
-  getRecovery()
-  getDeaths()
-  getLTC()
-  getRMCCData()
-  getSerologyData()
-    
+    # getCSVs()
+    getHospitalData()
+    getVaccineData()
+    getSummary()
+    getCases()
+    getRecovery()
+    getDeaths()
+    getLTC()
+    getRMCCData()
+    getSerologyData()
+      
