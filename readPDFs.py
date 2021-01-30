@@ -207,13 +207,19 @@ def readHospitalPDF(pdfFile):
     textToUse = []
     for text in extraText.split():
         matches = re.match(dateRegex, text)
+        date2Regex = r'\d+\-\w+\-\d+'
+        matches2 = re.match(date2Regex, text)
         noCommaText = text.replace(',', '')
-        if noCommaText.isnumeric() or matches:
+        if noCommaText.isnumeric() or matches or matches2:
             textToUse.append(text)
-    countyHospitalData['Out of State Hospitalized'] = textToUse[0]
-    countyHospitalData['Iowans Hospitalized'] = textToUse[1]
-    countyHospitalData['Total Hospitalized'] = textToUse[2]
-    countyHospitalData['Hospital Report Date'] = textToUse[3]
+    try:
+      countyHospitalData['Out of State Hospitalized'] = textToUse[0]
+      countyHospitalData['Iowans Hospitalized'] = textToUse[1]
+      countyHospitalData['Total Hospitalized'] = textToUse[2]
+      countyHospitalData['Hospital Report Date'] = textToUse[3]
+    except:
+      print(extraText)
+      print(textToUse)
 
     return countyHospitalData
 

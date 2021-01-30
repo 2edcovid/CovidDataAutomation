@@ -40,9 +40,51 @@ def getPDF(browser, link_text, name_fmt):
 
 
 def getVaccineData():
-    browser = getBrowser(urls.mainPage, height=1700, zoom=90)
+    browser = getBrowser(urls.vaccinePage, height=6200, zoom=90)
     time.sleep(SHORT_SLEEP_DURATION)
-    return getPDF(browser, 'Vaccine Information', file_names.countyVaccineFormat)
+    saveScreenshot(browser, file_names.vaccineScreenshot)
+    closeBrowser(browser)
+
+    fileNames = [
+      os.path.join(file_names.storageDir, "VaccineDosesAdministered{}.csv"),
+      os.path.join(file_names.storageDir, "VaccineIndividuals1stDose{}.csv"),
+      os.path.join(file_names.storageDir, "VaccineIowanDoses{}.csv"),
+      os.path.join(file_names.storageDir, "VaccineIndividualsComplete{}.csv"),
+      None,
+      os.path.join(file_names.storageDir, "VaccineManufacturer{}.csv"),
+      None,
+      None,
+      None,
+      None,
+      None,
+      None,
+      None,
+      None,
+      None,
+      None,
+      None,
+      os.path.join(file_names.storageDir, "VaccineDosesByDay{}.csv"),
+      os.path.join(file_names.storageDir, "VaccineDosesByCounty{}.csv"),
+      None,
+      None
+    ]
+    timeString = time.strftime("%Y-%m-%d %H%M") 
+    for i in range(21):
+      if fileNames[i]:
+        browser = getBrowser(urls.vaccinePage, height=1400, zoom=90)
+        time.sleep(SHORT_SLEEP_DURATION)
+        elements = browser.find_elements_by_class_name('cd-control-menu_container_2gtJe') 
+        try:
+          button = elements[i].find_element_by_css_selector("button[class='db-button small button cd-control-menu_option_wH8G6 cd-control-menu_expand_VcWkC cd-control-menu_button_2VfJA cd-control-menu_db-button_2UMcr ng-scope']") 
+          print('Clicking Download Button') 
+          browser.execute_script("$(arguments[0].click());", button) 
+          time.sleep(SHORT_SLEEP_DURATION) 
+
+          localPath = fileNames[i].format(timeString) 
+          saveDownloadFile(browser, file_names.storageDir, localPath) 
+        except:
+          print(i)
+        closeBrowser(browser)
 
 
 def getHospitalData():
@@ -103,7 +145,7 @@ def getCSVs():
       localPath = filenameLists[i]
       saveDownloadFile(browser, file_names.storageDir, localPath)
 
-    closeBrowser(browser)
+      closeBrowser(browser)
 
 
 def getAccessVals():

@@ -11,6 +11,8 @@ webGeoJson = 'data_file.geojson'
 
 storageGeoJsonFormat = os.path.join(storageDir, "data_file_{}.geojson")
 storageSummaryFormat = os.path.join(storageDir, 'Summary{}.csv')
+storageVaccineCountyFormat = os.path.join(storageDir, 'VaccineCounty{}.csv')
+storageVaccineManufactuerFormat = os.path.join(storageDir, 'VaccineManufacturer{}.csv')
 countyHospitalFormat = os.path.join(storageDir, 'countyHospital{}.pdf')
 countyVaccineFormat = os.path.join(storageDir, 'countyVaccine{}.pdf')
 
@@ -22,6 +24,7 @@ caseScreenshot = os.path.join(screenshotDir, "Screenshot_Cases.png")
 recoveryScreenshot = os.path.join(screenshotDir, "Screenshot_Recovery.png")
 deathsScreenshot = os.path.join(screenshotDir, "Screenshot_Deaths.png")
 ltcScreenshot = os.path.join(screenshotDir, "Screenshot_LTC.png")
+vaccineScreenshot = os.path.join(screenshotDir, "Screenshot_Vaccine.png")
 
 accessJson = 'accessVals.json'
 

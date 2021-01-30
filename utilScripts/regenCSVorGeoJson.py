@@ -1,9 +1,13 @@
 # 07-01 - 08-05
 # 
 import os
+import sys
+rootPath = os.path.dirname(os.path.dirname(__file__))
+sys.path.append(rootPath)
 import csv
 import json
 import strip_data
+import readPDFs
 import glob
 import re
 import fileNames
@@ -44,21 +48,24 @@ def genCSV():
           writer.writerows(rows)
 
 def genGeoJson():
-  list_of_pdfs = glob.glob(os.path.join('historical', '*.pdf'))
 
-  list_of_files = glob.glob(os.path.join('historical', '*.csv'))
+  list_of_files = glob.glob(os.path.join(rootPath, 'historical', '*.csv'))
   for csv_file in list_of_files:
     print(csv_file)
     hospitalData = None
-    dateRegex = r"historical\/Summary(2020\-\d\d\-\d\d)*"
+    vaccineData = None
+    dateRegex = r".+Summary(2020\-\d\d\-\d\d)\ \d\d\d\d\.csv"
     result = re.match(dateRegex, csv_file)
     if result:
       print(result.group(1))
     
-    list_of_pdfs = glob.glob(os.path.join('historical', 'countyHospital{} *.pdf').format(result.group(1)))
-    if len(list_of_pdfs):
-      hospitalData = strip_data.readPDF(list_of_pdfs[0])
-    strip_data.createGeoJson(csv_file, hospitalData)
+    list_of_hospital_pdfs = glob.glob(os.path.join(rootPath, 'historical', 'countyHospital{} *.pdf').format(result.group(1)))
+    list_of_vaccine_pdfs = glob.glob(os.path.join(rootPath, 'historical', 'countyVaccine{} *.pdf').format(result.group(1)))
+    if len(list_of_hospital_pdfs):
+      hospitalData = readPDFs.readHospitalPDF(list_of_hospital_pdfs[0])
+    if len(list_of_vaccine_pdfs):
+      vaccineData = readPDFs.readVaccinePDF(list_of_vaccine_pdfs[0])
+    strip_data.createGeoJson(csv_file, hospitalData, vaccine_data=vaccineData)
 
 def cleanGeoJson():
   removeList = [
