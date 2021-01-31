@@ -111,6 +111,7 @@ def load_image_data():
   return data
 
 
+
 if __name__ == "__main__":
     image_data = load_image_data()
     write_json(file_names.dailyJson, image_data)
@@ -121,7 +122,7 @@ if __name__ == "__main__":
     except:
       print('issue reading vaccine data')
 
-    list_of_files = glob.glob(os.path.join(file_names.storageDir, '*.csv'))
+    list_of_files = glob.glob(os.path.join(file_names.storageDir, 'Summary*.csv'))
     list_of_files.sort()
     csvFile = list_of_files[-1]
 
