@@ -93,7 +93,6 @@ def getHospitalData():
     return getPDF(browser, 'Iowa Hospitalizations by County', file_names.countyHospitalFormat)
 
 
-
 def getSummary():
     try:
       print('loading Summary Page')
