@@ -10,6 +10,8 @@ import strip_data
 import readPDFs
 import glob
 import re
+import fetch_data_files
+
 
 months = [7, 8]
 days = [1,5]
@@ -63,6 +65,81 @@ def genGeoJson():
     if len(list_of_vaccine_pdfs):
       vaccineData = readPDFs.readVaccinePDF(list_of_vaccine_pdfs[0])
     strip_data.createGeoJson(csv_file, hospitalData, vaccine_data=vaccineData)
+def cleanGeoJson():
+  removeList = [
+    'individuals_tested',
+    'CreationDate',
+    'Creator',
+    'EditDate',
+    'Editor'
+  ]
+
+  for geoFile in os.listdir("historical"):
+    if geoFile.endswith(".geojson"):
+      date = geoFile.split("_")[2]
+      date = date.split(".")[0]
+      print(date)
+
+      data = {}
+      with open(os.path.join("historical", geoFile), 'r') as read_file:
+        data = json.load(read_file)
+
+      for county in data['features']:
+        name = county['properties']['Name']
+        county['properties']['last_updated'] = date
+        for prop in removeList:
+          try:
+            county['properties'].pop(prop)
+          except:
+            pass
+
+      with open(os.path.join("historical", geoFile), "w") as write_file:
+            json.dump(data, write_file)
 
 
+def readableDataFromGeoJson():
+
+  removeList = [
+    'individuals_tested',
+    'CreationDate',
+    'Creator',
+    'EditDate',
+    'Editor',
+    'OBJECTID',
+    'IACountyID',
+    'FIPS',
+    'Country',
+    'last_updated',
+    'GlobalID',
+    'SHAPE_Length',
+    'SHAPE_Area',
+    'pop_est_2018',
+    'State'
+  ]
+
+  for geoFile in os.listdir("historical"):
+    if geoFile.endswith(".geojson"):
+      date = geoFile.split("_")[2]
+      date = date.split(".")[0]
+      print(date)
+
+      data = {}
+      with open(os.path.join("historical", geoFile), 'r') as read_file:
+        data = json.load(read_file)
+
+      for county in data['features']:
+        county.pop('geometry')
+        county.pop('type')
+        name = county['properties']['Name']
+        for prop in removeList:
+          try:
+            county['properties'].pop(prop)
+          except:
+            pass
+
+      with open(os.path.join("historical", 'ReadableGeoFileP{}.json'.format(date)), "w") as write_file:
+        json.dump(data, write_file)
+
+
+# readableDataFromGeoJson()
 genGeoJson()
