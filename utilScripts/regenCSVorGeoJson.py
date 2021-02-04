@@ -65,6 +65,8 @@ def genGeoJson():
     if len(list_of_vaccine_pdfs):
       vaccineData = readPDFs.readVaccinePDF(list_of_vaccine_pdfs[0])
     strip_data.createGeoJson(csv_file, hospitalData, vaccine_data=vaccineData)
+
+
 def cleanGeoJson():
   removeList = [
     'individuals_tested',
@@ -141,5 +143,6 @@ def readableDataFromGeoJson():
         json.dump(data, write_file)
 
 
-# readableDataFromGeoJson()
-genGeoJson()
+cleanGeoJson()
+readableDataFromGeoJson()
+# genGeoJson()
