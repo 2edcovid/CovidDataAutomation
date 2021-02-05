@@ -52,13 +52,11 @@ def genGeoJson():
 
   list_of_files = glob.glob(os.path.join(rootPath, 'historical', '*.csv'))
   for csv_file in list_of_files:
-    print(csv_file)
     hospitalData = None
     vaccineData = None
     dateRegex = r".+Summary(2020\-\d\d\-\d\d)\ \d\d\d\d\.csv"
     result = re.match(dateRegex, csv_file)
-    if result:
-      print(result.group(1))
+    print(result.group(1))
     
     list_of_hospital_pdfs = glob.glob(os.path.join(rootPath, 'historical', 'countyHospital{} *.pdf').format(result.group(1)))
     list_of_vaccine_pdfs = glob.glob(os.path.join(rootPath, 'historical', 'countyVaccine{} *.pdf').format(result.group(1)))
@@ -144,14 +142,6 @@ def readableDataFromGeoJson():
       with open(os.path.join("historical", 'ReadableGeoFileP{}.json'.format(date)), "w") as write_file:
         json.dump(data, write_file)
 
-def cleanGeoJson():
-  removeList = [
-    'individuals_tested',
-    'CreationDate',
-    'Creator',
-    'EditDate',
-    'Editor'
-  ]
 
 cleanGeoJson()
 readableDataFromGeoJson()
