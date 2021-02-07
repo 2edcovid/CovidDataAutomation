@@ -12,7 +12,7 @@ import readPDFs
 import readImages
 
 
-def createGeoJson(localCsvFile, hospitalData, removePending=False):
+def createGeoJson(localCsvFile, hospitalData, vaccineCSV=None, removePending=False):
     countyData = {}
     data = {}
     date = (localCsvFile.split('.csv')[0].split()[0].split('Summary')[1])
@@ -33,6 +33,20 @@ def createGeoJson(localCsvFile, hospitalData, removePending=False):
             countyData[row[countyHeader]]['Active'] = int(row['Individuals Positive']) - (int(row['Total Recovered']) + int(row['Total Deaths']))
           except:
             countyData[row[countyHeader]]['Active'] = row['Individuals Positive']
+
+    if vaccineCSV:
+      with open(vaccineCSV) as csvFiles:
+        csvReader = csv.DictReader(csvFiles)
+        for row in csvReader:
+          try:
+            countyHeader = 'County'
+            countyName = row[countyHeader]
+            if countyName == '.':
+              countyName = 'Pending Investigation'
+            countyData[countyName]['Vaccine Series Initiated'] = row['Series Initiated']
+            countyData[countyName]['Vaccine Series Completed'] = row['Series Completed']
+          except:
+            print(row)
 
     with open(file_names.originalGeoJson, 'r') as read_file:
         data = json.load(read_file)
@@ -55,19 +69,50 @@ def createGeoJson(localCsvFile, hospitalData, removePending=False):
             county['properties']['Confirmed'] = int(props['Positive'])
             county['properties']['Tested'] = int(props['Tested'])
             try:
+              county['properties']['VaccineSeriesInitiated'] = int(props['Vaccine Series Initiated'])
+            except:
+              county['properties']['VaccineSeriesInitiated'] = 0
+
+            try:
+              county['properties']['VaccineSeriesCompleted'] = int(props['Vaccine Series Completed'])
+            except:
+              county['properties']['VaccineSeriesCompleted'] = 0
+
+            try:
               county['properties']['Hospitalized'] = int(hospitalData[name])
             except:
               county['properties']['Hospitalized'] = 0
-            county['properties']['PercentRecovered'] = round(int(props['Recovered'])/county['properties']['pop_est_2018']*100,2)
-            county['properties']['PercentActive'] = round(int(props['Active'])/county['properties']['pop_est_2018']*100,2)
-            county['properties']['PercentDeaths'] = round(int(props['Deaths'])/county['properties']['pop_est_2018']*100,2)
-            county['properties']['PercentConfirmed'] = round(int(props['Positive'])/county['properties']['pop_est_2018']*100,2)
-            county['properties']['PercentTested'] = round(int(props['Tested'])/county['properties']['pop_est_2018']*100,2)
+
+            try:
+              county['properties']['PercentRecovered'] = round(int(props['Recovered'])/county['properties']['pop_est_2018']*100,2)
+              county['properties']['PercentActive'] = round(int(props['Active'])/county['properties']['pop_est_2018']*100,2)
+              county['properties']['PercentDeaths'] = round(int(props['Deaths'])/county['properties']['pop_est_2018']*100,2)
+              county['properties']['PercentConfirmed'] = round(int(props['Positive'])/county['properties']['pop_est_2018']*100,2)
+              county['properties']['PercentTested'] = round(int(props['Tested'])/county['properties']['pop_est_2018']*100,2)
+            except:
+              county['properties']['PercentRecovered'] = 0
+              county['properties']['PercentActive'] = 0
+              county['properties']['PercentDeaths'] = 0
+              county['properties']['PercentConfirmed'] = 0
+              county['properties']['PercentTested'] = 0
+
+            try:
+              county['properties']['PercentVaccineSeriesInitated'] = round(int(props['Vaccine Series Initiated'])/county['properties']['pop_est_2018']*100,2)
+            except:
+              county['properties']['PercentVaccineSeriesInitated'] = 0
+
+            try:
+              county['properties']['PercentVaccineSeriesCompleted'] = round(int(props['Vaccine Series Completed'])/county['properties']['pop_est_2018']*100,2)
+            except:
+              county['properties']['PercentVaccineSeriesCompleted'] = 0
+
             try:
               county['properties']['PercentHospitalized'] = round(int(hospitalData[name])/county['properties']['pop_est_2018']*100,2)
             except:
               county['properties']['PercentHospitalized'] = 0
+
         except:
+            print('issues with {}'.format(name))
             county['properties']['Active'] = 0
             county['properties']['Tested'] = 0
             county['properties']['Hospitalized'] = 0
@@ -77,6 +122,10 @@ def createGeoJson(localCsvFile, hospitalData, removePending=False):
             county['properties']['PercentConfirmed'] = 0
             county['properties']['PercentTested'] = 0
             county['properties']['PercentHospitalized'] = 0
+            county['properties']['VaccineSeriesInitiated'] = 0
+            county['properties']['VaccineSeriesCompleted'] = 0
+            county['properties']['PercentVaccineSeriesInitated'] = 0
+            county['properties']['PercentVaccineSeriesCompleted'] = 0
 
     for county in removeList:
         data['features'].remove(county)
@@ -175,8 +224,17 @@ if __name__ == "__main__":
 
     list_of_files = glob.glob(os.path.join(file_names.storageDir, 'Summary*.csv'))
     list_of_files.sort()
-    csvFile = list_of_files[-1]
+    summary_csv_file = list_of_files[-1]
 
-    createGeoJson(csvFile, hospital_pdf_data['Hospitalized By County'])
+    countyData = os.path.join(file_names.storageDir, "VaccineDosesByCounty{}.csv")
+
+    list_of_files = glob.glob(os.path.join(file_names.storageDir, "VaccineDosesByCounty*.csv"))
+    list_of_files.sort()
+    vaccine_csv_file = list_of_files[-1]
+
+    print(vaccine_csv_file)
+    print(summary_csv_file)
+
+    createGeoJson(summary_csv_file, hospital_pdf_data['Hospitalized By County'], vaccineCSV=vaccine_csv_file)
 
     print(image_data)

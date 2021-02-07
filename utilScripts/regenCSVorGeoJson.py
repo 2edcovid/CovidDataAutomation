@@ -49,22 +49,26 @@ def genCSV():
           writer.writerows(rows)
 
 def genGeoJson():
-
-  list_of_files = glob.glob(os.path.join(rootPath, 'historical', '*.csv'))
+  fetch_data_files.getGeoJSON()
+  list_of_files = glob.glob(os.path.join(rootPath, 'historical', 'Summary*.csv'))
   for csv_file in list_of_files:
     hospitalData = None
     vaccineData = None
-    dateRegex = r".+Summary(2020\-\d\d\-\d\d)\ \d\d\d\d\.csv"
+    dateRegex = r".+Summary(20\d\d\-\d\d\-\d\d)\ \d\d\d\d\.csv"
     result = re.match(dateRegex, csv_file)
     print(result.group(1))
     
-    list_of_hospital_pdfs = glob.glob(os.path.join(rootPath, 'historical', 'countyHospital{} *.pdf').format(result.group(1)))
-    list_of_vaccine_pdfs = glob.glob(os.path.join(rootPath, 'historical', 'countyVaccine{} *.pdf').format(result.group(1)))
+    list_of_hospital_pdfs = glob.glob(os.path.join(rootPath, 'historical', 'countyHospital{}*.pdf').format(result.group(1)))
+    # list_of_vaccine_pdfs = glob.glob(os.path.join(rootPath, 'historical', 'countyVaccine{} *.pdf').format(result.group(1)))
+    list_of_vaccine_csvs = glob.glob(os.path.join(rootPath, 'historical', "VaccineDosesByCounty{}*.csv").format(result.group(1)))
     if len(list_of_hospital_pdfs):
-      hospitalData = readPDFs.readHospitalPDF(list_of_hospital_pdfs[0])
-    if len(list_of_vaccine_pdfs):
-      vaccineData = readPDFs.readVaccinePDF(list_of_vaccine_pdfs[0])
-    strip_data.createGeoJson(csv_file, hospitalData, vaccine_data=vaccineData)
+      hospitalData = readPDFs.readHospitalPDF(list_of_hospital_pdfs[0])['Hospitalized By County']
+    # if len(list_of_vaccine_pdfs):
+    #   vaccineData = readPDFs.readVaccinePDF(list_of_vaccine_pdfs[0])
+    vaccine_csv = None
+    if len(list_of_vaccine_csvs):
+     vaccine_csv=list_of_vaccine_csvs[0]
+    strip_data.createGeoJson(csv_file, hospitalData, vaccineCSV=vaccine_csv)
 
 
 def cleanGeoJson():
@@ -86,7 +90,7 @@ def cleanGeoJson():
       with open(os.path.join("historical", geoFile), 'r') as read_file:
         data = json.load(read_file)
 
-      for county in data['features']:
+      for county in data['features']: 
         name = county['properties']['Name']
         county['properties']['last_updated'] = date
         for prop in removeList:
@@ -116,7 +120,11 @@ def readableDataFromGeoJson():
     'SHAPE_Length',
     'SHAPE_Area',
     'pop_est_2018',
-    'State'
+    'State',
+    'VaccineSeriesInitiated',
+    'VaccineSeriesCompleted',
+    'PercentVaccineSeriesInitated',
+    'PercentVaccineSeriesCompleted',
   ]
 
   for geoFile in os.listdir("historical"):
@@ -129,20 +137,27 @@ def readableDataFromGeoJson():
       with open(os.path.join("historical", geoFile), 'r') as read_file:
         data = json.load(read_file)
 
-      for county in data['features']:
+      removeCountyList = []
+
+      for county in data['features']: 
         county.pop('geometry')
         county.pop('type')
         name = county['properties']['Name']
+        if name == 'Pending Investigation':
+          removeCountyList.append(county)
         for prop in removeList:
           try:
             county['properties'].pop(prop)
           except:
             pass
 
+      for county in removeCountyList:
+        data['features'].remove(county)
+
       with open(os.path.join("historical", 'ReadableGeoFileP{}.json'.format(date)), "w") as write_file:
-        json.dump(data, write_file)
+        json.dump(data, write_file, indent="")
 
 
+genGeoJson()
 cleanGeoJson()
 readableDataFromGeoJson()
-# genGeoJson()
