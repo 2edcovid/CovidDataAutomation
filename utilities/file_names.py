@@ -4,10 +4,7 @@ storageDir = 'historical'
 screenshotDir = 'screenshots'
 redditCommentDir = 'RedditComments'
 
-
-
 originalGeoJson = 'IA_COVID19_Cases.geojson'
-webGeoJson = 'data_file.geojson'
 
 storageGeoJsonFormat = os.path.join(storageDir, "data_file_{}.geojson")
 storageSummaryFormat = os.path.join(storageDir, 'Summary{}.csv')

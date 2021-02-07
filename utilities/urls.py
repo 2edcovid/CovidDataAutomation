@@ -21,4 +21,4 @@ casePage = 'https://public.domo.com/embed/pages/OYPXR' # Total Tested, Indivitua
 recoveredPage = 'https://public.domo.com/embed/pages/boNDL' # preexisting condition, no condition, unknown
 deathsPage = 'https://public.domo.com/embed/pages/VO7VW' # preexisting condition, no condition, unknown
 
-ltcPage = 'https://public.domo.com/embed/pages/dRWq0' # current outbreaks, positive cases, recovered, deaths
+ltcPage = 'https://public.domo.com/embed/pages/31wVn' # current outbreaks, positive cases, recovered, deaths

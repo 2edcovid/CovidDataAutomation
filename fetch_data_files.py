@@ -11,6 +11,9 @@ from utilities import commit_checker
 SLEEP_DURATION = 40
 SHORT_SLEEP_DURATION = 20
 
+buttonContainer = 'cd-control-menu_container_2gtJe'
+buttonCss = "button[class='db-button small button cd-control-menu_option_wH8G6 cd-control-menu_expand_VcWkC cd-control-menu_button_2VfJA cd-control-menu_db-button_2UMcr ng-scope']"
+
 def getPDF(browser, link_text, name_fmt):
     filePath = None
 
@@ -40,8 +43,7 @@ def getPDF(browser, link_text, name_fmt):
 
 
 def getVaccineData():
-    browser = getBrowser(urls.vaccinePage, height=6200, zoom=90)
-    time.sleep(SHORT_SLEEP_DURATION)
+    browser = getBrowser(urls.vaccinePage, height=6200, zoom=90, timeout=SLEEP_DURATION)
     saveScreenshot(browser, file_names.vaccineScreenshot)
     closeBrowser(browser)
 
@@ -71,45 +73,38 @@ def getVaccineData():
     timeString = time.strftime("%Y-%m-%d %H%M") 
     for i in range(21):
       if fileNames[i]:
-        browser = getBrowser(urls.vaccinePage, height=1400, zoom=90)
-        time.sleep(SHORT_SLEEP_DURATION)
-        elements = browser.find_elements_by_class_name('cd-control-menu_container_2gtJe') 
-        try:
-          button = elements[i].find_element_by_css_selector("button[class='db-button small button cd-control-menu_option_wH8G6 cd-control-menu_expand_VcWkC cd-control-menu_button_2VfJA cd-control-menu_db-button_2UMcr ng-scope']") 
-          print('Clicking Download Button') 
-          browser.execute_script("$(arguments[0].click());", button) 
-          time.sleep(SHORT_SLEEP_DURATION) 
+        browser = getBrowser(urls.vaccinePage, height=1400, zoom=90, timeout=SHORT_SLEEP_DURATION)
+        localPath = fileNames[i].format(timeString) 
 
-          localPath = fileNames[i].format(timeString) 
-          saveDownloadFile(browser, file_names.storageDir, localPath) 
-        except:
-          print(i)
+        downloadFile(browser, i, localPath)
+
         closeBrowser(browser)
 
 
 def getHospitalData():
-    browser = getBrowser(urls.mainPage, height=1700, zoom=90)
-    time.sleep(SHORT_SLEEP_DURATION)
+    browser = getBrowser(urls.mainPage, height=1700, zoom=90, timeout=SHORT_SLEEP_DURATION)
     return getPDF(browser, 'Iowa Hospitalizations by County', file_names.countyHospitalFormat)
+
+
+def downloadFile(browser, index, localPath):
+    try:
+      elements = browser.find_elements_by_class_name(buttonContainer) 
+      button = elements[index].find_element_by_css_selector(buttonCss) 
+      browser.execute_script("$(arguments[0].click());", button) 
+      time.sleep(SHORT_SLEEP_DURATION) 
+      saveDownloadFile(browser, file_names.storageDir, localPath)
+    except:
+      print('issue downloading', localPath)
 
 
 def getSummary():
     try:
       print('loading Summary Page')
-      browser = getBrowser(urls.summaryPage, height=2400, zoom=90)
-      time.sleep(SLEEP_DURATION)
+      browser = getBrowser(urls.summaryPage, height=2400, zoom=90, timeout=SLEEP_DURATION)
       saveScreenshot(browser, file_names.summaryScreenshot) 
- 
-      elements = browser.find_elements_by_class_name('cd-control-menu_container_2gtJe') 
-      button = elements[-2].find_element_by_css_selector("button[class='db-button small button cd-control-menu_option_wH8G6 cd-control-menu_expand_VcWkC cd-control-menu_button_2VfJA cd-control-menu_db-button_2UMcr ng-scope']") 
-      print('Clicking Download Button') 
-      browser.execute_script("$(arguments[0].click());", button) 
-      time.sleep(SHORT_SLEEP_DURATION) 
- 
       timeString = time.strftime("%Y-%m-%d %H%M") 
       localPath = file_names.storageSummaryFormat.format(timeString) 
-      saveDownloadFile(browser, file_names.storageDir, localPath) 
- 
+      downloadFile(browser, -2, localPath)
       closeBrowser(browser)
     except Exception as e:
       print('issue getting summary data {}'.format(e))
@@ -135,8 +130,7 @@ def getCSVs():
     ]
 
     for i in range(12):
-      browser = getBrowser(urls.summaryPage)
-      time.sleep(SHORT_SLEEP_DURATION)
+      browser = getBrowser(urls.summaryPage, timeout=SHORT_SLEEP_DURATION)
       buttons = browser.find_elements_by_css_selector('button[aria-label="Export data"]')
       browser.execute_script("$(arguments[0].click());", buttons[i])
       time.sleep(10)
@@ -171,49 +165,43 @@ def getGeoJSON():
 
 
 def getOriginalMap():
-  browser = getBrowser(urls.argisMap)
+  browser = getBrowser(urls.argisMap, timeout=SLEEP_DURATION)
   saveScreenshot(browser, file_names.mapScreenshot)
   closeBrowser(browser)
 
 
 def getCases():
-  browser = getBrowser(urls.casePage, height=6200, zoom=90)
-  time.sleep(SLEEP_DURATION)
+  browser = getBrowser(urls.casePage, height=6200, zoom=90, timeout=SLEEP_DURATION)
   saveScreenshot(browser, file_names.caseScreenshot)
   closeBrowser(browser)
 
 
 def getRecovery():
-  browser = getBrowser(urls.recoveredPage, height=2500)
-  time.sleep(SLEEP_DURATION)
+  browser = getBrowser(urls.recoveredPage, height=2500, timeout=SLEEP_DURATION)
   saveScreenshot(browser, file_names.recoveryScreenshot)
   closeBrowser(browser)
 
 
 def getDeaths():
-  browser = getBrowser(urls.deathsPage, height=2500)
-  time.sleep(SLEEP_DURATION)
+  browser = getBrowser(urls.deathsPage, height=2500, timeout=SLEEP_DURATION)
   saveScreenshot(browser, file_names.deathsScreenshot)
   closeBrowser(browser)
 
 
 def getLTC():
-  browser = getBrowser(urls.ltcPage, height=400)
-  time.sleep(SLEEP_DURATION)
+  browser = getBrowser(urls.ltcPage, height=400, timeout=SLEEP_DURATION)
   saveScreenshot(browser, file_names.ltcScreenshot)
   closeBrowser(browser)
 
 
 def getRMCCData():
-  browser = getBrowser(urls.rmccPage, height=3300)
-  time.sleep(SLEEP_DURATION)
+  browser = getBrowser(urls.rmccPage, height=3300, timeout=SLEEP_DURATION)
   saveScreenshot(browser, file_names.rmccScreenshot)
   closeBrowser(browser)
 
 
 def getSerologyData():
-  browser = getBrowser(urls.serologyPage, zoom=80, height=400)
-  time.sleep(SLEEP_DURATION)
+  browser = getBrowser(urls.serologyPage, zoom=80, height=400, timeout=SLEEP_DURATION)
   saveScreenshot(browser, file_names.serologyScreenshot)
   closeBrowser(browser)
 
@@ -223,19 +211,18 @@ if __name__ == "__main__":
   if not os.path.exists(file_names.screenshotDir):
       os.makedirs(file_names.screenshotDir)
 
-  getOriginalMap()
-  if commit_checker.stillNeedTodaysData():
-    getGeoJSON()
-    # print(getAccessVals())
+  # getOriginalMap()
+  # if commit_checker.stillNeedTodaysData():
+  #   # print(getAccessVals())
 
-    # getCSVs()
-    getHospitalData()
-    getVaccineData()
-    getSummary()
-    getCases()
-    getRecovery()
-    getDeaths()
-    getLTC()
-    getRMCCData()
-    getSerologyData()
+  #   # getCSVs()
+  #   getHospitalData()
+  #   getVaccineData()
+  #   getSummary()
+  #   getCases()
+  #   getRecovery()
+  #   getDeaths()
+  getLTC()
+    # getRMCCData()
+    # getSerologyData()
       

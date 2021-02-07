@@ -433,7 +433,7 @@ def getLTCData():
     try:
         fileName = file_names.ltcScreenshot
         img = cv2.imread(fileName)
-        crop_img = img[150:-20, 100:-100]
+        crop_img = img[150:-10, 100:-100]
         cv2.imwrite(os.path.join(file_names.screenshotDir,
                                  'LTC_totals.png'), crop_img)
         text = pytesseract.image_to_string(crop_img)

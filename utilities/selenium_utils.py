@@ -74,7 +74,7 @@ def getDownloadedFileName(browser):
   return fileName
 
 
-def getBrowser(url, local=False, height=1062, width=1914, zoom=0):
+def getBrowser(url, local=False, height=1062, width=1914, zoom=0, timeout=0):
   browser = None
   try:
     if local:
@@ -106,6 +106,7 @@ def getBrowser(url, local=False, height=1062, width=1914, zoom=0):
   if zoom:
     browser.execute_script("document.body.style.zoom='{}%'".format(zoom))
     time.sleep(10)
+  time.sleep(timeout)
   return browser
 
 
