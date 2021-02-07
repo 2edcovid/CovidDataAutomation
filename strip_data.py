@@ -131,11 +131,8 @@ def createGeoJson(localCsvFile, hospitalData, vaccineCSV=None, removePending=Fal
         data['features'].remove(county)
 
     combinedFile = file_names.storageGeoJsonFormat.format(date)
-    with open(combinedFile, "w") as write_file:
-        json.dump(data, write_file)
+    write_json(combinedFile, data)
 
-    with open(file_names.webGeoJson, "w") as write_file:
-        json.dump(data, write_file)
     return combinedFile
 
 
@@ -143,7 +140,7 @@ def write_json(file_path, data):
     if os.path.exists(file_path):
         os.remove(file_path)
     with open(file_path, 'w') as open_file:
-        json.dump(data, open_file)
+        json.dump(data, open_file, indent="")
 
 
 def load_image_data():

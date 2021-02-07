@@ -10,7 +10,6 @@ import strip_data
 import readPDFs
 import glob
 import re
-import fetch_data_files
 
 
 months = [7, 8]
@@ -49,7 +48,6 @@ def genCSV():
           writer.writerows(rows)
 
 def genGeoJson():
-  fetch_data_files.getGeoJSON()
   list_of_files = glob.glob(os.path.join(rootPath, 'historical', 'Summary*.csv'))
   for csv_file in list_of_files:
     hospitalData = None
@@ -99,8 +97,8 @@ def cleanGeoJson():
           except:
             pass
 
-      with open(os.path.join("historical", geoFile), "w") as write_file:
-            json.dump(data, write_file)
+      geoFile = os.path.join("historical", geoFile)
+      strip_data.write_json(genGeoJson, data)
 
 
 def readableDataFromGeoJson():
@@ -154,8 +152,8 @@ def readableDataFromGeoJson():
       for county in removeCountyList:
         data['features'].remove(county)
 
-      with open(os.path.join("historical", 'ReadableGeoFileP{}.json'.format(date)), "w") as write_file:
-        json.dump(data, write_file, indent="")
+      geoFile = os.path.join("historical", 'ReadableGeoFileP{}.json'.format(date))
+      strip_data.write_json(genGeoJson, data)
 
 
 genGeoJson()
