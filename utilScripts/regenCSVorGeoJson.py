@@ -98,7 +98,7 @@ def cleanGeoJson():
             pass
 
       geoFile = os.path.join("historical", geoFile)
-      strip_data.write_json(genGeoJson, data)
+      strip_data.write_json(geoFile, data)
 
 
 def readableDataFromGeoJson():
@@ -153,7 +153,7 @@ def readableDataFromGeoJson():
         data['features'].remove(county)
 
       geoFile = os.path.join("historical", 'ReadableGeoFileP{}.json'.format(date))
-      strip_data.write_json(genGeoJson, data)
+      strip_data.write_json(geoFile, data)
 
 
 genGeoJson()
