@@ -121,7 +121,7 @@ def readableDataFromGeoJson():
     'State',
     'VaccineSeriesInitiated',
     'VaccineSeriesCompleted',
-    'PercentVaccineSeriesInitated',
+    'PercentVaccineSeriesInitiated',
     'PercentVaccineSeriesCompleted',
   ]
 

@@ -97,9 +97,9 @@ def createGeoJson(localCsvFile, hospitalData, vaccineCSV=None, removePending=Fal
               county['properties']['PercentTested'] = 0
 
             try:
-              county['properties']['PercentVaccineSeriesInitated'] = round(int(props['Vaccine Series Initiated'])/county['properties']['pop_est_2018']*100,2)
+              county['properties']['PercentVaccineSeriesInitiated'] = round(int(props['Vaccine Series Initiated'])/county['properties']['pop_est_2018']*100,2)
             except:
-              county['properties']['PercentVaccineSeriesInitated'] = 0
+              county['properties']['PercentVaccineSeriesInitiated'] = 0
 
             try:
               county['properties']['PercentVaccineSeriesCompleted'] = round(int(props['Vaccine Series Completed'])/county['properties']['pop_est_2018']*100,2)
@@ -124,7 +124,7 @@ def createGeoJson(localCsvFile, hospitalData, vaccineCSV=None, removePending=Fal
             county['properties']['PercentHospitalized'] = 0
             county['properties']['VaccineSeriesInitiated'] = 0
             county['properties']['VaccineSeriesCompleted'] = 0
-            county['properties']['PercentVaccineSeriesInitated'] = 0
+            county['properties']['PercentVaccineSeriesInitiated'] = 0
             county['properties']['PercentVaccineSeriesCompleted'] = 0
 
     for county in removeList:

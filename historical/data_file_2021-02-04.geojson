@@ -35,7 +35,7 @@
 "PercentDeaths": 0.31,
 "PercentConfirmed": 11.87,
 "PercentTested": 35.13,
-"PercentVaccineSeriesInitated": 1.78,
+"PercentVaccineSeriesInitiated": 1.78,
 "PercentVaccineSeriesCompleted": 0.88,
 "PercentHospitalized": 0.0
 },
@@ -3648,7 +3648,7 @@
 "PercentDeaths": 0.2,
 "PercentConfirmed": 10.84,
 "PercentTested": 36.27,
-"PercentVaccineSeriesInitated": 1.74,
+"PercentVaccineSeriesInitiated": 1.74,
 "PercentVaccineSeriesCompleted": 1.42,
 "PercentHospitalized": 0.0
 },
@@ -4109,7 +4109,7 @@
 "PercentDeaths": 0.22,
 "PercentConfirmed": 11.21,
 "PercentTested": 54.37,
-"PercentVaccineSeriesInitated": 2.47,
+"PercentVaccineSeriesInitiated": 2.47,
 "PercentVaccineSeriesCompleted": 2.19,
 "PercentHospitalized": 0.0
 },
@@ -4590,7 +4590,7 @@
 "PercentDeaths": 0.4,
 "PercentConfirmed": 12.09,
 "PercentTested": 49.08,
-"PercentVaccineSeriesInitated": 2.2,
+"PercentVaccineSeriesInitiated": 2.2,
 "PercentVaccineSeriesCompleted": 1.98,
 "PercentHospitalized": 0.0
 },
@@ -5095,7 +5095,7 @@
 "PercentDeaths": 0.27,
 "PercentConfirmed": 9.71,
 "PercentTested": 38.92,
-"PercentVaccineSeriesInitated": 2.6,
+"PercentVaccineSeriesInitiated": 2.6,
 "PercentVaccineSeriesCompleted": 0.87,
 "PercentHospitalized": 0.01
 },
@@ -6864,7 +6864,7 @@
 "PercentDeaths": 0.34,
 "PercentConfirmed": 12.68,
 "PercentTested": 47.2,
-"PercentVaccineSeriesInitated": 1.29,
+"PercentVaccineSeriesInitiated": 1.29,
 "PercentVaccineSeriesCompleted": 1.1,
 "PercentHospitalized": 0.04
 },
@@ -7609,7 +7609,7 @@
 "PercentDeaths": 0.12,
 "PercentConfirmed": 8.41,
 "PercentTested": 44.52,
-"PercentVaccineSeriesInitated": 3.21,
+"PercentVaccineSeriesInitiated": 3.21,
 "PercentVaccineSeriesCompleted": 2.26,
 "PercentHospitalized": 0.0
 },
@@ -8238,7 +8238,7 @@
 "PercentDeaths": 0.22,
 "PercentConfirmed": 10.05,
 "PercentTested": 43.14,
-"PercentVaccineSeriesInitated": 2.76,
+"PercentVaccineSeriesInitiated": 2.76,
 "PercentVaccineSeriesCompleted": 1.67,
 "PercentHospitalized": 0.0
 },
@@ -8771,7 +8771,7 @@
 "PercentDeaths": 0.29,
 "PercentConfirmed": 11.9,
 "PercentTested": 52.1,
-"PercentVaccineSeriesInitated": 3.19,
+"PercentVaccineSeriesInitiated": 3.19,
 "PercentVaccineSeriesCompleted": 0.47,
 "PercentHospitalized": 0.01
 },
@@ -9272,7 +9272,7 @@
 "PercentDeaths": 0.37,
 "PercentConfirmed": 11.18,
 "PercentTested": 47.13,
-"PercentVaccineSeriesInitated": 1.49,
+"PercentVaccineSeriesInitiated": 1.49,
 "PercentVaccineSeriesCompleted": 1.86,
 "PercentHospitalized": 0.0
 },
@@ -9773,7 +9773,7 @@
 "PercentDeaths": 0.05,
 "PercentConfirmed": 8.45,
 "PercentTested": 44.2,
-"PercentVaccineSeriesInitated": 3.26,
+"PercentVaccineSeriesInitiated": 3.26,
 "PercentVaccineSeriesCompleted": 0.66,
 "PercentHospitalized": 0.0
 },
@@ -10242,7 +10242,7 @@
 "PercentDeaths": 0.18,
 "PercentConfirmed": 13.32,
 "PercentTested": 40.99,
-"PercentVaccineSeriesInitated": 2.4,
+"PercentVaccineSeriesInitiated": 2.4,
 "PercentVaccineSeriesCompleted": 1.63,
 "PercentHospitalized": 0.01
 },
@@ -14843,7 +14843,7 @@
 "PercentDeaths": 0.42,
 "PercentConfirmed": 12.57,
 "PercentTested": 43.33,
-"PercentVaccineSeriesInitated": 4.04,
+"PercentVaccineSeriesInitiated": 4.04,
 "PercentVaccineSeriesCompleted": 2.72,
 "PercentHospitalized": 0.01
 },
@@ -15360,7 +15360,7 @@
 "PercentDeaths": 0.15,
 "PercentConfirmed": 10.97,
 "PercentTested": 46.32,
-"PercentVaccineSeriesInitated": 9.56,
+"PercentVaccineSeriesInitiated": 9.56,
 "PercentVaccineSeriesCompleted": 2.93,
 "PercentHospitalized": 0.01
 },
@@ -15897,7 +15897,7 @@
 "PercentDeaths": 0.18,
 "PercentConfirmed": 10.64,
 "PercentTested": 45.01,
-"PercentVaccineSeriesInitated": 3.46,
+"PercentVaccineSeriesInitiated": 3.46,
 "PercentVaccineSeriesCompleted": 3.01,
 "PercentHospitalized": 0.03
 },
@@ -16450,7 +16450,7 @@
 "PercentDeaths": 0.23,
 "PercentConfirmed": 12.6,
 "PercentTested": 49.6,
-"PercentVaccineSeriesInitated": 1.64,
+"PercentVaccineSeriesInitiated": 1.64,
 "PercentVaccineSeriesCompleted": 1.77,
 "PercentHospitalized": 0.03
 },
@@ -16991,7 +16991,7 @@
 "PercentDeaths": 0.18,
 "PercentConfirmed": 11.38,
 "PercentTested": 50.72,
-"PercentVaccineSeriesInitated": 8.18,
+"PercentVaccineSeriesInitiated": 8.18,
 "PercentVaccineSeriesCompleted": 3.54,
 "PercentHospitalized": 0.01
 },
@@ -17568,7 +17568,7 @@
 "PercentDeaths": 0.1,
 "PercentConfirmed": 9.65,
 "PercentTested": 40.15,
-"PercentVaccineSeriesInitated": 1.55,
+"PercentVaccineSeriesInitiated": 1.55,
 "PercentVaccineSeriesCompleted": 1.22,
 "PercentHospitalized": 0.01
 },
@@ -18073,7 +18073,7 @@
 "PercentDeaths": 0.24,
 "PercentConfirmed": 9.15,
 "PercentTested": 43.63,
-"PercentVaccineSeriesInitated": 0.77,
+"PercentVaccineSeriesInitiated": 0.77,
 "PercentVaccineSeriesCompleted": 1.49,
 "PercentHospitalized": 0.01
 },
@@ -18606,7 +18606,7 @@
 "PercentDeaths": 0.29,
 "PercentConfirmed": 8.91,
 "PercentTested": 35.58,
-"PercentVaccineSeriesInitated": 2.67,
+"PercentVaccineSeriesInitiated": 2.67,
 "PercentVaccineSeriesCompleted": 1.32,
 "PercentHospitalized": 0.0
 },
@@ -21899,7 +21899,7 @@
 "PercentDeaths": 0.13,
 "PercentConfirmed": 8.7,
 "PercentTested": 42.0,
-"PercentVaccineSeriesInitated": 1.79,
+"PercentVaccineSeriesInitiated": 1.79,
 "PercentVaccineSeriesCompleted": 1.53,
 "PercentHospitalized": 0.02
 },
@@ -22552,7 +22552,7 @@
 "PercentDeaths": 0.29,
 "PercentConfirmed": 14.25,
 "PercentTested": 48.07,
-"PercentVaccineSeriesInitated": 2.41,
+"PercentVaccineSeriesInitiated": 2.41,
 "PercentVaccineSeriesCompleted": 0.53,
 "PercentHospitalized": 0.01
 },
@@ -28013,7 +28013,7 @@
 "PercentDeaths": 0.3,
 "PercentConfirmed": 12.47,
 "PercentTested": 47.51,
-"PercentVaccineSeriesInitated": 2.33,
+"PercentVaccineSeriesInitiated": 2.33,
 "PercentVaccineSeriesCompleted": 3.28,
 "PercentHospitalized": 0.0
 },
@@ -28558,7 +28558,7 @@
 "PercentDeaths": 0.18,
 "PercentConfirmed": 20.21,
 "PercentTested": 68.81,
-"PercentVaccineSeriesInitated": 2.27,
+"PercentVaccineSeriesInitiated": 2.27,
 "PercentVaccineSeriesCompleted": 1.66,
 "PercentHospitalized": 0.01
 },
@@ -29067,7 +29067,7 @@
 "PercentDeaths": 0.25,
 "PercentConfirmed": 11.81,
 "PercentTested": 47.15,
-"PercentVaccineSeriesInitated": 1.04,
+"PercentVaccineSeriesInitiated": 1.04,
 "PercentVaccineSeriesCompleted": 1.22,
 "PercentHospitalized": 0.0
 },
@@ -29604,7 +29604,7 @@
 "PercentDeaths": 0.22,
 "PercentConfirmed": 11.49,
 "PercentTested": 45.04,
-"PercentVaccineSeriesInitated": 1.96,
+"PercentVaccineSeriesInitiated": 1.96,
 "PercentVaccineSeriesCompleted": 2.31,
 "PercentHospitalized": 0.0
 },
@@ -30077,7 +30077,7 @@
 "PercentDeaths": 0.22,
 "PercentConfirmed": 13.33,
 "PercentTested": 57.39,
-"PercentVaccineSeriesInitated": 3.31,
+"PercentVaccineSeriesInitiated": 3.31,
 "PercentVaccineSeriesCompleted": 1.73,
 "PercentHospitalized": 0.0
 },
@@ -30638,7 +30638,7 @@
 "PercentDeaths": 0.21,
 "PercentConfirmed": 10.26,
 "PercentTested": 43.78,
-"PercentVaccineSeriesInitated": 7.32,
+"PercentVaccineSeriesInitiated": 7.32,
 "PercentVaccineSeriesCompleted": 3.96,
 "PercentHospitalized": 0.01
 },
@@ -31135,7 +31135,7 @@
 "PercentDeaths": 0.19,
 "PercentConfirmed": 10.56,
 "PercentTested": 45.62,
-"PercentVaccineSeriesInitated": 1.92,
+"PercentVaccineSeriesInitiated": 1.92,
 "PercentVaccineSeriesCompleted": 1.41,
 "PercentHospitalized": 0.02
 },
@@ -31680,7 +31680,7 @@
 "PercentDeaths": 0.2,
 "PercentConfirmed": 10.63,
 "PercentTested": 43.37,
-"PercentVaccineSeriesInitated": 1.97,
+"PercentVaccineSeriesInitiated": 1.97,
 "PercentVaccineSeriesCompleted": 0.77,
 "PercentHospitalized": 0.01
 },
@@ -32217,7 +32217,7 @@
 "PercentDeaths": 0.19,
 "PercentConfirmed": 12.31,
 "PercentTested": 53.45,
-"PercentVaccineSeriesInitated": 4.62,
+"PercentVaccineSeriesInitiated": 4.62,
 "PercentVaccineSeriesCompleted": 3.39,
 "PercentHospitalized": 0.01
 },
@@ -35450,7 +35450,7 @@
 "PercentDeaths": 0.22,
 "PercentConfirmed": 10.6,
 "PercentTested": 41.65,
-"PercentVaccineSeriesInitated": 3.27,
+"PercentVaccineSeriesInitiated": 3.27,
 "PercentVaccineSeriesCompleted": 1.63,
 "PercentHospitalized": 0.01
 },
@@ -36051,7 +36051,7 @@
 "PercentDeaths": 0.22,
 "PercentConfirmed": 13.2,
 "PercentTested": 54.36,
-"PercentVaccineSeriesInitated": 6.07,
+"PercentVaccineSeriesInitiated": 6.07,
 "PercentVaccineSeriesCompleted": 2.6,
 "PercentHospitalized": 0.01
 },
@@ -36656,7 +36656,7 @@
 "PercentDeaths": 0.12,
 "PercentConfirmed": 7.92,
 "PercentTested": 39.76,
-"PercentVaccineSeriesInitated": 2.0,
+"PercentVaccineSeriesInitiated": 2.0,
 "PercentVaccineSeriesCompleted": 1.68,
 "PercentHospitalized": 0.0
 },
@@ -37297,7 +37297,7 @@
 "PercentDeaths": 0.2,
 "PercentConfirmed": 10.93,
 "PercentTested": 48.09,
-"PercentVaccineSeriesInitated": 5.63,
+"PercentVaccineSeriesInitiated": 5.63,
 "PercentVaccineSeriesCompleted": 2.08,
 "PercentHospitalized": 0.02
 },
@@ -37826,7 +37826,7 @@
 "PercentDeaths": 0.2,
 "PercentConfirmed": 12.99,
 "PercentTested": 52.06,
-"PercentVaccineSeriesInitated": 4.4,
+"PercentVaccineSeriesInitiated": 4.4,
 "PercentVaccineSeriesCompleted": 2.22,
 "PercentHospitalized": 0.01
 },
@@ -41187,7 +41187,7 @@
 "PercentDeaths": 0.45,
 "PercentConfirmed": 11.58,
 "PercentTested": 42.68,
-"PercentVaccineSeriesInitated": 2.95,
+"PercentVaccineSeriesInitiated": 2.95,
 "PercentVaccineSeriesCompleted": 1.04,
 "PercentHospitalized": 0.01
 },
@@ -41708,7 +41708,7 @@
 "PercentDeaths": 0.17,
 "PercentConfirmed": 11.79,
 "PercentTested": 49.46,
-"PercentVaccineSeriesInitated": 1.2,
+"PercentVaccineSeriesInitiated": 1.2,
 "PercentVaccineSeriesCompleted": 1.47,
 "PercentHospitalized": 0.0
 },
@@ -42249,7 +42249,7 @@
 "PercentDeaths": 0.09,
 "PercentConfirmed": 12.92,
 "PercentTested": 49.88,
-"PercentVaccineSeriesInitated": 3.97,
+"PercentVaccineSeriesInitiated": 3.97,
 "PercentVaccineSeriesCompleted": 1.91,
 "PercentHospitalized": 0.0
 },
@@ -42846,7 +42846,7 @@
 "PercentDeaths": 0.24,
 "PercentConfirmed": 11.11,
 "PercentTested": 44.8,
-"PercentVaccineSeriesInitated": 2.24,
+"PercentVaccineSeriesInitiated": 2.24,
 "PercentVaccineSeriesCompleted": 1.83,
 "PercentHospitalized": 0.01
 },
@@ -43447,7 +43447,7 @@
 "PercentDeaths": 0.2,
 "PercentConfirmed": 9.57,
 "PercentTested": 44.14,
-"PercentVaccineSeriesInitated": 3.18,
+"PercentVaccineSeriesInitiated": 3.18,
 "PercentVaccineSeriesCompleted": 2.15,
 "PercentHospitalized": 0.01
 },
@@ -44012,7 +44012,7 @@
 "PercentDeaths": 0.24,
 "PercentConfirmed": 10.18,
 "PercentTested": 42.37,
-"PercentVaccineSeriesInitated": 2.93,
+"PercentVaccineSeriesInitiated": 2.93,
 "PercentVaccineSeriesCompleted": 1.58,
 "PercentHospitalized": 0.01
 },
@@ -44553,7 +44553,7 @@
 "PercentDeaths": 0.19,
 "PercentConfirmed": 10.38,
 "PercentTested": 41.61,
-"PercentVaccineSeriesInitated": 2.03,
+"PercentVaccineSeriesInitiated": 2.03,
 "PercentVaccineSeriesCompleted": 1.52,
 "PercentHospitalized": 0.02
 },
@@ -47774,7 +47774,7 @@
 "PercentDeaths": 0.26,
 "PercentConfirmed": 13.49,
 "PercentTested": 42.98,
-"PercentVaccineSeriesInitated": 2.22,
+"PercentVaccineSeriesInitiated": 2.22,
 "PercentVaccineSeriesCompleted": 1.36,
 "PercentHospitalized": 0.03
 },
@@ -48439,7 +48439,7 @@
 "PercentDeaths": 0.13,
 "PercentConfirmed": 8.29,
 "PercentTested": 46.15,
-"PercentVaccineSeriesInitated": 5.19,
+"PercentVaccineSeriesInitiated": 5.19,
 "PercentVaccineSeriesCompleted": 2.44,
 "PercentHospitalized": 0.01
 },
@@ -49184,7 +49184,7 @@
 "PercentDeaths": 0.2,
 "PercentConfirmed": 8.58,
 "PercentTested": 43.71,
-"PercentVaccineSeriesInitated": 2.2,
+"PercentVaccineSeriesInitiated": 2.2,
 "PercentVaccineSeriesCompleted": 1.47,
 "PercentHospitalized": 0.0
 },
@@ -49853,7 +49853,7 @@
 "PercentDeaths": 0.37,
 "PercentConfirmed": 11.56,
 "PercentTested": 45.34,
-"PercentVaccineSeriesInitated": 3.17,
+"PercentVaccineSeriesInitiated": 3.17,
 "PercentVaccineSeriesCompleted": 0.6,
 "PercentHospitalized": 0.01
 },
@@ -50470,7 +50470,7 @@
 "PercentDeaths": 0.24,
 "PercentConfirmed": 8.46,
 "PercentTested": 38.91,
-"PercentVaccineSeriesInitated": 4.1,
+"PercentVaccineSeriesInitiated": 4.1,
 "PercentVaccineSeriesCompleted": 1.14,
 "PercentHospitalized": 0.07
 },
@@ -53887,7 +53887,7 @@
 "PercentDeaths": 0.19,
 "PercentConfirmed": 14.02,
 "PercentTested": 46.6,
-"PercentVaccineSeriesInitated": 2.44,
+"PercentVaccineSeriesInitiated": 2.44,
 "PercentVaccineSeriesCompleted": 1.43,
 "PercentHospitalized": 0.02
 },
@@ -54468,7 +54468,7 @@
 "PercentDeaths": 0.22,
 "PercentConfirmed": 12.9,
 "PercentTested": 51.4,
-"PercentVaccineSeriesInitated": 5.33,
+"PercentVaccineSeriesInitiated": 5.33,
 "PercentVaccineSeriesCompleted": 3.71,
 "PercentHospitalized": 0.0
 },
@@ -54993,7 +54993,7 @@
 "PercentDeaths": 0.09,
 "PercentConfirmed": 7.91,
 "PercentTested": 41.32,
-"PercentVaccineSeriesInitated": 2.16,
+"PercentVaccineSeriesInitiated": 2.16,
 "PercentVaccineSeriesCompleted": 1.54,
 "PercentHospitalized": 0.04
 },
@@ -55534,7 +55534,7 @@
 "PercentDeaths": 0.09,
 "PercentConfirmed": 8.75,
 "PercentTested": 46.2,
-"PercentVaccineSeriesInitated": 4.44,
+"PercentVaccineSeriesInitiated": 4.44,
 "PercentVaccineSeriesCompleted": 2.13,
 "PercentHospitalized": 0.02
 },
@@ -56071,7 +56071,7 @@
 "PercentDeaths": 0.04,
 "PercentConfirmed": 9.28,
 "PercentTested": 50.88,
-"PercentVaccineSeriesInitated": 5.06,
+"PercentVaccineSeriesInitiated": 5.06,
 "PercentVaccineSeriesCompleted": 2.15,
 "PercentHospitalized": 0.01
 },
@@ -56648,7 +56648,7 @@
 "PercentDeaths": 0.17,
 "PercentConfirmed": 11.11,
 "PercentTested": 47.02,
-"PercentVaccineSeriesInitated": 1.94,
+"PercentVaccineSeriesInitiated": 1.94,
 "PercentVaccineSeriesCompleted": 1.06,
 "PercentHospitalized": 0.01
 },
@@ -57205,7 +57205,7 @@
 "PercentDeaths": 0.16,
 "PercentConfirmed": 10.23,
 "PercentTested": 42.42,
-"PercentVaccineSeriesInitated": 1.86,
+"PercentVaccineSeriesInitiated": 1.86,
 "PercentVaccineSeriesCompleted": 1.43,
 "PercentHospitalized": 0.02
 },
@@ -68658,7 +68658,7 @@
 "PercentDeaths": 0.11,
 "PercentConfirmed": 8.61,
 "PercentTested": 43.23,
-"PercentVaccineSeriesInitated": 3.01,
+"PercentVaccineSeriesInitiated": 3.01,
 "PercentVaccineSeriesCompleted": 0.98,
 "PercentHospitalized": 0.01
 },
@@ -69379,7 +69379,7 @@
 "PercentDeaths": 0.47,
 "PercentConfirmed": 11.49,
 "PercentTested": 41.7,
-"PercentVaccineSeriesInitated": 2.3,
+"PercentVaccineSeriesInitiated": 2.3,
 "PercentVaccineSeriesCompleted": 0.82,
 "PercentHospitalized": 0.01
 },
@@ -72872,7 +72872,7 @@
 "PercentDeaths": 0.26,
 "PercentConfirmed": 9.56,
 "PercentTested": 41.11,
-"PercentVaccineSeriesInitated": 3.81,
+"PercentVaccineSeriesInitiated": 3.81,
 "PercentVaccineSeriesCompleted": 2.68,
 "PercentHospitalized": 0.02
 },
@@ -73505,7 +73505,7 @@
 "PercentDeaths": 0.16,
 "PercentConfirmed": 7.99,
 "PercentTested": 41.9,
-"PercentVaccineSeriesInitated": 3.74,
+"PercentVaccineSeriesInitiated": 3.74,
 "PercentVaccineSeriesCompleted": 2.29,
 "PercentHospitalized": 0.0
 },
@@ -74050,7 +74050,7 @@
 "PercentDeaths": 0.25,
 "PercentConfirmed": 9.9,
 "PercentTested": 46.92,
-"PercentVaccineSeriesInitated": 1.92,
+"PercentVaccineSeriesInitiated": 1.92,
 "PercentVaccineSeriesCompleted": 1.41,
 "PercentHospitalized": 0.0
 },
@@ -74659,7 +74659,7 @@
 "PercentDeaths": 0.04,
 "PercentConfirmed": 8.33,
 "PercentTested": 46.86,
-"PercentVaccineSeriesInitated": 8.08,
+"PercentVaccineSeriesInitiated": 8.08,
 "PercentVaccineSeriesCompleted": 6.38,
 "PercentHospitalized": 0.0
 },
@@ -77676,7 +77676,7 @@
 "PercentDeaths": 0.09,
 "PercentConfirmed": 10.51,
 "PercentTested": 53.0,
-"PercentVaccineSeriesInitated": 3.61,
+"PercentVaccineSeriesInitiated": 3.61,
 "PercentVaccineSeriesCompleted": 1.06,
 "PercentHospitalized": 0.01
 },
@@ -78253,7 +78253,7 @@
 "PercentDeaths": 0.14,
 "PercentConfirmed": 8.22,
 "PercentTested": 45.02,
-"PercentVaccineSeriesInitated": 1.12,
+"PercentVaccineSeriesInitiated": 1.12,
 "PercentVaccineSeriesCompleted": 1.71,
 "PercentHospitalized": 0.01
 },
@@ -78870,7 +78870,7 @@
 "PercentDeaths": 0.1,
 "PercentConfirmed": 9.98,
 "PercentTested": 49.77,
-"PercentVaccineSeriesInitated": 6.57,
+"PercentVaccineSeriesInitiated": 6.57,
 "PercentVaccineSeriesCompleted": 2.17,
 "PercentHospitalized": 0.01
 },
@@ -81803,7 +81803,7 @@
 "PercentDeaths": 0.14,
 "PercentConfirmed": 7.62,
 "PercentTested": 42.14,
-"PercentVaccineSeriesInitated": 1.58,
+"PercentVaccineSeriesInitiated": 1.58,
 "PercentVaccineSeriesCompleted": 0.96,
 "PercentHospitalized": 0.0
 },
@@ -82400,7 +82400,7 @@
 "PercentDeaths": 0.17,
 "PercentConfirmed": 9.23,
 "PercentTested": 42.75,
-"PercentVaccineSeriesInitated": 4.86,
+"PercentVaccineSeriesInitiated": 4.86,
 "PercentVaccineSeriesCompleted": 2.01,
 "PercentHospitalized": 0.01
 },
@@ -83073,7 +83073,7 @@
 "PercentDeaths": 0.11,
 "PercentConfirmed": 9.46,
 "PercentTested": 44.45,
-"PercentVaccineSeriesInitated": 4.07,
+"PercentVaccineSeriesInitiated": 4.07,
 "PercentVaccineSeriesCompleted": 1.72,
 "PercentHospitalized": 0.02
 },
@@ -95182,7 +95182,7 @@
 "PercentDeaths": 0.2,
 "PercentConfirmed": 9.39,
 "PercentTested": 44.59,
-"PercentVaccineSeriesInitated": 1.43,
+"PercentVaccineSeriesInitiated": 1.43,
 "PercentVaccineSeriesCompleted": 1.14,
 "PercentHospitalized": 0.01
 },
@@ -97323,7 +97323,7 @@
 "PercentDeaths": 0.14,
 "PercentConfirmed": 10.07,
 "PercentTested": 45.84,
-"PercentVaccineSeriesInitated": 5.54,
+"PercentVaccineSeriesInitiated": 5.54,
 "PercentVaccineSeriesCompleted": 3.59,
 "PercentHospitalized": 0.01
 },
@@ -101420,7 +101420,7 @@
 "PercentDeaths": 0.36,
 "PercentConfirmed": 9.26,
 "PercentTested": 43.89,
-"PercentVaccineSeriesInitated": 2.34,
+"PercentVaccineSeriesInitiated": 2.34,
 "PercentVaccineSeriesCompleted": 2.54,
 "PercentHospitalized": 0.02
 },
@@ -101997,7 +101997,7 @@
 "PercentDeaths": 0.18,
 "PercentConfirmed": 10.39,
 "PercentTested": 47.92,
-"PercentVaccineSeriesInitated": 1.96,
+"PercentVaccineSeriesInitiated": 1.96,
 "PercentVaccineSeriesCompleted": 0.73,
 "PercentHospitalized": 0.0
 },
@@ -104890,7 +104890,7 @@
 "PercentDeaths": 0.27,
 "PercentConfirmed": 8.59,
 "PercentTested": 35.79,
-"PercentVaccineSeriesInitated": 2.07,
+"PercentVaccineSeriesInitiated": 2.07,
 "PercentVaccineSeriesCompleted": 0.52,
 "PercentHospitalized": 0.01
 },
@@ -105451,7 +105451,7 @@
 "PercentDeaths": 0.12,
 "PercentConfirmed": 9.44,
 "PercentTested": 48.49,
-"PercentVaccineSeriesInitated": 2.95,
+"PercentVaccineSeriesInitiated": 2.95,
 "PercentVaccineSeriesCompleted": 1.32,
 "PercentHospitalized": 0.02
 },
@@ -108368,7 +108368,7 @@
 "PercentDeaths": 0.08,
 "PercentConfirmed": 8.14,
 "PercentTested": 41.64,
-"PercentVaccineSeriesInitated": 1.68,
+"PercentVaccineSeriesInitiated": 1.68,
 "PercentVaccineSeriesCompleted": 1.35,
 "PercentHospitalized": 0.01
 },
@@ -108897,7 +108897,7 @@
 "PercentDeaths": 0.18,
 "PercentConfirmed": 9.36,
 "PercentTested": 42.44,
-"PercentVaccineSeriesInitated": 1.97,
+"PercentVaccineSeriesInitiated": 1.97,
 "PercentVaccineSeriesCompleted": 0.69,
 "PercentHospitalized": 0.0
 },
@@ -109558,7 +109558,7 @@
 "PercentDeaths": 0.18,
 "PercentConfirmed": 9.64,
 "PercentTested": 41.51,
-"PercentVaccineSeriesInitated": 1.09,
+"PercentVaccineSeriesInitiated": 1.09,
 "PercentVaccineSeriesCompleted": 2.28,
 "PercentHospitalized": 0.01
 },
@@ -110195,7 +110195,7 @@
 "PercentDeaths": 0.35,
 "PercentConfirmed": 10.62,
 "PercentTested": 43.71,
-"PercentVaccineSeriesInitated": 1.2,
+"PercentVaccineSeriesInitiated": 1.2,
 "PercentVaccineSeriesCompleted": 0.35,
 "PercentHospitalized": 0.0
 },
@@ -112692,7 +112692,7 @@
 "PercentDeaths": 0.13,
 "PercentConfirmed": 9.39,
 "PercentTested": 46.76,
-"PercentVaccineSeriesInitated": 3.99,
+"PercentVaccineSeriesInitiated": 3.99,
 "PercentVaccineSeriesCompleted": 1.42,
 "PercentHospitalized": 0.0
 },
@@ -114681,7 +114681,7 @@
 "PercentDeaths": 0.32,
 "PercentConfirmed": 9.3,
 "PercentTested": 39.9,
-"PercentVaccineSeriesInitated": 3.24,
+"PercentVaccineSeriesInitiated": 3.24,
 "PercentVaccineSeriesCompleted": 2.16,
 "PercentHospitalized": 0.01
 },
@@ -115194,7 +115194,7 @@
 "PercentDeaths": 0.08,
 "PercentConfirmed": 8.5,
 "PercentTested": 38.85,
-"PercentVaccineSeriesInitated": 5.73,
+"PercentVaccineSeriesInitiated": 5.73,
 "PercentVaccineSeriesCompleted": 1.7,
 "PercentHospitalized": 0.0
 },
@@ -115695,7 +115695,7 @@
 "PercentDeaths": 0.16,
 "PercentConfirmed": 13.57,
 "PercentTested": 49.22,
-"PercentVaccineSeriesInitated": 1.68,
+"PercentVaccineSeriesInitiated": 1.68,
 "PercentVaccineSeriesCompleted": 1.94,
 "PercentHospitalized": 0.01
 },
@@ -116324,7 +116324,7 @@
 "PercentDeaths": 0.17,
 "PercentConfirmed": 6.76,
 "PercentTested": 37.05,
-"PercentVaccineSeriesInitated": 1.7,
+"PercentVaccineSeriesInitiated": 1.7,
 "PercentVaccineSeriesCompleted": 1.7,
 "PercentHospitalized": 0.0
 },
@@ -116857,7 +116857,7 @@
 "PercentDeaths": 0.23,
 "PercentConfirmed": 9.33,
 "PercentTested": 48.45,
-"PercentVaccineSeriesInitated": 2.4,
+"PercentVaccineSeriesInitiated": 2.4,
 "PercentVaccineSeriesCompleted": 1.81,
 "PercentHospitalized": 0.0
 },
@@ -117374,7 +117374,7 @@
 "PercentDeaths": 0.29,
 "PercentConfirmed": 10.32,
 "PercentTested": 43.94,
-"PercentVaccineSeriesInitated": 3.43,
+"PercentVaccineSeriesInitiated": 3.43,
 "PercentVaccineSeriesCompleted": 1.26,
 "PercentHospitalized": 0.01
 },
@@ -117887,7 +117887,7 @@
 "PercentDeaths": 0.16,
 "PercentConfirmed": 9.26,
 "PercentTested": 45.66,
-"PercentVaccineSeriesInitated": 1.83,
+"PercentVaccineSeriesInitiated": 1.83,
 "PercentVaccineSeriesCompleted": 1.19,
 "PercentHospitalized": 0.03
 },
@@ -118368,7 +118368,7 @@
 "PercentDeaths": 0.19,
 "PercentConfirmed": 7.9,
 "PercentTested": 39.13,
-"PercentVaccineSeriesInitated": 1.58,
+"PercentVaccineSeriesInitiated": 1.58,
 "PercentVaccineSeriesCompleted": 0.89,
 "PercentHospitalized": 0.01
 },
@@ -118837,7 +118837,7 @@
 "PercentDeaths": 0.33,
 "PercentConfirmed": 10.83,
 "PercentTested": 38.51,
-"PercentVaccineSeriesInitated": 4.47,
+"PercentVaccineSeriesInitiated": 4.47,
 "PercentVaccineSeriesCompleted": 0.78,
 "PercentHospitalized": 0.0
 },
@@ -119378,7 +119378,7 @@
 "PercentDeaths": 0.14,
 "PercentConfirmed": 10.38,
 "PercentTested": 48.49,
-"PercentVaccineSeriesInitated": 2.52,
+"PercentVaccineSeriesInitiated": 2.52,
 "PercentVaccineSeriesCompleted": 2.79,
 "PercentHospitalized": 0.01
 },
@@ -125735,7 +125735,7 @@
 "PercentDeaths": 0.11,
 "PercentConfirmed": 7.68,
 "PercentTested": 34.43,
-"PercentVaccineSeriesInitated": 2.39,
+"PercentVaccineSeriesInitiated": 2.39,
 "PercentVaccineSeriesCompleted": 1.22,
 "PercentHospitalized": 0.0
 },
@@ -128268,7 +128268,7 @@
 "PercentDeaths": 0.11,
 "PercentConfirmed": 10.05,
 "PercentTested": 35.89,
-"PercentVaccineSeriesInitated": 2.33,
+"PercentVaccineSeriesInitiated": 2.33,
 "PercentVaccineSeriesCompleted": 3.46,
 "PercentHospitalized": 0.01
 },
@@ -128873,7 +128873,7 @@
 "PercentDeaths": 0.18,
 "PercentConfirmed": 10.03,
 "PercentTested": 37.2,
-"PercentVaccineSeriesInitated": 4.22,
+"PercentVaccineSeriesInitiated": 4.22,
 "PercentVaccineSeriesCompleted": 0.45,
 "PercentHospitalized": 0.0
 },
@@ -129438,7 +129438,7 @@
 "PercentDeaths": 0.3,
 "PercentConfirmed": 9.6,
 "PercentTested": 43.2,
-"PercentVaccineSeriesInitated": 5.56,
+"PercentVaccineSeriesInitiated": 5.56,
 "PercentVaccineSeriesCompleted": 2.98,
 "PercentHospitalized": 0.0
 },
@@ -130011,7 +130011,7 @@
 "PercentDeaths": 0.23,
 "PercentConfirmed": 7.42,
 "PercentTested": 34.36,
-"PercentVaccineSeriesInitated": 2.17,
+"PercentVaccineSeriesInitiated": 2.17,
 "PercentVaccineSeriesCompleted": 0.73,
 "PercentHospitalized": 0.01
 },
@@ -130688,7 +130688,7 @@
 "PercentDeaths": 0.26,
 "PercentConfirmed": 8.05,
 "PercentTested": 32.18,
-"PercentVaccineSeriesInitated": 1.1,
+"PercentVaccineSeriesInitiated": 1.1,
 "PercentVaccineSeriesCompleted": 1.21,
 "PercentHospitalized": 0.01
 },
@@ -131233,7 +131233,7 @@
 "PercentDeaths": 0.08,
 "PercentConfirmed": 6.64,
 "PercentTested": 40.25,
-"PercentVaccineSeriesInitated": 1.99,
+"PercentVaccineSeriesInitiated": 1.99,
 "PercentVaccineSeriesCompleted": 1.36,
 "PercentHospitalized": 0.0
 },
@@ -131762,7 +131762,7 @@
 "PercentDeaths": 0.33,
 "PercentConfirmed": 6.67,
 "PercentTested": 30.96,
-"PercentVaccineSeriesInitated": 4.03,
+"PercentVaccineSeriesInitiated": 4.03,
 "PercentVaccineSeriesCompleted": 2.47,
 "PercentHospitalized": 0.0
 },
@@ -132283,7 +132283,7 @@
 "PercentDeaths": 0.36,
 "PercentConfirmed": 9.25,
 "PercentTested": 42.95,
-"PercentVaccineSeriesInitated": 2.39,
+"PercentVaccineSeriesInitiated": 2.39,
 "PercentVaccineSeriesCompleted": 0.98,
 "PercentHospitalized": 0.03
 },
@@ -132876,7 +132876,7 @@
 "PercentDeaths": 0.13,
 "PercentConfirmed": 9.99,
 "PercentTested": 41.89,
-"PercentVaccineSeriesInitated": 5.05,
+"PercentVaccineSeriesInitiated": 5.05,
 "PercentVaccineSeriesCompleted": 1.71,
 "PercentHospitalized": 0.01
 },
@@ -141533,7 +141533,7 @@
 "PercentDeaths": 0,
 "PercentConfirmed": 0,
 "PercentTested": 0,
-"PercentVaccineSeriesInitated": 0,
+"PercentVaccineSeriesInitiated": 0,
 "PercentVaccineSeriesCompleted": 0,
 "PercentHospitalized": 0
 },
@@ -141594,7 +141594,7 @@
 "PercentDeaths": 0.34,
 "PercentConfirmed": 10.15,
 "PercentTested": 45.77,
-"PercentVaccineSeriesInitated": 0.71,
+"PercentVaccineSeriesInitiated": 0.71,
 "PercentVaccineSeriesCompleted": 1.6,
 "PercentHospitalized": 0.01
 },
