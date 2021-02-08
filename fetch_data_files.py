@@ -211,18 +211,18 @@ if __name__ == "__main__":
   if not os.path.exists(file_names.screenshotDir):
       os.makedirs(file_names.screenshotDir)
 
-  # getOriginalMap()
-  # if commit_checker.stillNeedTodaysData():
-  #   # print(getAccessVals())
+  getOriginalMap()
+  if commit_checker.stillNeedTodaysData():
+    # print(getAccessVals())
 
-  #   # getCSVs()
-  #   getHospitalData()
-  #   getVaccineData()
-  #   getSummary()
-  #   getCases()
-  #   getRecovery()
-  #   getDeaths()
-  getLTC()
-    # getRMCCData()
-    # getSerologyData()
+    # getCSVs()
+    getHospitalData()
+    getVaccineData()
+    getSummary()
+    getCases()
+    getRecovery()
+    getDeaths()
+    getLTC()
+    getRMCCData()
+    getSerologyData()
       

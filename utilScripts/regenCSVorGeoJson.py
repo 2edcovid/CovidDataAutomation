@@ -75,7 +75,8 @@ def cleanGeoJson():
     'CreationDate',
     'Creator',
     'EditDate',
-    'Editor'
+    'Editor',
+    'PercentVaccineSeriesInitated'
   ]
 
   for geoFile in os.listdir("historical"):
@@ -158,4 +159,4 @@ def readableDataFromGeoJson():
 
 genGeoJson()
 cleanGeoJson()
-readableDataFromGeoJson()
+# readableDataFromGeoJson()
