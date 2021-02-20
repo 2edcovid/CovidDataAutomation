@@ -5,6 +5,7 @@ import time
 
 from utilities import file_names
 from utilities import post_time
+from utilities import commit_checker
 
 secret = os.environ['APIKEY']
 clientID = os.environ['APIID']
@@ -47,7 +48,7 @@ reddit = praw.Reddit(client_id=clientID, client_secret=secret,
 reddit.validate_on_submit = True
 
 if __name__ == "__main__":
-  if post_time.shouldPost():
+  if post_time.shouldPost() and commit_checker.onMaster():
     post(reddit)
   else:
     post(reddit, sub='test')
