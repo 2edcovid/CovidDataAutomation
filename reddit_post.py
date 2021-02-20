@@ -48,7 +48,7 @@ reddit = praw.Reddit(client_id=clientID, client_secret=secret,
 reddit.validate_on_submit = True
 
 if __name__ == "__main__":
-  if post_time.shouldPost() and commit_checker.onMaster():
+  if post_time.shouldPost():
     post(reddit)
   else:
     post(reddit, sub='test')
