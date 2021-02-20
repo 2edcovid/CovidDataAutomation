@@ -49,3 +49,5 @@ reddit.validate_on_submit = True
 if __name__ == "__main__":
   if post_time.shouldPost():
     post(reddit)
+  else:
+    post(reddit, sub='test')

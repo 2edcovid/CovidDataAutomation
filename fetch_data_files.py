@@ -212,17 +212,13 @@ if __name__ == "__main__":
       os.makedirs(file_names.screenshotDir)
 
   getOriginalMap()
-  if commit_checker.stillNeedTodaysData():
-    # print(getAccessVals())
 
-    # getCSVs()
-    getHospitalData()
-    getVaccineData()
-    getSummary()
-    getCases()
-    getRecovery()
-    getDeaths()
-    getLTC()
-    getRMCCData()
-    getSerologyData()
+  getHospitalData()
+  getVaccineData()
+  getSummary()
+  getCases()
+  getDeaths()
+  getLTC()
+  getRMCCData()
+  getSerologyData()
       

@@ -284,7 +284,7 @@ def getTestTotalsData(crop_img):
     data = {}
 
     try:
-        totalsImg = crop_img[1000:1150, 10:-500]
+        totalsImg = crop_img[1080:1200, 10:-500]
         cv2.imwrite(os.path.join(file_names.screenshotDir,
                                  'Cases_totals.png'), totalsImg)
         text = pytesseract.image_to_string(totalsImg)
@@ -297,21 +297,6 @@ def getTestTotalsData(crop_img):
         })
     except Exception as e:
         print('issue reading total test values {}'.format(e))
-
-    try:
-        individualsImg = crop_img[1450:1600, 10:-500]
-        cv2.imwrite(os.path.join(file_names.screenshotDir,
-                                 'Cases_individuals.png'), individualsImg)
-        text = pytesseract.image_to_string(individualsImg)
-        sanitizedText = sanitizeText(text)[1].split()
-        sanitizedText = convertVals(sanitizedText)
-        data.update({
-            'Total Individual Tests': sanitizedText[0],
-            'Total Individuals Negative': sanitizedText[1],
-            'Total Individuals Positive': sanitizedText[2],
-        })
-    except Exception as e:
-        print('issue reading individual test values {}'.format(e))
 
     print(data)
     return data
@@ -330,8 +315,14 @@ def getCaseData():
     data.update(getAntigenData(crop_img))
     data.update(getTestTotalsData(crop_img))
 
+    data.update({
+        'Total Individual Tests': int(data['Individual Antigen Tests']) + int(data['Individual PCR Tests']),
+        'Total Individuals Negative': int(data['Individual Antigen Negatives']) + int(data['Individual PCR Negatives']),
+        'Total Individuals Positive': int(data['Individual Antigen Positives']) + int(data['Individual PCR Positives']),
+    })
+
     try:
-        breakDownImg = crop_img[-200:-10, 10:-10]
+        breakDownImg = crop_img[-1550:-1350, 10:-10]
         cv2.imwrite(os.path.join(file_names.screenshotDir,
                                  'Cases_breakdown.png'), breakDownImg)
         text = pytesseract.image_to_string(breakDownImg)

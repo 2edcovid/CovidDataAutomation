@@ -2,7 +2,6 @@ import os
 import pygsheets
 import file_names
 import json
-import post_time
 import time
 import glob
 import csv

@@ -6,7 +6,6 @@ import time
 import glob
 
 from utilities import file_names
-from utilities import post_time
 
 filePath = file_names.authJson
 

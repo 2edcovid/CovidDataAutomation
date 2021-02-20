@@ -6,7 +6,6 @@ import requests
 from base64 import b64encode
 
 from utilities import file_names
-from utilities import post_time
 
 
 def upload_images(album_title, paths):
@@ -63,7 +62,6 @@ def postDebug():
 
 
 if __name__ == "__main__":
-  if post_time.shouldPost():
-    postDebug()
+  postDebug()
   
   
