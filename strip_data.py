@@ -24,15 +24,15 @@ def createGeoJson(localCsvFile, hospitalData, vaccineCSV=None, removePending=Fal
             countyHeader = 'EventResidentCounty'
             
           countyData[row[countyHeader]] = {
-                'Tested' : row['Individuals Tested'],
-                'Positive' : row['Individuals Positive'],
+                'Tested' : row['Total Tests'],
+                'Positive' : row['Total Positive Tests'],
                 'Recovered' : row['Total Recovered'],
                 'Deaths' : row['Total Deaths'],
             }
           try:
-            countyData[row[countyHeader]]['Active'] = int(row['Individuals Positive']) - (int(row['Total Recovered']) + int(row['Total Deaths']))
+            countyData[row[countyHeader]]['Active'] = int(row['Total Positive Tests']) - (int(row['Total Recovered']) + int(row['Total Deaths']))
           except:
-            countyData[row[countyHeader]]['Active'] = row['Individuals Positive']
+            countyData[row[countyHeader]]['Active'] = row['Total Positive Tests']
 
     if vaccineCSV:
       with open(vaccineCSV) as csvFiles:
@@ -151,9 +151,7 @@ def load_image_data():
   data.update(readImages.getRMCCData())
 
   data.update(readImages.getDeathData())
-  data.update(readImages.getRecoveryData())
   data.update(readImages.getLTCData())
-  # data.update(readImages.getSummaryData())
   return data
 
 

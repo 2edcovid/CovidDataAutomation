@@ -75,6 +75,7 @@ def getDownloadedFileName(browser):
 
 
 def getBrowser(url, local=False, height=1062, width=1914, zoom=0, timeout=0):
+  print(url)
   browser = None
   try:
     if local:

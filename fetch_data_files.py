@@ -8,8 +8,8 @@ from utilities import file_names
 from utilities import urls
 from utilities import commit_checker
 
-SLEEP_DURATION = 40
-SHORT_SLEEP_DURATION = 20
+SLEEP_DURATION = 20
+SHORT_SLEEP_DURATION = 10
 
 buttonContainer = 'cd-control-menu_container_2gtJe'
 buttonCss = "button[class='db-button small button cd-control-menu_option_wH8G6 cd-control-menu_expand_VcWkC cd-control-menu_button_2VfJA cd-control-menu_db-button_2UMcr ng-scope']"
@@ -212,17 +212,13 @@ if __name__ == "__main__":
       os.makedirs(file_names.screenshotDir)
 
   getOriginalMap()
-  if commit_checker.stillNeedTodaysData():
-    # print(getAccessVals())
 
-    # getCSVs()
-    getHospitalData()
-    getVaccineData()
-    getSummary()
-    getCases()
-    getRecovery()
-    getDeaths()
-    getLTC()
-    getRMCCData()
-    getSerologyData()
+  getHospitalData()
+  getVaccineData()
+  getSummary()
+  getCases()
+  getDeaths()
+  getLTC()
+  getRMCCData()
+  getSerologyData()
       

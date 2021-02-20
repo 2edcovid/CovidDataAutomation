@@ -5,8 +5,8 @@ import json
 import time
 import glob
 
+from utilities import commit_checker
 from utilities import file_names
-from utilities import post_time
 
 filePath = file_names.authJson
 
@@ -99,7 +99,9 @@ if __name__ == "__main__":
   gc = pygsheets.authorize(service_file=filePath)
   sh = gc.open('Covid19')
 
-  data = readData()
-  postData(sh, data)
+  
+  if commit_checker.onMaster():
+    data = readData()
+    postData(sh, data)
 
   prepRedditPost(sh)
