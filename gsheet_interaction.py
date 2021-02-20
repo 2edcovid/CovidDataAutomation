@@ -99,9 +99,8 @@ if __name__ == "__main__":
   gc = pygsheets.authorize(service_file=filePath)
   sh = gc.open('Covid19')
 
-  
-  if commit_checker.onMaster():
-    data = readData()
-    postData(sh, data)
+
+  data = readData()
+  postData(sh, data)
 
   prepRedditPost(sh)
