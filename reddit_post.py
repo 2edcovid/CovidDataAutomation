@@ -5,6 +5,7 @@ import time
 
 from utilities import file_names
 from utilities import post_time
+from utilities import commit_checker
 
 secret = os.environ['APIKEY']
 clientID = os.environ['APIID']

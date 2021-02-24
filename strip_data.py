@@ -12,7 +12,8 @@ import readPDFs
 import readImages
 
 
-def createGeoJson(localCsvFile, hospitalData, vaccineCSV=None, removePending=False):
+def createGeoJson(localCsvFile, hospitalData, vaccineCSV=None, removePending=False, vaccineData=None):
+    print(vaccineData)
     countyData = {}
     data = {}
     date = (localCsvFile.split('.csv')[0].split()[0].split('Summary')[1])
@@ -22,17 +23,25 @@ def createGeoJson(localCsvFile, hospitalData, vaccineCSV=None, removePending=Fal
           countyHeader = 'County'
           if 'EventResidentCounty' in row:
             countyHeader = 'EventResidentCounty'
+
+          tests = 'Total Tests'
+          if 'Individuals Tested' in row:
+            tests = 'Individuals Tested'
+
+          positives = 'Total Positive Tests'
+          if 'Individuals Positive' in row:
+            positives = 'Individuals Positive'
             
           countyData[row[countyHeader]] = {
-                'Tested' : row['Total Tests'],
-                'Positive' : row['Total Positive Tests'],
+                'Tested' : row[tests],
+                'Positive' : row[positives],
                 'Recovered' : row['Total Recovered'],
                 'Deaths' : row['Total Deaths'],
             }
           try:
-            countyData[row[countyHeader]]['Active'] = int(row['Total Positive Tests']) - (int(row['Total Recovered']) + int(row['Total Deaths']))
+            countyData[row[countyHeader]]['Active'] = int(row[positives]) - (int(row['Total Recovered']) + int(row['Total Deaths']))
           except:
-            countyData[row[countyHeader]]['Active'] = row['Total Positive Tests']
+            countyData[row[countyHeader]]['Active'] = row[positives]
 
     if vaccineCSV:
       with open(vaccineCSV) as csvFiles:
@@ -46,6 +55,7 @@ def createGeoJson(localCsvFile, hospitalData, vaccineCSV=None, removePending=Fal
             countyData[countyName]['Vaccine Series Initiated'] = row['Series Initiated']
             countyData[countyName]['Vaccine Series Completed'] = row['Series Completed']
           except:
+            print('csv issue')
             print(row)
 
     with open(file_names.originalGeoJson, 'r') as read_file:

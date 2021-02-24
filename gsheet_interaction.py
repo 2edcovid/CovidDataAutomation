@@ -5,6 +5,7 @@ import json
 import time
 import glob
 
+from utilities import commit_checker
 from utilities import file_names
 
 filePath = file_names.authJson
@@ -97,6 +98,7 @@ if __name__ == "__main__":
 
   gc = pygsheets.authorize(service_file=filePath)
   sh = gc.open('Covid19')
+
 
   data = readData()
   postData(sh, data)

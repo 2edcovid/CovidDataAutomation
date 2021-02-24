@@ -3,6 +3,10 @@ import os
 import time
 import sys
 
+def onMaster():
+  repo = Repo(os.getcwd())
+  branch = repo.active_branch
+  return branch.name == 'master'
 
 def stillNeedTodaysData():
   needIt = True
@@ -20,17 +24,17 @@ def stillNeedTodaysData():
 
 
 def commitAndMerge(commit_message):
-  repo = Repo(os.getcwd())
-  origin = repo.remotes.origin
-  origin.fetch()
+    repo = Repo(os.getcwd())
+    origin = repo.remotes.origin
+    origin.fetch()
 
-  repo.index.add(repo.untracked_files)
-  repo.git.add(update=True)
-  repo.index.commit(commit_message)
-  data = repo.heads.data 
-  data.checkout() 
+    repo.index.add(repo.untracked_files)
+    repo.git.add(update=True)
+    repo.index.commit(commit_message)
+    data = repo.heads.data 
+    data.checkout() 
 
-  os.system('git merge --strategy-option theirs master -m "Merge branch \'master\' into data"') 
+    os.system('git merge --strategy-option theirs master -m "Merge branch \'master\' into data"') 
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:
