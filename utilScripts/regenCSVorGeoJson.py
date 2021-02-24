@@ -57,16 +57,16 @@ def genGeoJson():
     print(result.group(1))
     
     list_of_hospital_pdfs = glob.glob(os.path.join(rootPath, 'historical', 'countyHospital{}*.pdf').format(result.group(1)))
-    # list_of_vaccine_pdfs = glob.glob(os.path.join(rootPath, 'historical', 'countyVaccine{} *.pdf').format(result.group(1)))
+    list_of_vaccine_pdfs = glob.glob(os.path.join(rootPath, 'historical', 'countyVaccine{} *.pdf').format(result.group(1)))
     list_of_vaccine_csvs = glob.glob(os.path.join(rootPath, 'historical', "VaccineDosesByCounty{}*.csv").format(result.group(1)))
     if len(list_of_hospital_pdfs):
       hospitalData = readPDFs.readHospitalPDF(list_of_hospital_pdfs[0])['Hospitalized By County']
-    # if len(list_of_vaccine_pdfs):
-    #   vaccineData = readPDFs.readVaccinePDF(list_of_vaccine_pdfs[0])
+    if len(list_of_vaccine_pdfs):
+      vaccineData = readPDFs.readVaccinePDF(list_of_vaccine_pdfs[0])
     vaccine_csv = None
     if len(list_of_vaccine_csvs):
      vaccine_csv=list_of_vaccine_csvs[0]
-    strip_data.createGeoJson(csv_file, hospitalData, vaccineCSV=vaccine_csv)
+    strip_data.createGeoJson(csv_file, hospitalData, vaccineCSV=vaccine_csv, vaccineData=vaccineData)
 
 
 def cleanGeoJson():
@@ -158,5 +158,5 @@ def readableDataFromGeoJson():
 
 
 genGeoJson()
-cleanGeoJson()
+# cleanGeoJson()
 # readableDataFromGeoJson()

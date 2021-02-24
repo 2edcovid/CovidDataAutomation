@@ -24,7 +24,6 @@ def stillNeedTodaysData():
 
 
 def commitAndMerge(commit_message):
-  if onMaster():
     repo = Repo(os.getcwd())
     origin = repo.remotes.origin
     origin.fetch()
