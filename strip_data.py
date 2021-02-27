@@ -13,7 +13,6 @@ import readImages
 
 
 def createGeoJson(localCsvFile, hospitalData, vaccineCSV=None, removePending=False, vaccineData=None):
-    print(vaccineData)
     countyData = {}
     data = {}
     date = (localCsvFile.split('.csv')[0].split()[0].split('Summary')[1])
@@ -57,6 +56,14 @@ def createGeoJson(localCsvFile, hospitalData, vaccineCSV=None, removePending=Fal
           except:
             print('csv issue')
             print(row)
+    elif vaccineData:
+      for countyName in countyData:
+        try:
+          countyData[countyName]['Vaccine Series Completed'] = vaccineData[countyName]
+        except:
+          countyData[countyName]['Vaccine Series Completed'] = 0
+          print(countyName)
+
 
     with open(file_names.originalGeoJson, 'r') as read_file:
         data = json.load(read_file)
@@ -165,6 +172,20 @@ def load_image_data():
   return data
 
 
+def readRecoveredCSVData():
+  list_of_files = glob.glob(os.path.join(file_names.storageDir, 'Summary*.csv'))
+  list_of_files.sort()
+  summary_csv_file = list_of_files[-1]
+
+  runningTotal = 0
+
+  with open(summary_csv_file) as csvFile:
+    csvReader = csv.DictReader(csvFile)
+    for row in csvReader:
+      runningTotal = runningTotal + int(row['Total Recovered'])
+
+  return runningTotal
+
 def readVaccineCSVData():
   fileNames = [
     os.path.join(file_names.storageDir, "VaccineDosesAdministered{}.csv"),
@@ -220,6 +241,7 @@ def readVaccineCSVData():
 if __name__ == "__main__":
     image_data = load_image_data()
     vaccine_data = readVaccineCSVData()
+    image_data['Total Recovered'] = readRecoveredCSVData()
     print(vaccine_data)
 
     image_data.update(vaccine_data)

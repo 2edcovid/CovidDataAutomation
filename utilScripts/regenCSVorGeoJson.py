@@ -62,7 +62,7 @@ def genGeoJson():
     if len(list_of_hospital_pdfs):
       hospitalData = readPDFs.readHospitalPDF(list_of_hospital_pdfs[0])['Hospitalized By County']
     if len(list_of_vaccine_pdfs):
-      vaccineData = readPDFs.readVaccinePDF(list_of_vaccine_pdfs[0])
+      vaccineData = readPDFs.readVaccinePDF(list_of_vaccine_pdfs[0])['Completed by County']
     vaccine_csv = None
     if len(list_of_vaccine_csvs):
      vaccine_csv=list_of_vaccine_csvs[0]
@@ -157,6 +157,6 @@ def readableDataFromGeoJson():
       strip_data.write_json(geoFile, data)
 
 
-genGeoJson()
-# cleanGeoJson()
+# genGeoJson()
+cleanGeoJson()
 # readableDataFromGeoJson()
