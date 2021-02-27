@@ -28,7 +28,7 @@
 "Confirmed": 1375,
 "Tested": 4051,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 26,
 "Hospitalized": 2,
 "PercentRecovered": 10.37,
 "PercentActive": 0.99,
@@ -36,7 +36,7 @@
 "PercentConfirmed": 11.64,
 "PercentTested": 34.3,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.22,
 "PercentHospitalized": 0.02
 },
 "geometry": {
@@ -3641,7 +3641,7 @@
 "Confirmed": 647,
 "Tested": 2148,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 21,
 "Hospitalized": 0,
 "PercentRecovered": 10.0,
 "PercentActive": 0.53,
@@ -3649,7 +3649,7 @@
 "PercentConfirmed": 10.71,
 "PercentTested": 35.56,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.35,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -4102,7 +4102,7 @@
 "Confirmed": 1891,
 "Tested": 9163,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 183,
 "Hospitalized": 3,
 "PercentRecovered": 9.7,
 "PercentActive": 1.15,
@@ -4110,7 +4110,7 @@
 "PercentConfirmed": 11.02,
 "PercentTested": 53.42,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 1.07,
 "PercentHospitalized": 0.02
 },
 "geometry": {
@@ -4583,7 +4583,7 @@
 "Confirmed": 1113,
 "Tested": 4451,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 63,
 "Hospitalized": 1,
 "PercentRecovered": 10.42,
 "PercentActive": 1.26,
@@ -4591,7 +4591,7 @@
 "PercentConfirmed": 12.03,
 "PercentTested": 48.1,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.68,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -5088,7 +5088,7 @@
 "Confirmed": 1311,
 "Tested": 5246,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 64,
 "Hospitalized": 0,
 "PercentRecovered": 8.17,
 "PercentActive": 1.09,
@@ -5096,7 +5096,7 @@
 "PercentConfirmed": 9.48,
 "PercentTested": 37.93,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.46,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -6857,7 +6857,7 @@
 "Confirmed": 1806,
 "Tested": 6845,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 20,
 "Hospitalized": 4,
 "PercentRecovered": 10.27,
 "PercentActive": 1.55,
@@ -6865,7 +6865,7 @@
 "PercentConfirmed": 12.11,
 "PercentTested": 45.91,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.13,
 "PercentHospitalized": 0.03
 },
 "geometry": {
@@ -7602,7 +7602,7 @@
 "Confirmed": 1608,
 "Tested": 8644,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 82,
 "Hospitalized": 1,
 "PercentRecovered": 6.66,
 "PercentActive": 1.27,
@@ -7610,7 +7610,7 @@
 "PercentConfirmed": 8.03,
 "PercentTested": 43.16,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.41,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -8231,7 +8231,7 @@
 "Confirmed": 859,
 "Tested": 3837,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 15,
 "Hospitalized": 0,
 "PercentRecovered": 7.35,
 "PercentActive": 1.8,
@@ -8239,7 +8239,7 @@
 "PercentConfirmed": 9.35,
 "PercentTested": 41.77,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.16,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -8764,7 +8764,7 @@
 "Confirmed": 1222,
 "Tested": 5341,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 14,
 "Hospitalized": 0,
 "PercentRecovered": 10.16,
 "PercentActive": 1.18,
@@ -8772,7 +8772,7 @@
 "PercentConfirmed": 11.62,
 "PercentTested": 50.78,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.13,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -9265,7 +9265,7 @@
 "Confirmed": 1170,
 "Tested": 4914,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 47,
 "Hospitalized": 0,
 "PercentRecovered": 9.47,
 "PercentActive": 1.25,
@@ -9273,7 +9273,7 @@
 "PercentConfirmed": 11.07,
 "PercentTested": 46.49,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.44,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -9766,7 +9766,7 @@
 "Confirmed": 619,
 "Tested": 3220,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 32,
 "Hospitalized": 0,
 "PercentRecovered": 6.8,
 "PercentActive": 1.45,
@@ -9774,7 +9774,7 @@
 "PercentConfirmed": 8.31,
 "PercentTested": 43.2,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.43,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -10235,7 +10235,7 @@
 "Confirmed": 4597,
 "Tested": 14032,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 107,
 "Hospitalized": 6,
 "PercentRecovered": 12.17,
 "PercentActive": 0.84,
@@ -10243,7 +10243,7 @@
 "PercentConfirmed": 13.17,
 "PercentTested": 40.2,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.31,
 "PercentHospitalized": 0.02
 },
 "geometry": {
@@ -14836,7 +14836,7 @@
 "Confirmed": 1711,
 "Tested": 5887,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 182,
 "Hospitalized": 2,
 "PercentRecovered": 11.14,
 "PercentActive": 1.21,
@@ -14844,7 +14844,7 @@
 "PercentConfirmed": 12.36,
 "PercentTested": 42.54,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 1.32,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -15353,7 +15353,7 @@
 "Confirmed": 1726,
 "Tested": 7298,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 59,
 "Hospitalized": 2,
 "PercentRecovered": 9.37,
 "PercentActive": 1.2,
@@ -15361,7 +15361,7 @@
 "PercentConfirmed": 10.7,
 "PercentTested": 45.23,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.37,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -15890,7 +15890,7 @@
 "Confirmed": 925,
 "Tested": 3940,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 98,
 "Hospitalized": 2,
 "PercentRecovered": 8.86,
 "PercentActive": 1.38,
@@ -15898,7 +15898,7 @@
 "PercentConfirmed": 10.36,
 "PercentTested": 44.13,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 1.1,
 "PercentHospitalized": 0.02
 },
 "geometry": {
@@ -16443,7 +16443,7 @@
 "Confirmed": 1320,
 "Tested": 5183,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 35,
 "Hospitalized": 8,
 "PercentRecovered": 10.59,
 "PercentActive": 1.51,
@@ -16451,7 +16451,7 @@
 "PercentConfirmed": 12.32,
 "PercentTested": 48.38,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.33,
 "PercentHospitalized": 0.07
 },
 "geometry": {
@@ -16984,7 +16984,7 @@
 "Confirmed": 4738,
 "Tested": 21135,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 436,
 "Hospitalized": 9,
 "PercentRecovered": 9.95,
 "PercentActive": 0.99,
@@ -16992,7 +16992,7 @@
 "PercentConfirmed": 11.11,
 "PercentTested": 49.56,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 1.02,
 "PercentHospitalized": 0.02
 },
 "geometry": {
@@ -17561,7 +17561,7 @@
 "Confirmed": 1137,
 "Tested": 4680,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 53,
 "Hospitalized": 3,
 "PercentRecovered": 8.5,
 "PercentActive": 0.9,
@@ -17569,7 +17569,7 @@
 "PercentConfirmed": 9.5,
 "PercentTested": 39.12,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.44,
 "PercentHospitalized": 0.03
 },
 "geometry": {
@@ -18066,7 +18066,7 @@
 "Confirmed": 1417,
 "Tested": 6745,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 154,
 "Hospitalized": 3,
 "PercentRecovered": 7.89,
 "PercentActive": 0.88,
@@ -18074,7 +18074,7 @@
 "PercentConfirmed": 8.99,
 "PercentTested": 42.8,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.98,
 "PercentHospitalized": 0.02
 },
 "geometry": {
@@ -18599,7 +18599,7 @@
 "Confirmed": 1538,
 "Tested": 6098,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 66,
 "Hospitalized": 1,
 "PercentRecovered": 7.71,
 "PercentActive": 0.77,
@@ -18607,7 +18607,7 @@
 "PercentConfirmed": 8.76,
 "PercentTested": 34.73,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.38,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -21892,7 +21892,7 @@
 "Confirmed": 1661,
 "Tested": 7976,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 76,
 "Hospitalized": 3,
 "PercentRecovered": 6.85,
 "PercentActive": 1.48,
@@ -21900,7 +21900,7 @@
 "PercentConfirmed": 8.45,
 "PercentTested": 40.57,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.39,
 "PercentHospitalized": 0.02
 },
 "geometry": {
@@ -22545,7 +22545,7 @@
 "Confirmed": 3534,
 "Tested": 11861,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 183,
 "Hospitalized": 1,
 "PercentRecovered": 13.05,
 "PercentActive": 0.76,
@@ -22553,7 +22553,7 @@
 "PercentConfirmed": 14.08,
 "PercentTested": 47.26,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.73,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -28006,7 +28006,7 @@
 "Confirmed": 1401,
 "Tested": 5293,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 96,
 "Hospitalized": 4,
 "PercentRecovered": 10.66,
 "PercentActive": 1.48,
@@ -28014,7 +28014,7 @@
 "PercentConfirmed": 12.38,
 "PercentTested": 46.75,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.85,
 "PercentHospitalized": 0.04
 },
 "geometry": {
@@ -28551,7 +28551,7 @@
 "Confirmed": 3964,
 "Tested": 13476,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 81,
 "Hospitalized": 3,
 "PercentRecovered": 18.34,
 "PercentActive": 1.46,
@@ -28559,7 +28559,7 @@
 "PercentConfirmed": 19.95,
 "PercentTested": 67.81,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.41,
 "PercentHospitalized": 0.02
 },
 "geometry": {
@@ -29060,7 +29060,7 @@
 "Confirmed": 782,
 "Tested": 3134,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 44,
 "Hospitalized": 0,
 "PercentRecovered": 10.13,
 "PercentActive": 1.31,
@@ -29068,7 +29068,7 @@
 "PercentConfirmed": 11.6,
 "PercentTested": 46.5,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.65,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -29597,7 +29597,7 @@
 "Confirmed": 1068,
 "Tested": 4218,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 141,
 "Hospitalized": 1,
 "PercentRecovered": 9.85,
 "PercentActive": 1.14,
@@ -29605,7 +29605,7 @@
 "PercentConfirmed": 11.19,
 "PercentTested": 44.18,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 1.48,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -30070,7 +30070,7 @@
 "Confirmed": 1671,
 "Tested": 7152,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 63,
 "Hospitalized": 0,
 "PercentRecovered": 11.88,
 "PercentActive": 1.1,
@@ -30078,7 +30078,7 @@
 "PercentConfirmed": 13.17,
 "PercentTested": 56.36,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.5,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -30631,7 +30631,7 @@
 "Confirmed": 2501,
 "Tested": 10385,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 252,
 "Hospitalized": 4,
 "PercentRecovered": 9.07,
 "PercentActive": 0.76,
@@ -30639,7 +30639,7 @@
 "PercentConfirmed": 10.03,
 "PercentTested": 41.63,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 1.01,
 "PercentHospitalized": 0.02
 },
 "geometry": {
@@ -31128,7 +31128,7 @@
 "Confirmed": 1036,
 "Tested": 4509,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 52,
 "Hospitalized": 5,
 "PercentRecovered": 8.44,
 "PercentActive": 1.62,
@@ -31136,7 +31136,7 @@
 "PercentConfirmed": 10.23,
 "PercentTested": 44.54,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.51,
 "PercentHospitalized": 0.05
 },
 "geometry": {
@@ -31673,7 +31673,7 @@
 "Confirmed": 1518,
 "Tested": 6078,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 140,
 "Hospitalized": 3,
 "PercentRecovered": 8.59,
 "PercentActive": 1.69,
@@ -31681,7 +31681,7 @@
 "PercentConfirmed": 10.44,
 "PercentTested": 41.8,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.96,
 "PercentHospitalized": 0.02
 },
 "geometry": {
@@ -35443,7 +35443,7 @@
 "Confirmed": 1764,
 "Tested": 6951,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 92,
 "Hospitalized": 4,
 "PercentRecovered": 9.29,
 "PercentActive": 0.84,
@@ -35451,7 +35451,7 @@
 "PercentConfirmed": 10.33,
 "PercentTested": 40.72,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.54,
 "PercentHospitalized": 0.02
 },
 "geometry": {
@@ -36044,7 +36044,7 @@
 "Confirmed": 4725,
 "Tested": 19411,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 564,
 "Hospitalized": 1,
 "PercentRecovered": 11.97,
 "PercentActive": 0.85,
@@ -36052,7 +36052,7 @@
 "PercentConfirmed": 13.02,
 "PercentTested": 53.51,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 1.55,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -36649,7 +36649,7 @@
 "Confirmed": 1622,
 "Tested": 8149,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 153,
 "Hospitalized": 1,
 "PercentRecovered": 6.67,
 "PercentActive": 0.87,
@@ -36657,7 +36657,7 @@
 "PercentConfirmed": 7.65,
 "PercentTested": 38.44,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.72,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -37819,7 +37819,7 @@
 "Confirmed": 13135,
 "Tested": 52425,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 874,
 "Hospitalized": 10,
 "PercentRecovered": 11.7,
 "PercentActive": 0.93,
@@ -37827,7 +37827,7 @@
 "PercentConfirmed": 12.81,
 "PercentTested": 51.13,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.85,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -41180,7 +41180,7 @@
 "Confirmed": 760,
 "Tested": 2818,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 14,
 "Hospitalized": 0,
 "PercentRecovered": 9.9,
 "PercentActive": 0.77,
@@ -41188,7 +41188,7 @@
 "PercentConfirmed": 11.11,
 "PercentTested": 41.19,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.2,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -41701,7 +41701,7 @@
 "Confirmed": 1122,
 "Tested": 4710,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 31,
 "Hospitalized": 1,
 "PercentRecovered": 10.47,
 "PercentActive": 0.92,
@@ -41709,7 +41709,7 @@
 "PercentConfirmed": 11.54,
 "PercentTested": 48.46,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.32,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -42242,7 +42242,7 @@
 "Confirmed": 1235,
 "Tested": 4755,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 75,
 "Hospitalized": 0,
 "PercentRecovered": 12.0,
 "PercentActive": 0.64,
@@ -42250,7 +42250,7 @@
 "PercentConfirmed": 12.73,
 "PercentTested": 49.03,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.77,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -42839,7 +42839,7 @@
 "Confirmed": 1626,
 "Tested": 6567,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 125,
 "Hospitalized": 2,
 "PercentRecovered": 9.61,
 "PercentActive": 1.06,
@@ -42847,7 +42847,7 @@
 "PercentConfirmed": 10.87,
 "PercentTested": 43.92,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.84,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -43440,7 +43440,7 @@
 "Confirmed": 1579,
 "Tested": 7260,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 61,
 "Hospitalized": 1,
 "PercentRecovered": 8.48,
 "PercentActive": 0.7,
@@ -43448,7 +43448,7 @@
 "PercentConfirmed": 9.36,
 "PercentTested": 43.04,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.36,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -44005,7 +44005,7 @@
 "Confirmed": 1227,
 "Tested": 5016,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 109,
 "Hospitalized": 0,
 "PercentRecovered": 8.66,
 "PercentActive": 1.08,
@@ -44013,7 +44013,7 @@
 "PercentConfirmed": 9.97,
 "PercentTested": 40.77,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.89,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -44546,7 +44546,7 @@
 "Confirmed": 1951,
 "Tested": 7871,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 164,
 "Hospitalized": 4,
 "PercentRecovered": 8.95,
 "PercentActive": 0.93,
@@ -44554,7 +44554,7 @@
 "PercentConfirmed": 10.04,
 "PercentTested": 40.51,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.84,
 "PercentHospitalized": 0.02
 },
 "geometry": {
@@ -47767,7 +47767,7 @@
 "Confirmed": 2750,
 "Tested": 8712,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 85,
 "Hospitalized": 2,
 "PercentRecovered": 12.37,
 "PercentActive": 0.64,
@@ -47775,7 +47775,7 @@
 "PercentConfirmed": 13.26,
 "PercentTested": 42.0,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.41,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -49177,7 +49177,7 @@
 "Confirmed": 2136,
 "Tested": 10956,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 301,
 "Hospitalized": 1,
 "PercentRecovered": 7.57,
 "PercentActive": 0.57,
@@ -49185,7 +49185,7 @@
 "PercentConfirmed": 8.33,
 "PercentTested": 42.73,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 1.17,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -49846,7 +49846,7 @@
 "Confirmed": 1902,
 "Tested": 7390,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 90,
 "Hospitalized": 2,
 "PercentRecovered": 10.07,
 "PercentActive": 0.83,
@@ -49854,7 +49854,7 @@
 "PercentConfirmed": 11.25,
 "PercentTested": 43.72,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.53,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -50463,7 +50463,7 @@
 "Confirmed": 685,
 "Tested": 3279,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 23,
 "Hospitalized": 4,
 "PercentRecovered": 6.12,
 "PercentActive": 1.57,
@@ -50471,7 +50471,7 @@
 "PercentConfirmed": 7.89,
 "PercentTested": 37.78,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.27,
 "PercentHospitalized": 0.05
 },
 "geometry": {
@@ -53880,7 +53880,7 @@
 "Confirmed": 2348,
 "Tested": 7837,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 33,
 "Hospitalized": 5,
 "PercentRecovered": 12.05,
 "PercentActive": 1.49,
@@ -53888,7 +53888,7 @@
 "PercentConfirmed": 13.68,
 "PercentTested": 45.68,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.19,
 "PercentHospitalized": 0.03
 },
 "geometry": {
@@ -54461,7 +54461,7 @@
 "Confirmed": 2583,
 "Tested": 10171,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 288,
 "Hospitalized": 2,
 "PercentRecovered": 11.4,
 "PercentActive": 1.25,
@@ -54469,7 +54469,7 @@
 "PercentConfirmed": 12.82,
 "PercentTested": 50.47,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 1.43,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -54986,7 +54986,7 @@
 "Confirmed": 697,
 "Tested": 3666,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 33,
 "Hospitalized": 1,
 "PercentRecovered": 7.09,
 "PercentActive": 0.59,
@@ -54994,7 +54994,7 @@
 "PercentConfirmed": 7.76,
 "PercentTested": 40.82,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.37,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -55527,7 +55527,7 @@
 "Confirmed": 2233,
 "Tested": 11897,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 210,
 "Hospitalized": 3,
 "PercentRecovered": 6.98,
 "PercentActive": 1.43,
@@ -55535,7 +55535,7 @@
 "PercentConfirmed": 8.48,
 "PercentTested": 45.16,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.8,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -56064,7 +56064,7 @@
 "Confirmed": 8812,
 "Tested": 48848,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 903,
 "Hospitalized": 6,
 "PercentRecovered": 8.07,
 "PercentActive": 0.87,
@@ -56072,7 +56072,7 @@
 "PercentConfirmed": 8.98,
 "PercentTested": 49.79,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.92,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -56641,7 +56641,7 @@
 "Confirmed": 4311,
 "Tested": 18142,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 102,
 "Hospitalized": 1,
 "PercentRecovered": 9.97,
 "PercentActive": 0.65,
@@ -56649,7 +56649,7 @@
 "PercentConfirmed": 10.78,
 "PercentTested": 45.38,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.26,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -57198,7 +57198,7 @@
 "Confirmed": 4583,
 "Tested": 19133,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 223,
 "Hospitalized": 10,
 "PercentRecovered": 8.68,
 "PercentActive": 1.02,
@@ -57206,7 +57206,7 @@
 "PercentConfirmed": 9.85,
 "PercentTested": 41.13,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.48,
 "PercentHospitalized": 0.02
 },
 "geometry": {
@@ -68651,7 +68651,7 @@
 "Confirmed": 1557,
 "Tested": 7871,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 288,
 "Hospitalized": 1,
 "PercentRecovered": 7.22,
 "PercentActive": 1.04,
@@ -68659,7 +68659,7 @@
 "PercentConfirmed": 8.36,
 "PercentTested": 42.26,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 1.55,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -69372,7 +69372,7 @@
 "Confirmed": 1585,
 "Tested": 5776,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 156,
 "Hospitalized": 4,
 "PercentRecovered": 9.74,
 "PercentActive": 1.03,
@@ -69380,7 +69380,7 @@
 "PercentConfirmed": 11.21,
 "PercentTested": 40.87,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 1.1,
 "PercentHospitalized": 0.03
 },
 "geometry": {
@@ -72865,7 +72865,7 @@
 "Confirmed": 1055,
 "Tested": 4634,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 86,
 "Hospitalized": 0,
 "PercentRecovered": 7.84,
 "PercentActive": 1.04,
@@ -72873,7 +72873,7 @@
 "PercentConfirmed": 9.11,
 "PercentTested": 40.02,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.74,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -73498,7 +73498,7 @@
 "Confirmed": 422,
 "Tested": 2233,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 74,
 "Hospitalized": 0,
 "PercentRecovered": 6.57,
 "PercentActive": 0.94,
@@ -73506,7 +73506,7 @@
 "PercentConfirmed": 7.66,
 "PercentTested": 40.56,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 1.34,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -74043,7 +74043,7 @@
 "Confirmed": 1046,
 "Tested": 4939,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 95,
 "Hospitalized": 0,
 "PercentRecovered": 8.6,
 "PercentActive": 0.93,
@@ -74051,7 +74051,7 @@
 "PercentConfirmed": 9.76,
 "PercentTested": 46.07,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.89,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -77669,7 +77669,7 @@
 "Confirmed": 9089,
 "Tested": 46594,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 589,
 "Hospitalized": 4,
 "PercentRecovered": 8.59,
 "PercentActive": 1.41,
@@ -77677,7 +77677,7 @@
 "PercentConfirmed": 10.08,
 "PercentTested": 51.67,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.65,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -78246,7 +78246,7 @@
 "Confirmed": 1278,
 "Tested": 7092,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 125,
 "Hospitalized": 1,
 "PercentRecovered": 6.9,
 "PercentActive": 0.89,
@@ -78254,7 +78254,7 @@
 "PercentConfirmed": 7.92,
 "PercentTested": 43.94,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.77,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -81796,7 +81796,7 @@
 "Confirmed": 1352,
 "Tested": 7390,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 70,
 "Hospitalized": 2,
 "PercentRecovered": 6.24,
 "PercentActive": 0.87,
@@ -81804,7 +81804,7 @@
 "PercentConfirmed": 7.23,
 "PercentTested": 39.52,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.37,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -82393,7 +82393,7 @@
 "Confirmed": 3332,
 "Tested": 15547,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 284,
 "Hospitalized": 3,
 "PercentRecovered": 7.54,
 "PercentActive": 1.27,
@@ -82401,7 +82401,7 @@
 "PercentConfirmed": 8.97,
 "PercentTested": 41.85,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.76,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -95175,7 +95175,7 @@
 "Confirmed": 3961,
 "Tested": 18760,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 94,
 "Hospitalized": 5,
 "PercentRecovered": 8.02,
 "PercentActive": 1.03,
@@ -95183,7 +95183,7 @@
 "PercentConfirmed": 9.23,
 "PercentTested": 43.7,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.22,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -97316,7 +97316,7 @@
 "Confirmed": 9167,
 "Tested": 42103,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 544,
 "Hospitalized": 11,
 "PercentRecovered": 8.63,
 "PercentActive": 1.05,
@@ -97324,7 +97324,7 @@
 "PercentConfirmed": 9.8,
 "PercentTested": 45.01,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.58,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -101413,7 +101413,7 @@
 "Confirmed": 1153,
 "Tested": 5515,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 102,
 "Hospitalized": 4,
 "PercentRecovered": 7.63,
 "PercentActive": 0.95,
@@ -101421,7 +101421,7 @@
 "PercentConfirmed": 8.92,
 "PercentTested": 42.65,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.79,
 "PercentHospitalized": 0.03
 },
 "geometry": {
@@ -101990,7 +101990,7 @@
 "Confirmed": 2231,
 "Tested": 10345,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 151,
 "Hospitalized": 2,
 "PercentRecovered": 8.22,
 "PercentActive": 1.71,
@@ -101998,7 +101998,7 @@
 "PercentConfirmed": 10.08,
 "PercentTested": 46.72,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.68,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -104883,7 +104883,7 @@
 "Confirmed": 864,
 "Tested": 3575,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 29,
 "Hospitalized": 0,
 "PercentRecovered": 7.54,
 "PercentActive": 0.66,
@@ -104891,7 +104891,7 @@
 "PercentConfirmed": 8.45,
 "PercentTested": 34.96,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.28,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -105444,7 +105444,7 @@
 "Confirmed": 4596,
 "Tested": 24088,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 309,
 "Hospitalized": 5,
 "PercentRecovered": 7.23,
 "PercentActive": 1.69,
@@ -105452,7 +105452,7 @@
 "PercentConfirmed": 9.0,
 "PercentTested": 47.18,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.61,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -108361,7 +108361,7 @@
 "Confirmed": 1240,
 "Tested": 6556,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 82,
 "Hospitalized": 2,
 "PercentRecovered": 5.72,
 "PercentActive": 1.85,
@@ -108369,7 +108369,7 @@
 "PercentConfirmed": 7.63,
 "PercentTested": 40.35,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.5,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -108890,7 +108890,7 @@
 "Confirmed": 1979,
 "Tested": 9103,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 118,
 "Hospitalized": 2,
 "PercentRecovered": 7.5,
 "PercentActive": 1.33,
@@ -108898,7 +108898,7 @@
 "PercentConfirmed": 9.0,
 "PercentTested": 41.38,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.54,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -109551,7 +109551,7 @@
 "Confirmed": 3096,
 "Tested": 13439,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 192,
 "Hospitalized": 4,
 "PercentRecovered": 7.85,
 "PercentActive": 1.25,
@@ -109559,7 +109559,7 @@
 "PercentConfirmed": 9.27,
 "PercentTested": 40.23,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.57,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -110188,7 +110188,7 @@
 "Confirmed": 1162,
 "Tested": 4793,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 37,
 "Hospitalized": 2,
 "PercentRecovered": 9.2,
 "PercentActive": 0.93,
@@ -110196,7 +110196,7 @@
 "PercentConfirmed": 10.4,
 "PercentTested": 42.91,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.33,
 "PercentHospitalized": 0.02
 },
 "geometry": {
@@ -112685,7 +112685,7 @@
 "Confirmed": 1385,
 "Tested": 6932,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 64,
 "Hospitalized": 3,
 "PercentRecovered": 8.31,
 "PercentActive": 0.78,
@@ -112693,7 +112693,7 @@
 "PercentConfirmed": 9.19,
 "PercentTested": 46.02,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.42,
 "PercentHospitalized": 0.02
 },
 "geometry": {
@@ -114674,7 +114674,7 @@
 "Confirmed": 891,
 "Tested": 3818,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 26,
 "Hospitalized": 2,
 "PercentRecovered": 7.27,
 "PercentActive": 1.4,
@@ -114682,7 +114682,7 @@
 "PercentConfirmed": 8.91,
 "PercentTested": 38.17,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.26,
 "PercentHospitalized": 0.02
 },
 "geometry": {
@@ -115187,7 +115187,7 @@
 "Confirmed": 302,
 "Tested": 1382,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 13,
 "Hospitalized": 0,
 "PercentRecovered": 7.0,
 "PercentActive": 1.21,
@@ -115195,7 +115195,7 @@
 "PercentConfirmed": 8.29,
 "PercentTested": 37.91,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.36,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -115688,7 +115688,7 @@
 "Confirmed": 2675,
 "Tested": 9700,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 181,
 "Hospitalized": 3,
 "PercentRecovered": 12.11,
 "PercentActive": 1.06,
@@ -115696,7 +115696,7 @@
 "PercentConfirmed": 13.33,
 "PercentTested": 48.34,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.9,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -116317,7 +116317,7 @@
 "Confirmed": 1221,
 "Tested": 6597,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 62,
 "Hospitalized": 0,
 "PercentRecovered": 5.32,
 "PercentActive": 1.19,
@@ -116325,7 +116325,7 @@
 "PercentConfirmed": 6.64,
 "PercentTested": 35.89,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.34,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -116850,7 +116850,7 @@
 "Confirmed": 1116,
 "Tested": 5871,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 69,
 "Hospitalized": 5,
 "PercentRecovered": 8.08,
 "PercentActive": 0.76,
@@ -116858,7 +116858,7 @@
 "PercentConfirmed": 9.03,
 "PercentTested": 47.5,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.56,
 "PercentHospitalized": 0.04
 },
 "geometry": {
@@ -117367,7 +117367,7 @@
 "Confirmed": 3506,
 "Tested": 14951,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 119,
 "Hospitalized": 4,
 "PercentRecovered": 8.53,
 "PercentActive": 1.15,
@@ -117375,7 +117375,7 @@
 "PercentConfirmed": 9.96,
 "PercentTested": 42.47,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.34,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -117880,7 +117880,7 @@
 "Confirmed": 812,
 "Tested": 4145,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 60,
 "Hospitalized": 0,
 "PercentRecovered": 7.03,
 "PercentActive": 1.5,
@@ -117888,7 +117888,7 @@
 "PercentConfirmed": 8.62,
 "PercentTested": 43.99,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.64,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -118361,7 +118361,7 @@
 "Confirmed": 667,
 "Tested": 3308,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 18,
 "Hospitalized": 0,
 "PercentRecovered": 6.23,
 "PercentActive": 1.36,
@@ -118369,7 +118369,7 @@
 "PercentConfirmed": 7.72,
 "PercentTested": 38.26,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.21,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -118830,7 +118830,7 @@
 "Confirmed": 824,
 "Tested": 2933,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 25,
 "Hospitalized": 0,
 "PercentRecovered": 7.87,
 "PercentActive": 2.45,
@@ -118838,7 +118838,7 @@
 "PercentConfirmed": 10.58,
 "PercentTested": 37.65,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.32,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -119371,7 +119371,7 @@
 "Confirmed": 3951,
 "Tested": 18520,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 583,
 "Hospitalized": 2,
 "PercentRecovered": 8.78,
 "PercentActive": 1.21,
@@ -119379,7 +119379,7 @@
 "PercentConfirmed": 10.1,
 "PercentTested": 47.32,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 1.49,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -125728,7 +125728,7 @@
 "Confirmed": 525,
 "Tested": 2369,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 23,
 "Hospitalized": 1,
 "PercentRecovered": 6.51,
 "PercentActive": 0.92,
@@ -125736,7 +125736,7 @@
 "PercentConfirmed": 7.51,
 "PercentTested": 33.88,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.33,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -128261,7 +128261,7 @@
 "Confirmed": 1479,
 "Tested": 5342,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 128,
 "Hospitalized": 2,
 "PercentRecovered": 8.88,
 "PercentActive": 0.72,
@@ -128269,7 +128269,7 @@
 "PercentConfirmed": 9.7,
 "PercentTested": 35.03,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.84,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -128866,7 +128866,7 @@
 "Confirmed": 600,
 "Tested": 2246,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 24,
 "Hospitalized": 0,
 "PercentRecovered": 8.67,
 "PercentActive": 0.87,
@@ -128874,7 +128874,7 @@
 "PercentConfirmed": 9.69,
 "PercentTested": 36.28,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.39,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -129431,7 +129431,7 @@
 "Confirmed": 453,
 "Tested": 2079,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 45,
 "Hospitalized": 1,
 "PercentRecovered": 7.02,
 "PercentActive": 1.87,
@@ -129439,7 +129439,7 @@
 "PercentConfirmed": 9.12,
 "PercentTested": 41.85,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.91,
 "PercentHospitalized": 0.02
 },
 "geometry": {
@@ -130004,7 +130004,7 @@
 "Confirmed": 503,
 "Tested": 2339,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 6,
 "Hospitalized": 1,
 "PercentRecovered": 6.31,
 "PercentActive": 0.64,
@@ -130012,7 +130012,7 @@
 "PercentConfirmed": 7.17,
 "PercentTested": 33.32,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.09,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -130681,7 +130681,7 @@
 "Confirmed": 703,
 "Tested": 2807,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 52,
 "Hospitalized": 0,
 "PercentRecovered": 6.91,
 "PercentActive": 0.65,
@@ -130689,7 +130689,7 @@
 "PercentConfirmed": 7.8,
 "PercentTested": 31.13,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.58,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -131226,7 +131226,7 @@
 "Confirmed": 498,
 "Tested": 3002,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 37,
 "Hospitalized": 0,
 "PercentRecovered": 5.3,
 "PercentActive": 0.96,
@@ -131234,7 +131234,7 @@
 "PercentConfirmed": 6.31,
 "PercentTested": 38.05,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.47,
 "PercentHospitalized": 0.0
 },
 "geometry": {
@@ -131755,7 +131755,7 @@
 "Confirmed": 420,
 "Tested": 1947,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 62,
 "Hospitalized": 1,
 "PercentRecovered": 5.62,
 "PercentActive": 0.61,
@@ -131763,7 +131763,7 @@
 "PercentConfirmed": 6.56,
 "PercentTested": 30.42,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.97,
 "PercentHospitalized": 0.02
 },
 "geometry": {
@@ -132276,7 +132276,7 @@
 "Confirmed": 1126,
 "Tested": 5207,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 41,
 "Hospitalized": 1,
 "PercentRecovered": 7.58,
 "PercentActive": 1.15,
@@ -132284,7 +132284,7 @@
 "PercentConfirmed": 9.05,
 "PercentTested": 41.87,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.33,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -132869,7 +132869,7 @@
 "Confirmed": 3251,
 "Tested": 13905,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 244,
 "Hospitalized": 3,
 "PercentRecovered": 8.22,
 "PercentActive": 1.24,
@@ -132877,7 +132877,7 @@
 "PercentConfirmed": 9.55,
 "PercentTested": 40.83,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.72,
 "PercentHospitalized": 0.01
 },
 "geometry": {
@@ -141587,7 +141587,7 @@
 "Confirmed": 697,
 "Tested": 3169,
 "VaccineSeriesInitiated": 0,
-"VaccineSeriesCompleted": 0,
+"VaccineSeriesCompleted": 16,
 "Hospitalized": 1,
 "PercentRecovered": 8.24,
 "PercentActive": 1.35,
@@ -141595,7 +141595,7 @@
 "PercentConfirmed": 9.87,
 "PercentTested": 44.87,
 "PercentVaccineSeriesInitiated": 0,
-"PercentVaccineSeriesCompleted": 0,
+"PercentVaccineSeriesCompleted": 0.23,
 "PercentHospitalized": 0.01
 },
 "geometry": {

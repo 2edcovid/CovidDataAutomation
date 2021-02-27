@@ -13,7 +13,6 @@ import readImages
 
 
 def createGeoJson(localCsvFile, hospitalData, vaccineCSV=None, removePending=False, vaccineData=None):
-    print(vaccineData)
     countyData = {}
     data = {}
     date = (localCsvFile.split('.csv')[0].split()[0].split('Summary')[1])
@@ -57,6 +56,14 @@ def createGeoJson(localCsvFile, hospitalData, vaccineCSV=None, removePending=Fal
           except:
             print('csv issue')
             print(row)
+    elif vaccineData:
+      for countyName in countyData:
+        try:
+          countyData[countyName]['Vaccine Series Completed'] = vaccineData[countyName]
+        except:
+          countyData[countyName]['Vaccine Series Completed'] = 0
+          print(countyName)
+
 
     with open(file_names.originalGeoJson, 'r') as read_file:
         data = json.load(read_file)
