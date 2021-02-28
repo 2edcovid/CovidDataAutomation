@@ -172,6 +172,20 @@ def load_image_data():
   return data
 
 
+def readRecoveredCSVData():
+  list_of_files = glob.glob(os.path.join(file_names.storageDir, 'Summary*.csv'))
+  list_of_files.sort()
+  summary_csv_file = list_of_files[-1]
+
+  runningTotal = 0
+
+  with open(summary_csv_file) as csvFile:
+    csvReader = csv.DictReader(csvFile)
+    for row in csvReader:
+      runningTotal = runningTotal + int(row['Total Recovered'])
+
+  return runningTotal
+
 def readVaccineCSVData():
   fileNames = [
     os.path.join(file_names.storageDir, "VaccineDosesAdministered{}.csv"),
@@ -227,6 +241,7 @@ def readVaccineCSVData():
 if __name__ == "__main__":
     image_data = load_image_data()
     vaccine_data = readVaccineCSVData()
+    image_data['Total Recovered'] = readRecoveredCSVData()
     print(vaccine_data)
 
     image_data.update(vaccine_data)
