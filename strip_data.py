@@ -242,6 +242,10 @@ if __name__ == "__main__":
     image_data = load_image_data()
     vaccine_data = readVaccineCSVData()
     image_data['Total Recovered'] = readRecoveredCSVData()
+    image_data.update({'Recovered With Preexisting Condition': 0,
+            'Recovered With No Preexisting Condition': 0,
+            'Recovered Preexisting Condition Unknown': 0,
+        })
     print(vaccine_data)
 
     image_data.update(vaccine_data)
