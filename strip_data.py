@@ -173,16 +173,18 @@ def load_image_data():
 
 
 def readRecoveredCSVData():
-  list_of_files = glob.glob(os.path.join(file_names.storageDir, 'Summary*.csv'))
-  list_of_files.sort()
-  summary_csv_file = list_of_files[-1]
-
   runningTotal = 0
+  try:
+    list_of_files = glob.glob(os.path.join(file_names.storageDir, 'Summary*.csv'))
+    list_of_files.sort()
+    summary_csv_file = list_of_files[-1]
 
-  with open(summary_csv_file) as csvFile:
-    csvReader = csv.DictReader(csvFile)
-    for row in csvReader:
-      runningTotal = runningTotal + int(row['Total Recovered'])
+    with open(summary_csv_file) as csvFile:
+      csvReader = csv.DictReader(csvFile)
+      for row in csvReader:
+        runningTotal = runningTotal + int(row['Total Recovered'])
+  except:
+    print('issue with Recovered CSV')
 
   return runningTotal
 
@@ -191,7 +193,9 @@ def readVaccineCSVData():
     os.path.join(file_names.storageDir, "VaccineDosesAdministered{}.csv"),
     os.path.join(file_names.storageDir, "VaccineIndividuals1stDose{}.csv"),
     os.path.join(file_names.storageDir, "VaccineIndividualsComplete{}.csv"),
-    os.path.join(file_names.storageDir, "VaccineManufacturer{}.csv")
+    os.path.join(file_names.storageDir, "VaccineManufacturer{}.csv"),
+    os.path.join(file_names.storageDir, "VaccineIndividuals2ndComplete{}.csv"),
+    os.path.join(file_names.storageDir, "VaccineIndividualsSingleComplete{}.csv"),
   ]
 
   vaccineData = {}
@@ -232,8 +236,12 @@ def readVaccineCSVData():
       manufacturer = row['Vaccine Manufacturer']
       if manufacturer == 'Moderna':
         vaccineData['Moderna Doses Given'] = row['Doses']
-      else:
+      elif manufacturer == 'Pfizer':
         vaccineData['Pfizer Doses Given'] = row['Doses']
+      elif manufacturer == 'Janssen':
+        vaccineData['Janssen Doses Given'] = row['Doses']
+      else:
+        vaccineData['Unknown Manufacturer Doses Given'] = row['Doses']
 
   return vaccineData
 
@@ -242,6 +250,10 @@ if __name__ == "__main__":
     image_data = load_image_data()
     vaccine_data = readVaccineCSVData()
     image_data['Total Recovered'] = readRecoveredCSVData()
+    image_data.update({'Recovered With Preexisting Condition': 0,
+            'Recovered With No Preexisting Condition': 0,
+            'Recovered Preexisting Condition Unknown': 0,
+        })
     print(vaccine_data)
 
     image_data.update(vaccine_data)

@@ -28,23 +28,22 @@ def upload_images(album_title, paths):
   album = albumResponse.json()['data']
 
   for i, img in enumerate(paths):
-    if img != file_names.mapScreenshot:
-      b64_image = None
-      with open(img, "rb") as f:
-        image_data = f.read()
-        b64_image = b64encode(image_data)
+    b64_image = None
+    with open(img, "rb") as f:
+      image_data = f.read()
+      b64_image = b64encode(image_data)
 
-      imageResponse = requests.post(
-        imageURL, 
-        headers = headerData,
-        data = {
-          'key': client_secret,
-          'image': b64_image,
-          "album": album['deletehash'],
-        }
-      )
-      print(imageResponse.status_code)
-      # os.remove(img)
+    imageResponse = requests.post(
+      imageURL, 
+      headers = headerData,
+      data = {
+        'key': client_secret,
+        'image': b64_image,
+        "album": album['deletehash'],
+      }
+    )
+    # print(imageResponse.status_code)
+    # os.remove(img)
 
   return album
 
