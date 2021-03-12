@@ -12,7 +12,7 @@ rmccPage = 'https://public.domo.com/embed/pages/ejyQ5'
 serologyPage = 'https://public.domo.com/embed/pages/eV1x9'
 summaryPage = 'https://public.domo.com/embed/pages/XDYpV' # Tested, Positive, Recovered, Deaths,
 
-vaccinePage = 'https://public.domo.com/embed/pages/qxVDp'
+vaccinePage = 'https://public.domo.com/embed/pages/1wB9j'
 
 #casePage = 'https://public.domo.com/embed/pages/aQVpq'  # Tested, Negative, Positive, preexisting condition, no condition, unknown
 

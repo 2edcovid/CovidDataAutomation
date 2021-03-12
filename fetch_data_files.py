@@ -44,14 +44,22 @@ def getPDF(browser, link_text, name_fmt):
 
 def getVaccineData():
     browser = getBrowser(urls.vaccinePage, height=6200, zoom=90, timeout=SLEEP_DURATION)
+    elements = browser.find_elements_by_class_name(buttonContainer)
+    print(len(elements))
     saveScreenshot(browser, file_names.vaccineScreenshot)
     closeBrowser(browser)
 
     fileNames = [
       os.path.join(file_names.storageDir, "VaccineDosesAdministered{}.csv"),
-      os.path.join(file_names.storageDir, "VaccineIndividuals1stDose{}.csv"),
       os.path.join(file_names.storageDir, "VaccineIowanDoses{}.csv"),
+      os.path.join(file_names.storageDir, "VaccineIndividuals1stDose{}.csv"),
+      os.path.join(file_names.storageDir, "VaccineIndividuals2ndComplete{}.csv"),
+      None,
+      None,
       os.path.join(file_names.storageDir, "VaccineIndividualsComplete{}.csv"),
+      os.path.join(file_names.storageDir, "VaccineIndividualsSingleComplete{}.csv"),
+      None,
+      None,
       None,
       os.path.join(file_names.storageDir, "VaccineManufacturer{}.csv"),
       None,
@@ -66,12 +74,11 @@ def getVaccineData():
       None,
       None,
       os.path.join(file_names.storageDir, "VaccineDosesByDay{}.csv"),
-      os.path.join(file_names.storageDir, "VaccineDosesByCounty{}.csv"),
       None,
-      None
+      os.path.join(file_names.storageDir, "VaccineDosesByCounty{}.csv"),
     ]
     timeString = time.strftime("%Y-%m-%d %H%M") 
-    for i in range(21):
+    for i in range(26):
       if fileNames[i]:
         browser = getBrowser(urls.vaccinePage, height=1400, zoom=90, timeout=SHORT_SLEEP_DURATION)
         localPath = fileNames[i].format(timeString) 
