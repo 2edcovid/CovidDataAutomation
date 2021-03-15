@@ -27,6 +27,7 @@ def sanitizeText(text):
             string = string.replace('/', '7')
             string = string.replace('?', '2')
             string = string.replace('“', '')
+            string = string.replace('°', '')
             string = string.strip()
             if string:
                 realList.append(string)
@@ -347,7 +348,7 @@ def getDeathData():
     img = cv2.imread(fileName)
 
     try:
-        crop_img = img[100:200, 100:-100]
+        crop_img = img[100:201, 100:-100]
         cv2.imwrite(os.path.join(file_names.screenshotDir,
                                  'Deaths_total.png'), crop_img)
         text = pytesseract.image_to_string(crop_img)
