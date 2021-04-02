@@ -4103,7 +4103,7 @@
 "Tested": 24494,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 5,
+"Hospitalized": 4,
 "PercentRecovered": 11.62,
 "PercentActive": 2.44,
 "PercentDeaths": 0.24,
@@ -4111,7 +4111,7 @@
 "PercentTested": 142.8,
 "PercentVaccineSeriesInitiated": 0,
 "PercentVaccineSeriesCompleted": 0,
-"PercentHospitalized": 0.03
+"PercentHospitalized": 0.02
 },
 "geometry": {
 "type": "MultiPolygon",
@@ -4584,7 +4584,7 @@
 "Tested": 15656,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 2,
+"Hospitalized": 3,
 "PercentRecovered": 11.97,
 "PercentActive": 1.71,
 "PercentDeaths": 0.43,
@@ -4592,7 +4592,7 @@
 "PercentTested": 169.2,
 "PercentVaccineSeriesInitiated": 0,
 "PercentVaccineSeriesCompleted": 0,
-"PercentHospitalized": 0.02
+"PercentHospitalized": 0.03
 },
 "geometry": {
 "type": "MultiPolygon",
@@ -8765,7 +8765,7 @@
 "Tested": 16391,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 0,
+"Hospitalized": 1,
 "PercentRecovered": 12.11,
 "PercentActive": 1.24,
 "PercentDeaths": 0.29,
@@ -8773,7 +8773,7 @@
 "PercentTested": 155.84,
 "PercentVaccineSeriesInitiated": 0,
 "PercentVaccineSeriesCompleted": 0,
-"PercentHospitalized": 0.0
+"PercentHospitalized": 0.01
 },
 "geometry": {
 "type": "MultiPolygon",
@@ -10236,7 +10236,7 @@
 "Tested": 41256,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 4,
+"Hospitalized": 3,
 "PercentRecovered": 13.54,
 "PercentActive": 0.97,
 "PercentDeaths": 0.2,
@@ -15354,7 +15354,7 @@
 "Tested": 27736,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 1,
+"Hospitalized": 0,
 "PercentRecovered": 11.26,
 "PercentActive": 1.8,
 "PercentDeaths": 0.15,
@@ -15362,7 +15362,7 @@
 "PercentTested": 171.91,
 "PercentVaccineSeriesInitiated": 0,
 "PercentVaccineSeriesCompleted": 0,
-"PercentHospitalized": 0.01
+"PercentHospitalized": 0.0
 },
 "geometry": {
 "type": "MultiPolygon",
@@ -16444,7 +16444,7 @@
 "Tested": 19810,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 0,
+"Hospitalized": 1,
 "PercentRecovered": 12.58,
 "PercentActive": 1.15,
 "PercentDeaths": 0.31,
@@ -16452,7 +16452,7 @@
 "PercentTested": 184.93,
 "PercentVaccineSeriesInitiated": 0,
 "PercentVaccineSeriesCompleted": 0,
-"PercentHospitalized": 0.0
+"PercentHospitalized": 0.01
 },
 "geometry": {
 "type": "MultiPolygon",
@@ -18067,7 +18067,7 @@
 "Tested": 23905,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 0,
+"Hospitalized": 1,
 "PercentRecovered": 9.12,
 "PercentActive": 1.33,
 "PercentDeaths": 0.26,
@@ -18075,7 +18075,7 @@
 "PercentTested": 151.67,
 "PercentVaccineSeriesInitiated": 0,
 "PercentVaccineSeriesCompleted": 0,
-"PercentHospitalized": 0.0
+"PercentHospitalized": 0.01
 },
 "geometry": {
 "type": "MultiPolygon",
@@ -29598,7 +29598,7 @@
 "Tested": 14658,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 1,
+"Hospitalized": 2,
 "PercentRecovered": 11.64,
 "PercentActive": 0.9,
 "PercentDeaths": 0.27,
@@ -29606,7 +29606,7 @@
 "PercentTested": 153.54,
 "PercentVaccineSeriesInitiated": 0,
 "PercentVaccineSeriesCompleted": 0,
-"PercentHospitalized": 0.01
+"PercentHospitalized": 0.02
 },
 "geometry": {
 "type": "MultiPolygon",
@@ -30632,7 +30632,7 @@
 "Tested": 36597,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 0,
+"Hospitalized": 1,
 "PercentRecovered": 10.57,
 "PercentActive": 0.8,
 "PercentDeaths": 0.23,
@@ -32211,7 +32211,7 @@
 "Tested": 176113,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 2,
+"Hospitalized": 3,
 "PercentRecovered": 12.63,
 "PercentActive": 1.57,
 "PercentDeaths": 0.21,
@@ -36045,7 +36045,7 @@
 "Tested": 65347,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 2,
+"Hospitalized": 3,
 "PercentRecovered": 13.41,
 "PercentActive": 1.01,
 "PercentDeaths": 0.25,
@@ -37291,7 +37291,7 @@
 "Tested": 200962,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 3,
+"Hospitalized": 4,
 "PercentRecovered": 11.07,
 "PercentActive": 1.31,
 "PercentDeaths": 0.23,
@@ -37820,7 +37820,7 @@
 "Tested": 135944,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 8,
+"Hospitalized": 9,
 "PercentRecovered": 13.28,
 "PercentActive": 1.92,
 "PercentDeaths": 0.21,
@@ -41702,7 +41702,7 @@
 "Tested": 18580,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 1,
+"Hospitalized": 0,
 "PercentRecovered": 12.05,
 "PercentActive": 1.26,
 "PercentDeaths": 0.2,
@@ -41710,7 +41710,7 @@
 "PercentTested": 191.17,
 "PercentVaccineSeriesInitiated": 0,
 "PercentVaccineSeriesCompleted": 0,
-"PercentHospitalized": 0.01
+"PercentHospitalized": 0.0
 },
 "geometry": {
 "type": "MultiPolygon",
@@ -44547,7 +44547,7 @@
 "Tested": 24064,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 2,
+"Hospitalized": 3,
 "PercentRecovered": 10.6,
 "PercentActive": 0.9,
 "PercentDeaths": 0.22,
@@ -44555,7 +44555,7 @@
 "PercentTested": 123.84,
 "PercentVaccineSeriesInitiated": 0,
 "PercentVaccineSeriesCompleted": 0,
-"PercentHospitalized": 0.01
+"PercentHospitalized": 0.02
 },
 "geometry": {
 "type": "MultiPolygon",
@@ -49178,7 +49178,7 @@
 "Tested": 34956,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 2,
+"Hospitalized": 3,
 "PercentRecovered": 9.18,
 "PercentActive": 0.88,
 "PercentDeaths": 0.21,
@@ -50464,7 +50464,7 @@
 "Tested": 17107,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 2,
+"Hospitalized": 1,
 "PercentRecovered": 8.53,
 "PercentActive": 0.88,
 "PercentDeaths": 0.35,
@@ -50472,7 +50472,7 @@
 "PercentTested": 197.11,
 "PercentVaccineSeriesInitiated": 0,
 "PercentVaccineSeriesCompleted": 0,
-"PercentHospitalized": 0.02
+"PercentHospitalized": 0.01
 },
 "geometry": {
 "type": "MultiPolygon",
@@ -54462,7 +54462,7 @@
 "Tested": 34081,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 2,
+"Hospitalized": 1,
 "PercentRecovered": 13.0,
 "PercentActive": 1.35,
 "PercentDeaths": 0.24,
@@ -54470,7 +54470,7 @@
 "PercentTested": 169.1,
 "PercentVaccineSeriesInitiated": 0,
 "PercentVaccineSeriesCompleted": 0,
-"PercentHospitalized": 0.01
+"PercentHospitalized": 0.0
 },
 "geometry": {
 "type": "MultiPolygon",
@@ -56065,7 +56065,7 @@
 "Tested": 152479,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 4,
+"Hospitalized": 2,
 "PercentRecovered": 9.74,
 "PercentActive": 1.19,
 "PercentDeaths": 0.05,
@@ -57199,7 +57199,7 @@
 "Tested": 58152,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 4,
+"Hospitalized": 3,
 "PercentRecovered": 10.62,
 "PercentActive": 1.38,
 "PercentDeaths": 0.19,
@@ -68652,7 +68652,7 @@
 "Tested": 28659,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 0,
+"Hospitalized": 1,
 "PercentRecovered": 9.13,
 "PercentActive": 0.79,
 "PercentDeaths": 0.12,
@@ -68660,7 +68660,7 @@
 "PercentTested": 153.86,
 "PercentVaccineSeriesInitiated": 0,
 "PercentVaccineSeriesCompleted": 0,
-"PercentHospitalized": 0.0
+"PercentHospitalized": 0.01
 },
 "geometry": {
 "type": "MultiPolygon",
@@ -74044,7 +74044,7 @@
 "Tested": 17098,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 2,
+"Hospitalized": 1,
 "PercentRecovered": 10.03,
 "PercentActive": 1.28,
 "PercentDeaths": 0.26,
@@ -74052,7 +74052,7 @@
 "PercentTested": 159.5,
 "PercentVaccineSeriesInitiated": 0,
 "PercentVaccineSeriesCompleted": 0,
-"PercentHospitalized": 0.02
+"PercentHospitalized": 0.01
 },
 "geometry": {
 "type": "MultiPolygon",
@@ -74653,7 +74653,7 @@
 "Tested": 195671,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 4,
+"Hospitalized": 5,
 "PercentRecovered": 8.63,
 "PercentActive": 0.82,
 "PercentDeaths": 0.05,
@@ -77670,7 +77670,7 @@
 "Tested": 119804,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 1,
+"Hospitalized": 2,
 "PercentRecovered": 11.22,
 "PercentActive": 1.95,
 "PercentDeaths": 0.11,
@@ -78864,7 +78864,7 @@
 "Tested": 641330,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 40,
+"Hospitalized": 42,
 "PercentRecovered": 10.55,
 "PercentActive": 1.95,
 "PercentDeaths": 0.12,
@@ -82394,7 +82394,7 @@
 "Tested": 48362,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 3,
+"Hospitalized": 2,
 "PercentRecovered": 10.29,
 "PercentActive": 1.27,
 "PercentDeaths": 0.19,
@@ -83067,7 +83067,7 @@
 "Tested": 193868,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 20,
+"Hospitalized": 17,
 "PercentRecovered": 9.81,
 "PercentActive": 1.26,
 "PercentDeaths": 0.13,
@@ -95176,7 +95176,7 @@
 "Tested": 50914,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 2,
+"Hospitalized": 3,
 "PercentRecovered": 9.7,
 "PercentActive": 1.16,
 "PercentDeaths": 0.22,
@@ -95184,7 +95184,7 @@
 "PercentTested": 118.6,
 "PercentVaccineSeriesInitiated": 0,
 "PercentVaccineSeriesCompleted": 0,
-"PercentHospitalized": 0.0
+"PercentHospitalized": 0.01
 },
 "geometry": {
 "type": "MultiPolygon",
@@ -105445,7 +105445,7 @@
 "Tested": 70799,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 4,
+"Hospitalized": 6,
 "PercentRecovered": 9.91,
 "PercentActive": 1.41,
 "PercentDeaths": 0.16,
@@ -109552,7 +109552,7 @@
 "Tested": 39293,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 1,
+"Hospitalized": 0,
 "PercentRecovered": 10.03,
 "PercentActive": 0.86,
 "PercentDeaths": 0.22,
@@ -114675,7 +114675,7 @@
 "Tested": 13426,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 1,
+"Hospitalized": 2,
 "PercentRecovered": 9.32,
 "PercentActive": 0.91,
 "PercentDeaths": 0.37,
@@ -114683,7 +114683,7 @@
 "PercentTested": 134.22,
 "PercentVaccineSeriesInitiated": 0,
 "PercentVaccineSeriesCompleted": 0,
-"PercentHospitalized": 0.01
+"PercentHospitalized": 0.02
 },
 "geometry": {
 "type": "MultiPolygon",
@@ -117368,7 +117368,7 @@
 "Tested": 44116,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 6,
+"Hospitalized": 4,
 "PercentRecovered": 11.17,
 "PercentActive": 1.49,
 "PercentDeaths": 0.34,
@@ -117376,7 +117376,7 @@
 "PercentTested": 125.31,
 "PercentVaccineSeriesInitiated": 0,
 "PercentVaccineSeriesCompleted": 0,
-"PercentHospitalized": 0.02
+"PercentHospitalized": 0.01
 },
 "geometry": {
 "type": "MultiPolygon",
@@ -119372,7 +119372,7 @@
 "Tested": 52693,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 1,
+"Hospitalized": 2,
 "PercentRecovered": 10.8,
 "PercentActive": 1.01,
 "PercentDeaths": 0.16,
@@ -119380,7 +119380,7 @@
 "PercentTested": 134.63,
 "PercentVaccineSeriesInitiated": 0,
 "PercentVaccineSeriesCompleted": 0,
-"PercentHospitalized": 0.0
+"PercentHospitalized": 0.01
 },
 "geometry": {
 "type": "MultiPolygon",
@@ -130005,7 +130005,7 @@
 "Tested": 7917,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 1,
+"Hospitalized": 0,
 "PercentRecovered": 7.44,
 "PercentActive": 0.38,
 "PercentDeaths": 0.26,
@@ -130013,7 +130013,7 @@
 "PercentTested": 112.78,
 "PercentVaccineSeriesInitiated": 0,
 "PercentVaccineSeriesCompleted": 0,
-"PercentHospitalized": 0.01
+"PercentHospitalized": 0.0
 },
 "geometry": {
 "type": "MultiPolygon",
@@ -131227,7 +131227,7 @@
 "Tested": 9937,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 0,
+"Hospitalized": 2,
 "PercentRecovered": 7.19,
 "PercentActive": 0.28,
 "PercentDeaths": 0.11,
@@ -131235,7 +131235,7 @@
 "PercentTested": 125.94,
 "PercentVaccineSeriesInitiated": 0,
 "PercentVaccineSeriesCompleted": 0,
-"PercentHospitalized": 0.0
+"PercentHospitalized": 0.03
 },
 "geometry": {
 "type": "MultiPolygon",
@@ -131756,7 +131756,7 @@
 "Tested": 6238,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 1,
+"Hospitalized": 0,
 "PercentRecovered": 6.98,
 "PercentActive": 1.3,
 "PercentDeaths": 0.36,
@@ -131764,7 +131764,7 @@
 "PercentTested": 97.45,
 "PercentVaccineSeriesInitiated": 0,
 "PercentVaccineSeriesCompleted": 0,
-"PercentHospitalized": 0.02
+"PercentHospitalized": 0.0
 },
 "geometry": {
 "type": "MultiPolygon",
@@ -132870,7 +132870,7 @@
 "Tested": 50807,
 "VaccineSeriesInitiated": 0,
 "VaccineSeriesCompleted": 0,
-"Hospitalized": 0,
+"Hospitalized": 2,
 "PercentRecovered": 10.5,
 "PercentActive": 0.71,
 "PercentDeaths": 0.16,
@@ -132878,7 +132878,7 @@
 "PercentTested": 149.19,
 "PercentVaccineSeriesInitiated": 0,
 "PercentVaccineSeriesCompleted": 0,
-"PercentHospitalized": 0.0
+"PercentHospitalized": 0.01
 },
 "geometry": {
 "type": "MultiPolygon",
