@@ -5,6 +5,7 @@ import csv
 import json
 import os
 import glob
+import sys
 
 from utilities import file_names
 from utilities import commit_checker
@@ -12,10 +13,8 @@ import readPDFs
 import readImages
 
 
-def createGeoJson(localCsvFile, hospitalData, vaccineCSV=None, removePending=False, vaccineData=None):
+def summaryDataForGeoJson(localCsvFile):
     countyData = {}
-    data = {}
-    date = (localCsvFile.split('.csv')[0].split()[0].split('Summary')[1])
     with open(localCsvFile) as csvFile:
         csvReader = csv.DictReader(csvFile)
         for row in csvReader:
@@ -41,7 +40,10 @@ def createGeoJson(localCsvFile, hospitalData, vaccineCSV=None, removePending=Fal
             countyData[row[countyHeader]]['Active'] = int(row[positives]) - (int(row['Total Recovered']) + int(row['Total Deaths']))
           except:
             countyData[row[countyHeader]]['Active'] = row[positives]
+    return countyData
 
+def vaccineDataForGeoJson(vaccineCSV=None, vaccineData=None):
+    countyData = {}
     if vaccineCSV:
       with open(vaccineCSV) as csvFiles:
         csvReader = csv.DictReader(csvFiles)
@@ -51,19 +53,44 @@ def createGeoJson(localCsvFile, hospitalData, vaccineCSV=None, removePending=Fal
             countyName = row[countyHeader]
             if countyName == '.':
               countyName = 'Pending Investigation'
-            countyData[countyName]['Vaccine Series Initiated'] = row['Series Initiated']
-            countyData[countyName]['Vaccine Series Completed'] = row['Series Completed']
+
+            if 'Two-Dose Series Initiated' in row:
+              countyData[countyName] = {
+                'Vaccine Series Initiated' : row['Two-Dose Series Initiated'],
+                'Vaccine Series Completed' : int(row['Two-Dose Series Completed']) + int(row['Single-Dose Series Completed'])
+              }
+            else:
+              countyData[countyName] = {
+                'Vaccine Series Initiated' : row['Series Initiated'],
+                'Vaccine Series Completed' : row['Series Completed']
+              }
           except:
             print('csv issue')
             print(row)
     elif vaccineData:
-      for countyName in countyData:
+      print('vaccine data')
+      for countyName in vaccineData:
         try:
-          countyData[countyName]['Vaccine Series Completed'] = vaccineData[countyName]
+          countyData[countyName] = {
+            'Vaccine Series Completed' : vaccineData[countyName]
+          }
         except:
-          countyData[countyName]['Vaccine Series Completed'] = 0
+          countyData[countyName] = {
+            'Vaccine Series Completed' : 0
+          }
           print(countyName)
+    return countyData
 
+def createGeoJson(localCsvFile, hospitalData, vaccineCSV=None, removePending=False, vaccineData=None):
+    countyData = {}
+    data = {}
+    date = (localCsvFile.split('.csv')[0].split()[0].split('Summary')[1])
+
+    countyData = (summaryDataForGeoJson(localCsvFile))
+    vaccineCountyData = vaccineDataForGeoJson(vaccineCSV=vaccineCSV, vaccineData=vaccineData)
+    for county in countyData:
+      if county in vaccineCountyData:
+        countyData[county].update(vaccineCountyData[county])
 
     with open(file_names.originalGeoJson, 'r') as read_file:
         data = json.load(read_file)
@@ -80,11 +107,16 @@ def createGeoJson(localCsvFile, hospitalData, vaccineCSV=None, removePending=Fal
             name = 'O\'Brien'
         try:
             props = countyData[name]
-            county['properties']['Recovered'] = int(props['Recovered'])
-            county['properties']['Active'] = int(props['Active'])
-            county['properties']['Deaths'] = int(props['Deaths'])
-            county['properties']['Confirmed'] = int(props['Positive'])
-            county['properties']['Tested'] = int(props['Tested'])
+            try:
+              county['properties']['Recovered'] = int(props['Recovered'])
+              county['properties']['Active'] = int(props['Active'])
+              county['properties']['Deaths'] = int(props['Deaths'])
+              county['properties']['Confirmed'] = int(props['Positive'])
+              county['properties']['Tested'] = int(props['Tested'])
+            except:
+              print('something fishy')
+              print(countyData)
+              sys.exit(1)
             try:
               county['properties']['VaccineSeriesInitiated'] = int(props['Vaccine Series Initiated'])
             except:

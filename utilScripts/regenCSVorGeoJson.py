@@ -157,6 +157,6 @@ def readableDataFromGeoJson():
       strip_data.write_json(geoFile, data)
 
 
-# genGeoJson()
+genGeoJson()
 cleanGeoJson()
 # readableDataFromGeoJson()
