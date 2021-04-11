@@ -82,14 +82,16 @@ def prepRedditPost(sh):
       
       f.write('## {}\n\n'.format(header))
       f.write(df.to_markdown())
-     
+
+  wks = sh[0]
+  totalVaccinated = wks.get_value('AS2')
   wks = sh[1]
   newCases = wks.get_value('D2')
   newDeaths = wks.get_value('I2')
 
   wks = sh[9]
   currentHospitalized = wks.get_value('B2')
-  redditPostTitle = "{} as of 11:00am: {} New Cases, {} New Deaths, {} Currently Hospitalized.".format(time.strftime('%a. %m/%d'), newCases, newDeaths, currentHospitalized)
+  redditPostTitle = "{} as of 11:00am: {} New Cases, {} New Deaths, {} Currently Hospitalized, {} Fully Vaccinated.".format(time.strftime('%a. %m/%d'), newCases, newDeaths, currentHospitalized, totalVaccinated)
   print(redditPostTitle)
   with open(file_names.redditTitle, 'w') as f:
     f.write(redditPostTitle)
@@ -138,10 +140,9 @@ if __name__ == "__main__":
   gc = pygsheets.authorize(service_file=filePath)
   sh = gc.open('Covid19')
 
-
   data = readData()
   postData(sh, data)
 
-  # prepRedditPost(sh)
+  prepRedditPost(sh)
 
   # prepWeeklyRedditPost(sh)
