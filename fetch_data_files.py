@@ -8,8 +8,8 @@ from utilities import file_names
 from utilities import urls
 from utilities import commit_checker
 
-SLEEP_DURATION = 20
-SHORT_SLEEP_DURATION = 10
+SLEEP_DURATION = 10
+SHORT_SLEEP_DURATION = 5
 
 buttonContainer = 'cd-control-menu_container_2gtJe'
 buttonCss = "button[class='db-button small button cd-control-menu_option_wH8G6 cd-control-menu_expand_VcWkC cd-control-menu_button_2VfJA cd-control-menu_db-button_2UMcr ng-scope']"
@@ -54,28 +54,28 @@ def getVaccineData():
       os.path.join(file_names.storageDir, "VaccineIowanDoses{}.csv"),
       os.path.join(file_names.storageDir, "VaccineIndividuals1stDose{}.csv"),
       os.path.join(file_names.storageDir, "VaccineIndividuals2ndComplete{}.csv"),
-      None,
-      None,
+      os.path.join(file_names.storageDir, "cvs5{}.csv"),
+      os.path.join(file_names.storageDir, "cvs6{}.csv"),
       os.path.join(file_names.storageDir, "VaccineIndividualsComplete{}.csv"),
       os.path.join(file_names.storageDir, "VaccineIndividualsSingleComplete{}.csv"),
-      None,
-      None,
-      None,
+      os.path.join(file_names.storageDir, "cvs9{}.csv"),
+      os.path.join(file_names.storageDir, "cvs10{}.csv"),
       os.path.join(file_names.storageDir, "VaccineManufacturer{}.csv"),
-      None,
-      None,
-      None,
-      None,
-      None,
-      None,
-      None,
-      None,
-      None,
-      None,
-      None,
+      os.path.join(file_names.storageDir, "VaccineDosesAdministeredToCountyResident{}.csv"),
+      os.path.join(file_names.storageDir, "VaccineDosesAdministeredByCountyProvider{}.csv"),
+      os.path.join(file_names.storageDir, "VaccineSeriesCompletedByCountyResident{}.csv"),
+      os.path.join(file_names.storageDir, "VaccineSeriesCompletedByCountyProvider{}.csv"),
+      os.path.join(file_names.storageDir, "VaccineDosesDistinctPersons{}.csv"),
+      os.path.join(file_names.storageDir, "VaccinePercentageClarification{}.csv"),
+      os.path.join(file_names.storageDir, "VaccineDosesByRace{}.csv"),
+      os.path.join(file_names.storageDir, "VaccineDosesByAgeGroup{}.csv"),
+      os.path.join(file_names.storageDir, "VaccineDosesByEthnicity{}.csv"),
+      os.path.join(file_names.storageDir, "VaccineDosesByGender{}.csv"),
       os.path.join(file_names.storageDir, "VaccineDosesByDay{}.csv"),
-      None,
+      os.path.join(file_names.storageDir, "cvs23{}.csv"),
       os.path.join(file_names.storageDir, "VaccineDosesByCounty{}.csv"),
+      os.path.join(file_names.storageDir, "cvs25{}.csv"),
+      os.path.join(file_names.storageDir, "VaccineFooter{}.csv"),
     ]
     timeString = time.strftime("%Y-%m-%d %H%M") 
     for i in range(26):
@@ -101,6 +101,7 @@ def downloadFile(browser, index, localPath):
       time.sleep(SHORT_SLEEP_DURATION) 
       saveDownloadFile(browser, file_names.storageDir, localPath)
     except:
+      print('##################################')
       print('issue downloading', localPath)
 
 

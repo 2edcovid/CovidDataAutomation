@@ -232,48 +232,60 @@ def readVaccineCSVData():
 
   vaccineData = {}
 
-  list_of_files = glob.glob(fileNames[0].format("*"))
-  list_of_files.sort()
-  localCsvFile = list_of_files[-1]
-  with open(localCsvFile) as csvFile:
-    csvReader = csv.DictReader(csvFile)
-    for row in csvReader:
-      for key in row:
-        vaccineData['Total Vaccine Doses Given'] = row[key]
+  try:
+    list_of_files = glob.glob(fileNames[0].format("*"))
+    list_of_files.sort()
+    localCsvFile = list_of_files[-1]
+    with open(localCsvFile) as csvFile:
+      csvReader = csv.DictReader(csvFile)
+      for row in csvReader:
+        for key in row:
+          vaccineData['Total Vaccine Doses Given'] = row[key]
+  except:
+    print('Issue reading vaccine doses')
 
-  list_of_files = glob.glob(fileNames[1].format("*"))
-  list_of_files.sort()
-  localCsvFile = list_of_files[-1]
-  with open(localCsvFile) as csvFile:
-    csvReader = csv.DictReader(csvFile)
-    for row in csvReader:
-      for key in row:
-        vaccineData['Vaccine Series Started'] = row[key]
+  try:
+    list_of_files = glob.glob(fileNames[1].format("*"))
+    list_of_files.sort()
+    localCsvFile = list_of_files[-1]
+    with open(localCsvFile) as csvFile:
+      csvReader = csv.DictReader(csvFile)
+      for row in csvReader:
+        for key in row:
+          vaccineData['Vaccine Series Started'] = row[key]
+  except:
+    print('issue reading vaccine series started')
 
-  list_of_files = glob.glob(fileNames[2].format("*"))
-  list_of_files.sort()
-  localCsvFile = list_of_files[-1]
-  with open(localCsvFile) as csvFile:
-    csvReader = csv.DictReader(csvFile)
-    for row in csvReader:
-      for key in row:
-        vaccineData['Vaccine Series Completed'] = row[key]
+  try:
+    list_of_files = glob.glob(fileNames[2].format("*"))
+    list_of_files.sort()
+    localCsvFile = list_of_files[-1]
+    with open(localCsvFile) as csvFile:
+      csvReader = csv.DictReader(csvFile)
+      for row in csvReader:
+        for key in row:
+          vaccineData['Vaccine Series Completed'] = row[key]
+  except:
+    print('issue reading vaccine series completed')
 
-  list_of_files = glob.glob(fileNames[3].format("*"))
-  list_of_files.sort()
-  localCsvFile = list_of_files[-1]
-  with open(localCsvFile) as csvFile:
-    csvReader = csv.DictReader(csvFile)
-    for row in csvReader:
-      manufacturer = row['Vaccine Manufacturer']
-      if manufacturer == 'Moderna':
-        vaccineData['Moderna Doses Given'] = row['Doses']
-      elif manufacturer == 'Pfizer':
-        vaccineData['Pfizer Doses Given'] = row['Doses']
-      elif manufacturer == 'Janssen':
-        vaccineData['Janssen Doses Given'] = row['Doses']
-      else:
-        vaccineData['Unknown Manufacturer Doses Given'] = row['Doses']
+  try:
+    list_of_files = glob.glob(fileNames[3].format("*"))
+    list_of_files.sort()
+    localCsvFile = list_of_files[-1]
+    with open(localCsvFile) as csvFile:
+      csvReader = csv.DictReader(csvFile)
+      for row in csvReader:
+        manufacturer = row['Vaccine Manufacturer']
+        if manufacturer == 'Moderna':
+          vaccineData['Moderna Doses Given'] = row['Doses']
+        elif manufacturer == 'Pfizer':
+          vaccineData['Pfizer Doses Given'] = row['Doses']
+        elif manufacturer == 'Janssen':
+          vaccineData['Janssen Doses Given'] = row['Doses']
+        else:
+          vaccineData['Unknown Manufacturer Doses Given'] = row['Doses']
+    except:
+      print('issue reading manufacturer')
 
   return vaccineData
 
