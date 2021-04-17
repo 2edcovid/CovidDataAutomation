@@ -59,7 +59,7 @@ def prepRedditPost(sh):
   sheetData = {
     'New Data' : 'M31',
     'Percentages' : 'J31',
-    '7 Day Rolling' : 'M31',
+    '7 Day Rolling' : 'M27',
     'Rates' : 'H31',
     'Month Summaries' : 'L41',
     'Totals' : 'H31',

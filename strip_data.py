@@ -284,8 +284,8 @@ def readVaccineCSVData():
           vaccineData['Janssen Doses Given'] = row['Doses']
         else:
           vaccineData['Unknown Manufacturer Doses Given'] = row['Doses']
-    except:
-      print('issue reading manufacturer')
+  except:
+    print('issue reading manufacturer')
 
   return vaccineData
 
