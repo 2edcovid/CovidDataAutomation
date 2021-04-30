@@ -54,7 +54,8 @@ def postData(sh, data):
         break
         
     if insertNewRow:
-      wks.insert_rows(1, number=1, inherit=False)  
+      wks.insert_rows(1, number=1, inherit=False)
+      origVals = wks.get_values('B2', 'AY2')[0]
 
     for i in range(len(fields)):
       if not origVals[i]:
