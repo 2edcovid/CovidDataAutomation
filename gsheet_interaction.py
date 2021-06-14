@@ -163,6 +163,6 @@ if __name__ == "__main__":
   data = readData()
   postData(sh, data)
 
-  prepRedditPost(sh)
+  # prepRedditPost(sh)
 
   # prepWeeklyRedditPost(sh)
