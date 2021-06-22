@@ -143,17 +143,29 @@ def getSerologyData():
     try:
         fileName = file_names.serologyScreenshot
         img = cv2.imread(fileName)
-        crop_img = img[100:-20, 200:-600]
+        crop_img = img[100:-30, 200:-600]
         cv2.imwrite(os.path.join(file_names.screenshotDir,
                                  'Serology_totals.png'), crop_img)
-        text = pytesseract.image_to_string(crop_img)
-        textList = sanitizeText(text)
-        vals = convertVals(textList[1].split())
+        tested_img = crop_img[50:-1, 0:400]
+        cv2.imwrite(os.path.join(file_names.screenshotDir,
+                                 'Serology_tested.png'), tested_img)
+        negative_img = crop_img[50:-1, 350:780]
+        cv2.imwrite(os.path.join(file_names.screenshotDir,
+                                 'Serology_negative.png'), negative_img)
+        positive_img = crop_img[50:-1, 750:-1]
+        cv2.imwrite(os.path.join(file_names.screenshotDir,
+                                 'Serology_positive.png'), positive_img)
+        text = pytesseract.image_to_string(tested_img)
+        tested = convertVals(sanitizeText(text))[0]
+        text = pytesseract.image_to_string(negative_img)
+        negative = convertVals(sanitizeText(text))[0]
+        text = pytesseract.image_to_string(positive_img)
+        positive = convertVals(sanitizeText(text))[0]
 
         data.update({
-            'Individual Serologic Tests': vals[0],
-            'Individual Serologic Negatives': vals[1],
-            'Individual Serologic Positives': vals[2],
+            'Individual Serologic Tests': tested,
+            'Individual Serologic Negatives': negative,
+            'Individual Serologic Positives': positive,
         })
     except Exception as e:
         print('issue reading serology data {}'.format(e))
