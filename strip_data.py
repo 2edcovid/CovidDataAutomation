@@ -65,8 +65,7 @@ def vaccineDataForGeoJson(vaccineCSV=None, vaccineData=None):
                 'Vaccine Series Completed' : row['Series Completed']
               }
           except:
-            print('csv issue')
-            print(row)
+            print('csv issue in {}: {}'.format(vaccineCSV, row))
     elif vaccineData:
       print('vaccine data')
       for countyName in vaccineData:

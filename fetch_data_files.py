@@ -22,7 +22,7 @@ def getPDF(browser, link_text, name_fmt):
     # print(html)
     htmlList = html.split('"')
     linkURL = htmlList[1]
-    print(linkURL)
+    # print(linkURL)
 
     if 'drive.google' in linkURL:
       linkURL = linkURL.replace('https://drive.google.com/file/d/', '')
@@ -60,25 +60,33 @@ def getVaccineData():
       os.path.join(file_names.storageDir, "VaccineIndividualsSingleComplete{}.csv"),
       os.path.join(file_names.storageDir, "cvs9{}.csv"),
       os.path.join(file_names.storageDir, "cvs10{}.csv"),
-      os.path.join(file_names.storageDir, "VaccineManufacturer{}.csv"),
+      os.path.join(file_names.storageDir, "VaccineTotalPercentVaccinated{}.csv"),
+      os.path.join(file_names.storageDir, "VaccineManufacturer{}.csv"), 
+      os.path.join(file_names.storageDir, "cvs13{}.csv"),
       os.path.join(file_names.storageDir, "VaccineDosesToCountyResident{}.csv"),
       os.path.join(file_names.storageDir, "VaccineDosesDoneByCountyProvider{}.csv"),
       os.path.join(file_names.storageDir, "VaccineSeriesCompletedByCountyResident{}.csv"),
-      os.path.join(file_names.storageDir, "VaccineSeriesCompletedByCountyProvider{}.csv"),
-      os.path.join(file_names.storageDir, "VaccineDosesDistinctPersons{}.csv"),
-      os.path.join(file_names.storageDir, "VaccinePercentageClarification{}.csv"),
+      os.path.join(file_names.storageDir, "VaccineSeriesCompletedByCountyProvider{}.csv"), 
+      os.path.join(file_names.storageDir, "VaccinePercentOfCountyFullyVaccinated{}.csv"),
+      os.path.join(file_names.storageDir, "VaccineDosesDistinctPersons{}.csv"), 
+      os.path.join(file_names.storageDir, "VaccinePercentageClarification{}.csv"), 
       os.path.join(file_names.storageDir, "VaccineDosesByRace{}.csv"),
-      os.path.join(file_names.storageDir, "VaccineDosesByAgeGroup{}.csv"),
+      os.path.join(file_names.storageDir, "VaccineDosesByAgeGroup{}.csv"), 
       os.path.join(file_names.storageDir, "VaccineDosesByEthnicity{}.csv"),
       os.path.join(file_names.storageDir, "VaccineDosesByGender{}.csv"),
+      os.path.join(file_names.storageDir, "VaccinePercentClarification{}.csv"),
+      os.path.join(file_names.storageDir, "VaccinePercentageByRace{}.csv"),
+      os.path.join(file_names.storageDir, "VaccinePercentageByAgeGroup{}.csv"),
+      os.path.join(file_names.storageDir, "VaccinePercentageByEthnicity{}.csv"),
+      os.path.join(file_names.storageDir, "VaccinePercentageByGender{}.csv"),
       os.path.join(file_names.storageDir, "VaccineDosesByDay{}.csv"),
-      os.path.join(file_names.storageDir, "cvs23{}.csv"),
+      os.path.join(file_names.storageDir, "cvs31{}.csv"),
       os.path.join(file_names.storageDir, "VaccineDosesByCounty{}.csv"),
-      os.path.join(file_names.storageDir, "cvs25{}.csv"),
-      os.path.join(file_names.storageDir, "VaccineFooter{}.csv"),
+      os.path.join(file_names.storageDir, "cvs33{}.csv"),
+      os.path.join(file_names.storageDir, "VaccineFooter{}.csv")
     ]
     timeString = time.strftime("%Y-%m-%d %H%M") 
-    for i in range(26):
+    for i in range(34):
       if fileNames[i]:
         browser = getBrowser(urls.vaccinePage, height=1400, zoom=90, timeout=SHORT_SLEEP_DURATION)
         localPath = fileNames[i].format(timeString) 
@@ -101,13 +109,12 @@ def downloadFile(browser, index, localPath):
       time.sleep(SHORT_SLEEP_DURATION) 
       saveDownloadFile(browser, file_names.storageDir, localPath)
     except:
-      print('##################################')
       print('issue downloading', localPath)
 
 
 def getSummary():
     try:
-      print('loading Summary Page')
+      # print('loading Summary Page')
       browser = getBrowser(urls.summaryPage, height=2400, zoom=90, timeout=SLEEP_DURATION)
       saveScreenshot(browser, file_names.summaryScreenshot) 
       timeString = time.strftime("%Y-%m-%d %H%M") 
@@ -141,7 +148,7 @@ def getCSVs():
       browser = getBrowser(urls.summaryPage, timeout=SHORT_SLEEP_DURATION)
       buttons = browser.find_elements_by_css_selector('button[aria-label="Export data"]')
       browser.execute_script("$(arguments[0].click());", buttons[i])
-      time.sleep(10)
+      time.sleep(SLEEP_DURATION)
 
       localPath = filenameLists[i]
       saveDownloadFile(browser, file_names.storageDir, localPath)
