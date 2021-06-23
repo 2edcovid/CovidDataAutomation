@@ -50,12 +50,13 @@ def upload_images(album_title, paths):
 
 def postDebug():
   try:
-    print('Debug Screenshots')
+    print('')
     title = "{} Iowa COVID19 Debug Screenshots".format(time.strftime("%m/%d"))
     fileList = glob.glob(os.path.join(file_names.screenshotDir, "Screenshot_*"))
     album = upload_images(title, fileList)
     url = "https://imgur.com/a/{}".format(album['id'])
-    print(url)
+    print('Debug Screenshots ' + url)
+    print('')
   except Exception as e:
     print('something wrong with imgur {}'.format(e))
 

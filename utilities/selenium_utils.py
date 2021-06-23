@@ -20,8 +20,9 @@ def saveDownloadFile(browser, dir, localPath):
     with open(localPath, 'wb') as f:
       f.write(content)
 
-  if os.path.exists(localPath):
-    print("Downloaded {}".format(localPath))
+  if not os.path.exists(localPath):
+    print("Couldn't download {}".format(localPath))
+  else:
     retval = True
 
   return retval
@@ -31,8 +32,8 @@ def saveScreenshot(browser, fileName):
   if os.path.exists(fileName):
     os.remove(fileName)
   browser.save_screenshot(fileName)
-  if os.path.exists(fileName):
-    print('{} captured'.format(fileName))
+  if not os.path.exists(fileName):
+    print('issue capturing {}'.format(fileName))
 
 
 def getFileContents(browser, path):

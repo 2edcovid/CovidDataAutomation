@@ -22,7 +22,7 @@ def getPDF(browser, link_text, name_fmt):
     # print(html)
     htmlList = html.split('"')
     linkURL = htmlList[1]
-    print(linkURL)
+    # print(linkURL)
 
     if 'drive.google' in linkURL:
       linkURL = linkURL.replace('https://drive.google.com/file/d/', '')
@@ -45,7 +45,7 @@ def getPDF(browser, link_text, name_fmt):
 def getVaccineData():
     browser = getBrowser(urls.vaccinePage, height=6200, zoom=90, timeout=SLEEP_DURATION)
     elements = browser.find_elements_by_class_name(buttonContainer)
-    print(len(elements))
+    # print(len(elements))
     saveScreenshot(browser, file_names.vaccineScreenshot)
     closeBrowser(browser)
 
@@ -107,7 +107,7 @@ def downloadFile(browser, index, localPath):
 
 def getSummary():
     try:
-      print('loading Summary Page')
+      # print('loading Summary Page')
       browser = getBrowser(urls.summaryPage, height=2400, zoom=90, timeout=SLEEP_DURATION)
       saveScreenshot(browser, file_names.summaryScreenshot) 
       timeString = time.strftime("%Y-%m-%d %H%M") 
