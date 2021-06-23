@@ -76,7 +76,7 @@ def getDownloadedFileName(browser):
 
 
 def getBrowser(url, local=False, height=1062, width=1914, zoom=0, timeout=10):
-  print(url)
+  # print(url)
   browser = None
   try:
     if local:
@@ -103,7 +103,7 @@ def getBrowser(url, local=False, height=1062, width=1914, zoom=0, timeout=10):
     browser.get(url)
   except Exception as e:
     print('issue getting {} {}'.format(url, e))
-  time.sleep(20)
+  time.sleep(timeout*2)
 
   if zoom:
     browser.execute_script("document.body.style.zoom='{}%'".format(zoom))
