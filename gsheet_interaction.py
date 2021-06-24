@@ -42,32 +42,36 @@ def postData(sh, data):
   if (dateVal != current_date):
     print('no values for todays date yet')
     date_val = time.strftime("%m/%d/%Y")
-    values.append(date_val)
-
+    
     fields = wks.get_values('B1', 'AY1')[0]
-    origVals = wks.get_values('B2', 'AY2')[0]
+    # origVals = wks.get_values('B2', 'AY2')[0]
 
-    insertNewRow = True
-    for i in range(len(origVals)):
-      if not origVals[i]:
-        insertNewRow = False
-        break
-        
-    if insertNewRow:
-      wks.insert_rows(1, number=1, inherit=False)
-      origVals = wks.get_values('B2', 'AY2')[0]
+    # insertNewRow = True
+    # for i in range(len(origVals)):
+    #   if not origVals[i]:
+    #     insertNewRow = False
+    #     break
+    
+    # if not insertNewRow:
+    #   values.append(origVals[0])
+    # else:
+    print('inserting new row')
+    values.append(date_val)
+    wks.insert_rows(1, number=1, inherit=False)
+    # origVals = wks.get_values('B2', 'AY2')[0]
+
 
     for i in range(len(fields)):
-      if not origVals[i]:
-        print('inserting data in {}'.format(fields[i]))
-        if fields[i] in data:
-          values.append(data[fields[i]])
-        else:
-          values.append("")
-          print('missing {} from data'.format(fields[i]))
+      # if not origVals[i]:
+      print('inserting data in {}'.format(fields[i]))
+      if fields[i] in data:
+        values.append(data[fields[i]])
       else:
-        print('field {} already filled'.format(fields[i]))
-        values.append(origVals[i])
+        values.append("")
+        print('missing {} from data'.format(fields[i]))
+      # else:
+      #   print('field {} already filled'.format(fields[i]))
+      #   values.append(origVals[i])
 
     if (len(values)):
       wks.update_row(2, values)
