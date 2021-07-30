@@ -225,8 +225,10 @@ def getSerologyData():
 if __name__ == "__main__":
   if not os.path.exists(file_names.screenshotDir):
       os.makedirs(file_names.screenshotDir)
-
-  getOriginalMap()
+  try:
+    getOriginalMap()
+  except:
+    print('original map down')
 
   getHospitalData()
   getVaccineData()
