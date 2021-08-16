@@ -235,7 +235,7 @@ if __name__ == "__main__":
   getSummary()
   getCases()
   getDeaths()
-  getLTC()
+  # getLTC()
   getRMCCData()
-  getSerologyData()
+  # getSerologyData()
       

@@ -194,12 +194,12 @@ def write_json(file_path, data):
 def load_image_data():
   data = {}
 
-  data.update(readImages.getSerologyData())
+  # data.update(readImages.getSerologyData())
   data.update(readImages.getCaseData())
   data.update(readImages.getRMCCData())
 
   data.update(readImages.getDeathData())
-  data.update(readImages.getLTCData())
+  # data.update(readImages.getLTCData())
   return data
 
 
