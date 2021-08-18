@@ -122,41 +122,61 @@ def prepRedditPost(sh):
 
 
 def prepWeeklyRedditPost(sh):
-  # Calculated
-  wks = sh[1]
-  caseMatrix = wks.range('D2:D8', returnas='matrix')
-  newCases = 0
-  for i in range(len(caseMatrix)):
-    newCases = newCases + int(caseMatrix[i][0].replace(',', ''))
-
-  deathsMatrix = wks.range('I2:I8', returnas='matrix')
-  newDeaths = 0
-  for i in range(len(deathsMatrix)):
-    newDeaths = newDeaths + int(deathsMatrix[i][0].replace(',', ''))
-
-  vaccinesMatrix = wks.range('L2:L8', returnas='matrix')
-  vaccinesGiven = 0
-  for i in range(len(vaccinesMatrix)):
-    vaccinesGiven = vaccinesGiven + int(vaccinesMatrix[i][0].replace(',', ''))
-
-  # Hospitalization Totals
-  wks = sh[9]
-  avgHospitalized = wks.get_value('B2') #-D8
-
-  hospitalMatrix = wks.range('B2:B8', returnas='matrix')
-  avgHospitalized = 0
-  for i in range(len(hospitalMatrix)):
-    avgHospitalized = avgHospitalized + int(hospitalMatrix[i][0].replace(',', ''))
-
-  avgHospitalized = math.ceil(avgHospitalized/7)
-
-
   today = datetime.datetime.now().strftime('%m/%d')
-  lastDay = (datetime.datetime.now() - datetime.timedelta(days=6)).strftime('%m/%d')
-  redditPostTitle = "Covid Weekly Info {}-{}: {:,} New Cases, {:,} New Deaths, {:,} Vaccines Doses Given, {:,} Average Hospitalized per day".format(lastDay, today, newCases, newDeaths, vaccinesGiven, avgHospitalized)
-  print(redditPostTitle)
-  with open(file_names.redditTitle, 'w') as f:
-    f.write(redditPostTitle)
+
+  if datetime.datetime.now().weekday() == 3:
+    header = 'Month Summaries'
+    wks = sh[2]
+    df = wks.get_as_df(start='A1', end='L41', index_column=1)
+    commentFile = os.path.join(file_names.redditCommentDir, "{}.md".format(header))
+
+    with open(commentFile, 'w') as f:
+      print('')
+      print('## {}'.format(header))
+      print('')
+      print(df.to_markdown())
+      
+      f.write('## {}\n\n'.format(header))
+      f.write(df.to_markdown())
+
+
+    # Calculated
+    wks = sh[1]
+    caseMatrix = wks.range('D2:D8', returnas='matrix')
+    newCases = 0
+    for i in range(len(caseMatrix)):
+      newCases = newCases + int(caseMatrix[i][0].replace(',', ''))
+
+    deathsMatrix = wks.range('I2:I8', returnas='matrix')
+    newDeaths = 0
+    for i in range(len(deathsMatrix)):
+      newDeaths = newDeaths + int(deathsMatrix[i][0].replace(',', ''))
+
+    vaccinesMatrix = wks.range('L2:L8', returnas='matrix')
+    vaccinesGiven = 0
+    for i in range(len(vaccinesMatrix)):
+      vaccinesGiven = vaccinesGiven + int(vaccinesMatrix[i][0].replace(',', ''))
+
+    # Hospitalization Totals
+    wks = sh[9]
+    avgHospitalized = wks.get_value('B2') #-D8
+
+    hospitalMatrix = wks.range('B2:B8', returnas='matrix')
+    avgHospitalized = 0
+    for i in range(len(hospitalMatrix)):
+      avgHospitalized = avgHospitalized + int(hospitalMatrix[i][0].replace(',', ''))
+
+    avgHospitalized = math.ceil(avgHospitalized/7)
+
+  
+    lastDay = (datetime.datetime.now() - datetime.timedelta(days=6)).strftime('%m/%d')
+    redditPostTitle = "Covid Weekly Info {}-{}: {:,} New Cases, {:,} New Deaths, {:,} Vaccines Doses Given, {:,} Average Hospitalized per day".format(lastDay, today, newCases, newDeaths, vaccinesGiven, avgHospitalized)
+    print(redditPostTitle)
+    with open(file_names.redditTitle, 'w') as f:
+      f.write(redditPostTitle)
+  else:
+    print('not posting')
+
 
 if __name__ == "__main__":
   setupEnvAuth()
@@ -169,4 +189,4 @@ if __name__ == "__main__":
 
   # prepRedditPost(sh)
 
-  # prepWeeklyRedditPost(sh)
+  prepWeeklyRedditPost(sh)

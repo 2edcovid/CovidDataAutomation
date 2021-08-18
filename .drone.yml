@@ -60,17 +60,17 @@ steps:
     branch: data
     local_ref: data
 
-# - name: postData
-#   image: 2edcovid/python_data_scraping:latest
-#   environment:
-#     APIKEY:
-#       from_secret: reddit_secret
-#     APIID:
-#       from_secret: reddit_client
-#     APIPWD:
-#       from_secret: reddit_pwd
-#   commands:
-#   - python reddit_post.py
+- name: postData
+  image: 2edcovid/python_data_scraping:latest
+  environment:
+    APIKEY:
+      from_secret: reddit_secret
+    APIID:
+      from_secret: reddit_client
+    APIPWD:
+      from_secret: reddit_pwd
+  commands:
+  - python reddit_post.py
 
 
 image_pull_secrets:

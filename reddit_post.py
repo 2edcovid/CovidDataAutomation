@@ -1,6 +1,7 @@
 import praw
 import os
 import glob
+import datetime
 import time
 
 from utilities import file_names
@@ -48,7 +49,10 @@ reddit = praw.Reddit(client_id=clientID, client_secret=secret,
 reddit.validate_on_submit = True
 
 if __name__ == "__main__":
-  if post_time.shouldPost():
-    post(reddit)
+  if datetime.datetime.now().weekday() == 3:
+    if post_time.shouldPost():
+      post(reddit)
+    else:
+      post(reddit, sub='test')
   else:
-    post(reddit, sub='test')
+    print('not posting')
