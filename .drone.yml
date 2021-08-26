@@ -45,8 +45,8 @@ steps:
       from_secret: gsheet_ssh_key
   commands:
   - python strip_data.py
-  - python gsheet_interaction.py
   - python utilities/commit_checker.py
+  - python gsheet_interaction.py
 
 - name: pushData
   image: appleboy/drone-git-push

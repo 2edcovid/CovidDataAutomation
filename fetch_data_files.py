@@ -180,7 +180,7 @@ def getGeoJSON():
 
 
 def getOriginalMap():
-  browser = getBrowser(urls.argisMap, timeout=SLEEP_DURATION)
+  browser = getBrowser(urls.argisMap, timeout=(SLEEP_DURATION+SLEEP_DURATION))
   saveScreenshot(browser, file_names.mapScreenshot)
   closeBrowser(browser)
 
