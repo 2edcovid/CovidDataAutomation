@@ -204,6 +204,8 @@ def load_image_data():
   data.update(readImages.getRMCCData())
 
   data.update(readImages.getDeathData())
+  data.update(readImages.getNewSummaryData())
+  data.update(readImages.getNewAccessData())
 
   return data
 

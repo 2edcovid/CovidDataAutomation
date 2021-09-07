@@ -112,6 +112,95 @@ def getRMCCData():
     print(data)
     return data
 
+def getNewAccessData():
+    print('New Access Data')
+    data = {}
+
+    try:
+        fileName = file_names.newAccessScreenshot
+        img = cv2.imread(fileName)
+
+        crop_img = img[350:875, 200:-200]
+        cv2.imwrite(os.path.join(file_names.screenshotDir,
+                                 'Access_crop.png'), crop_img)
+
+        vent_img = crop_img[400:875, 700:-150]
+        cv2.imwrite(os.path.join(file_names.screenshotDir,
+                                 'Access_vent.png'), vent_img)
+        text = pytesseract.image_to_string(vent_img)
+        sanitizedText = sanitizeText(text)
+        sanitizedText = convertVals(sanitizedText)
+        sanitizedText = sanitizedText[1].split()
+        data['Vents Available'] = sanitizedText[0]
+        data['On Vent'] = sanitizedText[1]
+
+    except Exception as e:
+        print('issue reading new access data {}'.format(e))
+
+    print(data)
+    return data
+
+
+
+
+def getNewSummaryData():
+    print('New Summary Data')
+    data = {}
+
+    try:
+        fileName = file_names.newSummaryScreenshot
+        img = cv2.imread(fileName)
+
+        crop_img = img[900:-100, 400:-400]
+        cv2.imwrite(os.path.join(file_names.screenshotDir,
+                                 'Summary_crop.png'), crop_img)
+        ltc_img = crop_img[-100:-10, 450:-450]
+        cv2.imwrite(os.path.join(file_names.screenshotDir,
+                                 'Summary_ltc.png'), ltc_img)
+
+        text = pytesseract.image_to_string(ltc_img)
+        sanitizedText = sanitizeText(text)
+        sanitizedText = convertVals(sanitizedText)
+        data['Current LTC Outbreaks'] = sanitizedText[0]
+
+        unvaxxed_img = crop_img[-400:-270, 10:-10]
+        cv2.imwrite(os.path.join(file_names.screenshotDir,
+                                 'Summary_unvaxxed.png'), unvaxxed_img)
+
+        text = pytesseract.image_to_string(unvaxxed_img)
+        sanitizedText = sanitizeText(text)
+        sanitizedText = convertVals(sanitizedText)
+        sanitizedText = sanitizedText[0].split()
+        data['UnVaxxed Usage of ICU'] = sanitizedText[0]
+        data['UnVaxxed Usage Of Hospital Bed'] = sanitizedText[1]
+
+
+        hospital_img = crop_img[0:400, 400:-400]
+        cv2.imwrite(os.path.join(file_names.screenshotDir,
+                                 'Summary_hospital.png'), hospital_img)
+        text = pytesseract.image_to_string(hospital_img)
+        sanitizedText = sanitizeText(text)
+        sanitizedText = convertVals(sanitizedText)
+        data['Currently Hospitalized'] = sanitizedText[0]
+        data['In ICU'] = sanitizedText[2]
+        data['Newly Admitted'] = sanitizedText[4]
+
+        vaccine_img = crop_img[430:570, 400:-10]
+        cv2.imwrite(os.path.join(file_names.screenshotDir,
+                                 'Summary_vaccine.png'), vaccine_img)
+        text = pytesseract.image_to_string(vaccine_img)
+        sanitizedText = sanitizeText(text)
+        sanitizedText = convertVals(sanitizedText)
+        sanitizedText = sanitizedText[0].split()
+        data['% Fully Vaxxed'] = sanitizedText[0]
+        data['% Partially Vaxxed'] = sanitizedText[1]
+
+    except Exception as e:
+        print('issue reading new summary {}'.format(e))
+
+    print(data)
+    return data
+
 
 def getSummaryData():
     print('Summary Data')
