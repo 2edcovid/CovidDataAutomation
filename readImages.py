@@ -42,7 +42,7 @@ def getRMCCData():
         fileName = file_names.rmccScreenshot
         img = cv2.imread(fileName)
 
-        crop_img = img[1160:-30, 150:-100]
+        crop_img = img[3450:-30, 150:-100]
         cv2.imwrite(os.path.join(file_names.screenshotDir,
                                  'RMCC_crop.png'), crop_img)
 
@@ -80,7 +80,7 @@ def getRMCCData():
             print('issue reading admit value {}'.format(e))
 
         try:
-            bed_img = crop_img[800:1200, 50:550]
+            bed_img = crop_img[1400:-10, 50:550]
             cv2.imwrite(os.path.join(
                 file_names.screenshotDir, 'RMCC_bed.png'), bed_img)
             text = pytesseract.image_to_string(bed_img)
@@ -91,20 +91,20 @@ def getRMCCData():
         except Exception as e:
             print('issue reading bed values {}'.format(e))
 
-        try:
-            vent_img = crop_img[1450:1880, 50:550]
-            cv2.imwrite(os.path.join(file_names.screenshotDir,
-                                     'RMCC_vent.png'), vent_img)
-            text = pytesseract.image_to_string(vent_img)
-            sanitizedText = sanitizeText(text)
-            sanitizedText = convertVals(sanitizedText)
-            vents = sanitizedText[1]
-            if vents == 7715:
-                vents = 775
-            data['Vents Available'] = vents
-            data['On Vent'] = sanitizedText[3]
-        except Exception as e:
-            print('issue reading vent values {}'.format(e))
+        # try:
+        #     vent_img = crop_img[1450:1880, 50:550]
+        #     cv2.imwrite(os.path.join(file_names.screenshotDir,
+        #                              'RMCC_vent.png'), vent_img)
+        #     text = pytesseract.image_to_string(vent_img)
+        #     sanitizedText = sanitizeText(text)
+        #     sanitizedText = convertVals(sanitizedText)
+        #     vents = sanitizedText[1]
+        #     if vents == 7715:
+        #         vents = 775
+        #     data['Vents Available'] = vents
+        #     data['On Vent'] = sanitizedText[3]
+        # except Exception as e:
+        #     print('issue reading vent values {}'.format(e))
 
     except Exception as e:
         print('issue reading RMCC {}'.format(e))
@@ -177,11 +177,11 @@ def getSerologyData():
 def getPCRData(crop_img):
     print('PCR Test Data')
     data = {}
-    pcrImg = crop_img[100:420, 10:-10]
+    pcrImg = crop_img[1300:-350, 10:-10]
     cv2.imwrite(os.path.join(file_names.screenshotDir, 'Cases_pcr.png'), pcrImg)
 
     try:
-        totalPCR = crop_img[100:420, 10:500]
+        totalPCR = pcrImg[0:420, 10:500]
         cv2.imwrite(os.path.join(file_names.screenshotDir,
                                  'Cases_total_pcr.png'), totalPCR)
         text = pytesseract.image_to_string(totalPCR)
@@ -198,7 +198,7 @@ def getPCRData(crop_img):
         print('issue reading total pcr values {}'.format(e))
 
     try:
-        negativePCR = crop_img[100:420, 600:1100]
+        negativePCR = pcrImg[0:420, 600:1100]
         cv2.imwrite(os.path.join(file_names.screenshotDir,
                                  'Cases_negative_pcr.png'), negativePCR)
         text = pytesseract.image_to_string(negativePCR)
@@ -215,7 +215,7 @@ def getPCRData(crop_img):
         print('issue reading negative pcr values {}'.format(e))
 
     try:
-        positivePCR = crop_img[100:420, 1200:1700]
+        positivePCR = pcrImg[0:420, 1200:1700]
         cv2.imwrite(os.path.join(file_names.screenshotDir,
                                  'Cases_positive_pcr.png'), positivePCR)
         text = pytesseract.image_to_string(positivePCR)
@@ -238,13 +238,14 @@ def getPCRData(crop_img):
 def getAntigenData(crop_img):
     print('Antigen Test Data')
     data = {}
-    antigenImg = crop_img[550:900, 10:-10]
+    antigenImg = crop_img[-320:-10, 10:-10]
     cv2.imwrite(os.path.join(file_names.screenshotDir,
                              'Cases_antigen.png'), antigenImg)
 
     try:
-        text = pytesseract.image_to_string(antigenImg)
-        totalAntigen = crop_img[550:900, 10:500]
+        totalAntigen = antigenImg[0:900, 10:500]
+        cv2.imwrite(os.path.join(file_names.screenshotDir,
+                                 'Cases_total_antigen.png'), totalAntigen)
         text = pytesseract.image_to_string(totalAntigen)
         sanitizedText = sanitizeText(text)
         antigenText = []
@@ -259,7 +260,9 @@ def getAntigenData(crop_img):
         print('issue reading total antigen values {}'.format(e))
 
     try:
-        negativeAntigen = crop_img[550:900, 600:1100]
+        negativeAntigen = antigenImg[0:900, 600:1100]
+        cv2.imwrite(os.path.join(file_names.screenshotDir,
+                                 'Cases_negative_antigen.png'), negativeAntigen)
         text = pytesseract.image_to_string(negativeAntigen)
         sanitizedText = sanitizeText(text)
         antigenText = []
@@ -274,7 +277,9 @@ def getAntigenData(crop_img):
         print('issue reading negative antigen values {}'.format(e))
 
     try:
-        positiveAntigen = crop_img[550:900, 1200:1700]
+        positiveAntigen = antigenImg[0:900, 1200:1700]
+        cv2.imwrite(os.path.join(file_names.screenshotDir,
+                                 'Cases_positive_antigen.png'), positiveAntigen)
         text = pytesseract.image_to_string(positiveAntigen)
         sanitizedText = sanitizeText(text)
         antigenText = []
@@ -297,16 +302,26 @@ def getTestTotalsData(crop_img):
     data = {}
 
     try:
-        totalsImg = crop_img[1080:1200, 10:-500]
+        totalAndNegativeImg = crop_img[100:300, 10:-10]
         cv2.imwrite(os.path.join(file_names.screenshotDir,
-                                 'Cases_totals.png'), totalsImg)
-        text = pytesseract.image_to_string(totalsImg)
+                                 'Cases_TotalAndNegative.png'), totalAndNegativeImg)
+        positiveImg = crop_img[650:800, 100:700]
+        cv2.imwrite(os.path.join(file_names.screenshotDir,
+                                 'Cases_Positives.png'), positiveImg)
+        text = pytesseract.image_to_string(totalAndNegativeImg)
+        
         sanitizedText = sanitizeText(text)[1].split()
         sanitizedText = convertVals(sanitizedText)
         data.update({
             'Total Tests': sanitizedText[0],
             'Total Negative': sanitizedText[1],
-            'Total Positive': sanitizedText[2],
+        })
+
+        text = pytesseract.image_to_string(positiveImg)
+        sanitizedText = sanitizeText(text)[1].split()
+        sanitizedText = convertVals(sanitizedText)
+        data.update({
+            'Total Positive': sanitizedText[0],
         })
     except Exception as e:
         print('issue reading total test values {}'.format(e))
@@ -320,13 +335,14 @@ def getCaseData():
     data = {}
     fileName = file_names.caseScreenshot
     img = cv2.imread(fileName)
-    crop_img = img[100:-80, 100:-100]
+    crop_img = img[550:-450, 100:-100]
     cv2.imwrite(os.path.join(file_names.screenshotDir,
                              'Cases_crop.png'), crop_img)
 
+    data.update(getTestTotalsData(crop_img))
     data.update(getPCRData(crop_img))
     data.update(getAntigenData(crop_img))
-    data.update(getTestTotalsData(crop_img))
+    
 
     data.update({
         'Total Individual Tests': int(data['Individual Antigen Tests']) + int(data['Individual PCR Tests']),
@@ -360,7 +376,7 @@ def getDeathData():
     img = cv2.imread(fileName)
 
     try:
-        crop_img = img[100:201, 100:-100]
+        crop_img = img[20:201, 100:-100]
         cv2.imwrite(os.path.join(file_names.screenshotDir,
                                  'Deaths_total.png'), crop_img)
         text = pytesseract.image_to_string(crop_img)
@@ -373,7 +389,7 @@ def getDeathData():
         print('issue reading total deaths {}'.format(e))
 
     try:
-        crop_img = img[-150:-10, 100:-100]
+        crop_img = img[-290:-10, 100:-100]
         cv2.imwrite(os.path.join(file_names.screenshotDir,
                                  'Deaths_breakdown.png'), crop_img)
         text = pytesseract.image_to_string(crop_img)
@@ -383,7 +399,6 @@ def getDeathData():
         data.update({
             'Deaths With Preexisting Condition': vals[0],
             'Deaths With No Preexisting Condition': vals[1],
-            'Deaths Preexisting Condition Unknown': '0'
         })
     except Exception as e:
         print('issue reading death breakdown {}'.format(e))

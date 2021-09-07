@@ -22,6 +22,8 @@ recoveryScreenshot = os.path.join(screenshotDir, "Screenshot_Recovery.png")
 deathsScreenshot = os.path.join(screenshotDir, "Screenshot_Deaths.png")
 ltcScreenshot = os.path.join(screenshotDir, "Screenshot_LTC.png")
 vaccineScreenshot = os.path.join(screenshotDir, "Screenshot_Vaccine.png")
+newSummaryScreenshot = os.path.join(screenshotDir, "Screenshot_NewSummary.png")
+newAccessScreenshot = os.path.join(screenshotDir, "Screenshot_NewAccess.png")
 
 accessJson = 'accessVals.json'
 
