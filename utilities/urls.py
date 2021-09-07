@@ -8,17 +8,19 @@ accessPage =  'https://coronavirus.iowa.gov/pages/access'
 
 
 # Domo pages
-rmccPage = 'https://public.domo.com/embed/pages/ejyQ5'
-serologyPage = 'https://public.domo.com/embed/pages/eV1x9'
+# rmccPage = 'https://public.domo.com/embed/pages/ejyQ5'
+# serologyPage = 'https://public.domo.com/embed/pages/eV1x9'
 summaryPage = 'https://public.domo.com/embed/pages/XDYpV' # Tested, Positive, Recovered, Deaths,
-
-vaccinePage = 'https://public.domo.com/embed/pages/1wB9j'
-
+# vaccinePage = 'https://public.domo.com/embed/pages/1wB9j'
 #casePage = 'https://public.domo.com/embed/pages/aQVpq'  # Tested, Negative, Positive, preexisting condition, no condition, unknown
-
-casePage = 'https://public.domo.com/embed/pages/VOJno' # Total Tested, Indivituals Tested, Total Negative, Individual Negative, Total Positive, Individual Positive, preexisting condition, no condition, unknown
-
+# casePage = 'https://public.domo.com/embed/pages/VOJno' # Total Tested, Indivituals Tested, Total Negative, Individual Negative, Total Positive, Individual Positive, preexisting condition, no condition, unknown
 # recoveredPage = 'https://public.domo.com/embed/pages/boNDL' # preexisting condition, no condition, unknown
-deathsPage = 'https://public.domo.com/embed/pages/VO7VW' # preexisting condition, no condition, unknown
+# deathsPage = 'https://public.domo.com/embed/pages/VO7VW' # preexisting condition, no condition, unknown
+# ltcPage = 'https://public.domo.com/embed/pages/31wVn' # current outbreaks, positive cases, recovered, deaths
 
-ltcPage = 'https://public.domo.com/embed/pages/31wVn' # current outbreaks, positive cases, recovered, deaths
+
+newVaccinePage = 'https://public.domo.com/embed/pages/G67x5?pfilters=[{%22column%22:%22Source%22,%22operand%22:%22IN%22,%22values%22:[%22CDC%C2%B9%22]},{%22column%22:%22Vaccine%20Status%22,%22operand%22:%22IN%22,%22values%22:[%22Fully%20Vaccinated%22]},{%22column%22:%22metric_name%22,%22operand%22:%22IN%22,%22values%22:[%22%25%2012%2B%20Years%20of%20Age%22]}]'
+newCasePage = 'https://public.domo.com/embed/pages/zpNA2'
+newHospitalPage = 'https://public.domo.com/embed/pages/BB7po'
+newDeathPage = 'https://public.domo.com/embed/pages/AD7rj'
+newVaccineDownload = 'https://public.domo.com/embed/pages/gJVKr'

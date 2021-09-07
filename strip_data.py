@@ -59,6 +59,10 @@ def vaccineDataForGeoJson(vaccineCSV=None, vaccineData=None):
                 'Vaccine Series Initiated' : row['Two-Dose Series Initiated'],
                 'Vaccine Series Completed' : int(row['Two-Dose Series Completed']) + int(row['Single-Dose Series Completed'])
               }
+            elif 'Vaccinations Completed' in row:
+              countyData[countyName] = {
+                'Vaccine Series Completed' : row['Vaccinations Completed']
+              }
             else:
               countyData[countyName] = {
                 'Vaccine Series Initiated' : row['Series Initiated'],
@@ -104,6 +108,8 @@ def createGeoJson(localCsvFile, hospitalData, vaccineCSV=None, removePending=Fal
 
         if name == 'Obrien':
             name = 'O\'Brien'
+        if name == 'Pending Investigation':
+            name = 'Unknown'
         try:
             props = countyData[name]
             try:
@@ -194,12 +200,11 @@ def write_json(file_path, data):
 def load_image_data():
   data = {}
 
-  # data.update(readImages.getSerologyData())
   data.update(readImages.getCaseData())
   data.update(readImages.getRMCCData())
 
   data.update(readImages.getDeathData())
-  # data.update(readImages.getLTCData())
+
   return data
 
 
@@ -307,8 +312,6 @@ if __name__ == "__main__":
     list_of_files = glob.glob(os.path.join(file_names.storageDir, 'Summary*.csv'))
     list_of_files.sort()
     summary_csv_file = list_of_files[-1]
-
-    countyData = os.path.join(file_names.storageDir, "VaccineDosesByCounty{}.csv")
 
     list_of_files = glob.glob(os.path.join(file_names.storageDir, "VaccineDosesByCounty*.csv"))
     list_of_files.sort()

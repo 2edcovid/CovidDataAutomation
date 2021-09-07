@@ -7,6 +7,7 @@ from utilities.selenium_utils import *
 from utilities import file_names
 from utilities import urls
 from utilities import commit_checker
+import shutil
 
 SLEEP_DURATION = 10
 SHORT_SLEEP_DURATION = 5
@@ -43,62 +44,102 @@ def getPDF(browser, link_text, name_fmt):
 
 
 def getVaccineData():
-    browser = getBrowser(urls.vaccinePage, height=6200, zoom=90, timeout=SLEEP_DURATION)
+    print('getting vaccination data')
+    browser = getBrowser(urls.newVaccinePage, height=6200, zoom=90, timeout=SLEEP_DURATION)
     elements = browser.find_elements_by_class_name(buttonContainer)
     print(len(elements))
     saveScreenshot(browser, file_names.vaccineScreenshot)
     closeBrowser(browser)
 
     fileNames = [
+      os.path.join(file_names.storageDir, "cvs1{}.csv"),
+      os.path.join(file_names.storageDir, "SourceFilter{}.csv"),
+      os.path.join(file_names.storageDir, "VaccinePercentOfCountyFullyVaccinated{}.csv"),
+      os.path.join(file_names.storageDir, "StatusFilter{}.csv"),
+      os.path.join(file_names.storageDir, "PopulationFilter{}.csv"),
+      os.path.join(file_names.storageDir, "cvs6{}.csv"),
       os.path.join(file_names.storageDir, "VaccineDosesAdministered{}.csv"),
       os.path.join(file_names.storageDir, "VaccineIowanDoses{}.csv"),
       os.path.join(file_names.storageDir, "VaccineIndividuals1stDose{}.csv"),
       os.path.join(file_names.storageDir, "VaccineIndividuals2ndComplete{}.csv"),
-      os.path.join(file_names.storageDir, "cvs5{}.csv"),
-      os.path.join(file_names.storageDir, "cvs6{}.csv"),
-      os.path.join(file_names.storageDir, "VaccineIndividualsComplete{}.csv"),
-      os.path.join(file_names.storageDir, "VaccineIndividualsSingleComplete{}.csv"),
-      os.path.join(file_names.storageDir, "cvs9{}.csv"),
-      os.path.join(file_names.storageDir, "cvs10{}.csv"),
-      os.path.join(file_names.storageDir, "VaccineTotalPercentVaccinated{}.csv"),
+      os.path.join(file_names.storageDir, "cvs11{}.csv"),
+      os.path.join(file_names.storageDir, "cvs12{}.csv"),
+      os.path.join(file_names.storageDir, "VaccineIndividualsComplete{}.csv"), 
+      os.path.join(file_names.storageDir, "VaccineIndividualsSingleComplete{}.csv"), 
+      os.path.join(file_names.storageDir, "cvs15{}.csv"),
+      os.path.join(file_names.storageDir, "cvs16{}.csv"),
       os.path.join(file_names.storageDir, "VaccineManufacturer{}.csv"), 
-      os.path.join(file_names.storageDir, "cvs13{}.csv"),
+      os.path.join(file_names.storageDir, "VaccineDosesDistinctPersons{}.csv"), 
+      os.path.join(file_names.storageDir, "VaccinePercentageClarification{}.csv"),
+      os.path.join(file_names.storageDir, "VaccineDosesByRace{}.csv"), 
+      os.path.join(file_names.storageDir, "VaccineDosesByAgeGroup{}.csv"), 
+      os.path.join(file_names.storageDir, "VaccineDosesByEthnicity{}.csv"), 
+      os.path.join(file_names.storageDir, "VaccineDosesByGender{}.csv"), 
+      os.path.join(file_names.storageDir, "VaccinePercentClarification{}.csv"), 
+      os.path.join(file_names.storageDir, "VaccinePercentageByRace{}.csv"), 
+      os.path.join(file_names.storageDir, "VaccinePercentageByAgeGroup{}.csv"), 
+      os.path.join(file_names.storageDir, "VaccinePercentageByEthnicity{}.csv"), 
+      os.path.join(file_names.storageDir, "VaccinePercentageByGender{}.csv"), 
+      os.path.join(file_names.storageDir, "VaccineDosesByDay{}.csv"), 
+      os.path.join(file_names.storageDir, "datanotes{}.csv"),
+    ]
+  
+    timeString = time.strftime("%Y-%m-%d %H%M") 
+    for i in range(len(elements)):
+      try:
+        if fileNames[i]:
+          browser = getBrowser(urls.newVaccinePage, height=1400, zoom=90, timeout=SHORT_SLEEP_DURATION)
+          localPath = fileNames[i].format(timeString) 
+          downloadFile(browser, i, localPath)
+          closeBrowser(browser)
+      except:
+        pass
+
+    browser = getBrowser(urls.newVaccineDownload, height=6200, zoom=90, timeout=SLEEP_DURATION)
+    elements = browser.find_elements_by_class_name(buttonContainer)
+    print(len(elements))
+    closeBrowser(browser)
+
+    fileNames = [
       os.path.join(file_names.storageDir, "VaccineDosesToCountyResident{}.csv"),
       os.path.join(file_names.storageDir, "VaccineDosesDoneByCountyProvider{}.csv"),
       os.path.join(file_names.storageDir, "VaccineSeriesCompletedByCountyResident{}.csv"),
-      os.path.join(file_names.storageDir, "VaccineSeriesCompletedByCountyProvider{}.csv"), 
-      os.path.join(file_names.storageDir, "VaccinePercentOfCountyFullyVaccinated{}.csv"),
-      os.path.join(file_names.storageDir, "VaccineDosesDistinctPersons{}.csv"), 
-      os.path.join(file_names.storageDir, "VaccinePercentageClarification{}.csv"), 
-      os.path.join(file_names.storageDir, "VaccineDosesByRace{}.csv"),
-      os.path.join(file_names.storageDir, "VaccineDosesByAgeGroup{}.csv"), 
-      os.path.join(file_names.storageDir, "VaccineDosesByEthnicity{}.csv"),
-      os.path.join(file_names.storageDir, "VaccineDosesByGender{}.csv"),
-      os.path.join(file_names.storageDir, "VaccinePercentClarification{}.csv"),
-      os.path.join(file_names.storageDir, "VaccinePercentageByRace{}.csv"),
-      os.path.join(file_names.storageDir, "VaccinePercentageByAgeGroup{}.csv"),
-      os.path.join(file_names.storageDir, "VaccinePercentageByEthnicity{}.csv"),
-      os.path.join(file_names.storageDir, "VaccinePercentageByGender{}.csv"),
-      os.path.join(file_names.storageDir, "VaccineDosesByDay{}.csv"),
-      os.path.join(file_names.storageDir, "cvs31{}.csv"),
-      os.path.join(file_names.storageDir, "VaccineDosesByCounty{}.csv"),
-      os.path.join(file_names.storageDir, "cvs33{}.csv"),
-      os.path.join(file_names.storageDir, "VaccineFooter{}.csv")
+      os.path.join(file_names.storageDir, "VaccineSeriesCompletedByCountyProvider{}.csv"),
     ]
-    timeString = time.strftime("%Y-%m-%d %H%M") 
-    for i in range(34):
-      if fileNames[i]:
-        browser = getBrowser(urls.vaccinePage, height=1400, zoom=90, timeout=SHORT_SLEEP_DURATION)
-        localPath = fileNames[i].format(timeString) 
 
-        downloadFile(browser, i, localPath)
+    for i in range(len(elements)):
+      try:
+        if fileNames[i]:
+          browser = getBrowser(urls.newVaccineDownload, height=1400, zoom=90, timeout=SHORT_SLEEP_DURATION)
+          localPath = fileNames[i].format(timeString) 
+          downloadFile(browser, i, localPath)
+          closeBrowser(browser)
+      except:
+        pass
 
-        closeBrowser(browser)
+    src_dir=os.path.join(file_names.storageDir, "VaccineSeriesCompletedByCountyResident{}.csv".format(timeString))
+    dst_dir=os.path.join(file_names.storageDir, "VaccineDosesByCounty{}.csv".format(timeString))
+    shutil.copy(src_dir,dst_dir)
+
+    # # debug dl
+    # for i in range(len(elements)):
+    #   browser = getBrowser(urls.newVaccineDownload, height=1400, zoom=90, timeout=SHORT_SLEEP_DURATION)
+    #   localPath=os.path.join(file_names.storageDir, "newVaccineDownload{}-{}.csv".format(i, timeString))
+    #   downloadFile(browser, i, localPath)
+    #   closeBrowser(browser)
 
 
 def getHospitalData():
+    print('get hospital pdf')
     browser = getBrowser(urls.mainPage, height=1700, zoom=90, timeout=SHORT_SLEEP_DURATION)
     return getPDF(browser, 'Iowa Hospitalizations by County', file_names.countyHospitalFormat)
+
+
+def getNewSummaryData():
+    print('screenshot of new summary page')
+    browser = getBrowser(urls.mainPage, height=2200, timeout=SHORT_SLEEP_DURATION)
+    saveScreenshot(browser, file_names.newSummaryScreenshot) 
+    closeBrowser(browser)
 
 
 def downloadFile(browser, index, localPath):
@@ -114,7 +155,7 @@ def downloadFile(browser, index, localPath):
 
 def getSummary():
     try:
-      # print('loading Summary Page')
+      print('loading Summary Page')
       browser = getBrowser(urls.summaryPage, height=2400, zoom=90, timeout=SLEEP_DURATION)
       saveScreenshot(browser, file_names.summaryScreenshot) 
       timeString = time.strftime("%Y-%m-%d %H%M") 
@@ -157,16 +198,9 @@ def getCSVs():
 
 
 def getAccessVals():
-  browser = getBrowser(urls.accessPage)
-  
-  titles = browser.find_elements_by_class_name('ss-title')
-  elements = browser.find_elements_by_class_name('ss-value')
-
-  vals = {}
-  for i in range(len(titles)):
-    vals[titles[i].get_attribute('innerHTML')] = elements[i].get_attribute('innerHTML')
+  browser = getBrowser(urls.accessPage, height=3200, timeout=SHORT_SLEEP_DURATION)
+  saveScreenshot(browser, file_names.newAccessScreenshot) 
   closeBrowser(browser)
-  return vals
 
 
 def getGeoJSON():
@@ -180,13 +214,19 @@ def getGeoJSON():
 
 
 def getOriginalMap():
-  browser = getBrowser(urls.argisMap, timeout=(SLEEP_DURATION+SLEEP_DURATION))
-  saveScreenshot(browser, file_names.mapScreenshot)
-  closeBrowser(browser)
+  print('screenshot of original map')
+  try:
+    browser = getBrowser(urls.argisMap, timeout=30)
+    saveScreenshot(browser, file_names.mapScreenshot)
+    closeBrowser(browser)
+  except:
+    print('original map down')
+
 
 
 def getCases():
-  browser = getBrowser(urls.casePage, height=6200, zoom=90, timeout=SLEEP_DURATION)
+  print('screenshot of case page')
+  browser = getBrowser(urls.newCasePage, height=3200, zoom=90, timeout=SLEEP_DURATION)
   saveScreenshot(browser, file_names.caseScreenshot)
   closeBrowser(browser)
 
@@ -198,7 +238,8 @@ def getRecovery():
 
 
 def getDeaths():
-  browser = getBrowser(urls.deathsPage, height=2500, timeout=SLEEP_DURATION)
+  print('screenshot of deaths page')
+  browser = getBrowser(urls.newDeathPage, height=2500, timeout=SLEEP_DURATION)
   saveScreenshot(browser, file_names.deathsScreenshot)
   closeBrowser(browser)
 
@@ -210,7 +251,8 @@ def getLTC():
 
 
 def getRMCCData():
-  browser = getBrowser(urls.rmccPage, height=3300, timeout=SLEEP_DURATION)
+  print('screenshot of hospital page')
+  browser = getBrowser(urls.newHospitalPage, height=5500, timeout=SLEEP_DURATION)
   saveScreenshot(browser, file_names.rmccScreenshot)
   closeBrowser(browser)
 
@@ -225,17 +267,16 @@ def getSerologyData():
 if __name__ == "__main__":
   if not os.path.exists(file_names.screenshotDir):
       os.makedirs(file_names.screenshotDir)
-  try:
-    getOriginalMap()
-  except:
-    print('original map down')
 
-  getHospitalData()
-  getVaccineData()
-  getSummary()
-  getCases()
-  getDeaths()
-  # getLTC()
+  getOriginalMap()
   getRMCCData()
-  # getSerologyData()
+  getHospitalData()
+  getDeaths()
+  getCases()
+  getNewSummaryData()
+  getAccessVals()
+  getVaccineData()
+
+  getSummary()
+
       
