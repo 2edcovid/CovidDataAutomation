@@ -28,6 +28,7 @@ def sanitizeText(text):
             string = string.replace('?', '2')
             string = string.replace('“', '')
             string = string.replace('°', '')
+            string = string.replace('|', '')
             string = string.strip()
             if string:
                 realList.append(string)
@@ -185,7 +186,7 @@ def getNewSummaryData():
         data['In ICU'] = sanitizedText[2]
         data['Newly Admitted'] = sanitizedText[4]
 
-        vaccine_img = crop_img[430:570, 400:-10]
+        vaccine_img = crop_img[450:545, 400:-10]
         cv2.imwrite(os.path.join(file_names.screenshotDir,
                                  'Summary_vaccine.png'), vaccine_img)
         text = pytesseract.image_to_string(vaccine_img)
