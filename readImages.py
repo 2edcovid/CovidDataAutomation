@@ -28,6 +28,7 @@ def sanitizeText(text):
             string = string.replace('?', '2')
             string = string.replace('“', '')
             string = string.replace('°', '')
+            string = string.replace('|', '')
             string = string.strip()
             if string:
                 realList.append(string)
@@ -42,7 +43,7 @@ def getRMCCData():
         fileName = file_names.rmccScreenshot
         img = cv2.imread(fileName)
 
-        crop_img = img[3450:-30, 150:-100]
+        crop_img = img[3430:-30, 150:-100]
         cv2.imwrite(os.path.join(file_names.screenshotDir,
                                  'RMCC_crop.png'), crop_img)
 
@@ -151,7 +152,7 @@ def getNewSummaryData():
         fileName = file_names.newSummaryScreenshot
         img = cv2.imread(fileName)
 
-        crop_img = img[900:-100, 400:-400]
+        crop_img = img[850:-150, 400:-400]
         cv2.imwrite(os.path.join(file_names.screenshotDir,
                                  'Summary_crop.png'), crop_img)
         ltc_img = crop_img[-100:-10, 450:-450]
@@ -185,7 +186,7 @@ def getNewSummaryData():
         data['In ICU'] = sanitizedText[2]
         data['Newly Admitted'] = sanitizedText[4]
 
-        vaccine_img = crop_img[430:570, 400:-10]
+        vaccine_img = crop_img[450:545, 400:-10]
         cv2.imwrite(os.path.join(file_names.screenshotDir,
                                  'Summary_vaccine.png'), vaccine_img)
         text = pytesseract.image_to_string(vaccine_img)
