@@ -43,7 +43,7 @@ def getRMCCData():
         fileName = file_names.rmccScreenshot
         img = cv2.imread(fileName)
 
-        crop_img = img[3450:-30, 150:-100]
+        crop_img = img[3430:-30, 150:-100]
         cv2.imwrite(os.path.join(file_names.screenshotDir,
                                  'RMCC_crop.png'), crop_img)
 
@@ -152,7 +152,7 @@ def getNewSummaryData():
         fileName = file_names.newSummaryScreenshot
         img = cv2.imread(fileName)
 
-        crop_img = img[900:-100, 400:-400]
+        crop_img = img[850:-150, 400:-400]
         cv2.imwrite(os.path.join(file_names.screenshotDir,
                                  'Summary_crop.png'), crop_img)
         ltc_img = crop_img[-100:-10, 450:-450]

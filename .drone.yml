@@ -10,7 +10,7 @@ trigger:
 steps:
 
 - name: selenium
-  image: selenium/standalone-chrome
+  image: selenium/standalone-chrome:91.0
   detach: true
 
 - name: getRawData
