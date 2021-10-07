@@ -61,7 +61,33 @@ steps:
     local_ref: data
 
 
+---
+kind: pipeline
+type: docker
+name: deploy
 
+steps:
+- name: selenium
+  image: selenium/standalone-chrome:91.0
+  detach: true
+
+- name: postData
+  image: 2edcovid/python_data_scraping:latest
+  environment:
+    APIKEY:
+      from_secret: reddit_secret
+    APIID:
+      from_secret: reddit_client
+    APIPWD:
+      from_secret: reddit_pwd
+  commands:
+  - python reddit_post.py
+
+trigger:
+  event:
+  - promote
+  target:
+  - production
 
 image_pull_secrets:
   - dockerconfig
