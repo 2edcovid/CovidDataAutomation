@@ -3,6 +3,9 @@ type: docker
 name: default
 
 trigger:
+  event:
+    exclude:
+    - promote
   branch:
     exclude:
     - data
@@ -74,6 +77,8 @@ steps:
 - name: postData
   image: 2edcovid/python_data_scraping:latest
   environment:
+    SSHKEY:
+      from_secret: gsheet_ssh_key
     APIKEY:
       from_secret: reddit_secret
     APIID:
@@ -81,13 +86,13 @@ steps:
     APIPWD:
       from_secret: reddit_pwd
   commands:
+  - chmod +x wait-for-it.sh
+  - ./wait-for-it.sh selenium:4444
   - python reddit_post.py
 
 trigger:
   event:
   - promote
-  target:
-  - production
 
 image_pull_secrets:
   - dockerconfig

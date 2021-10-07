@@ -51,6 +51,8 @@ reddit = praw.Reddit(client_id=clientID, client_secret=secret,
 reddit.validate_on_submit = True
 
 if __name__ == "__main__":
+  if not os.path.exists(file_names.screenshotDir):
+    os.makedirs(file_names.screenshotDir)
   fetch_data_files.getOriginalMap()
   gsheet_interaction.reddit()
   if datetime.datetime.now().weekday() == 3:
