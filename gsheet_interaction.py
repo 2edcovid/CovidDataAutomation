@@ -178,15 +178,22 @@ def prepWeeklyRedditPost(sh):
     print('not posting')
 
 
-if __name__ == "__main__":
-  setupEnvAuth()
+def post():
+    setupEnvAuth()
 
+    gc = pygsheets.authorize(service_file=filePath)
+    sh = gc.open('Covid19')
+
+    data = readData()
+    postData(sh, data)
+
+
+def reddit():
+  setupEnvAuth()
   gc = pygsheets.authorize(service_file=filePath)
   sh = gc.open('Covid19')
 
-  data = readData()
-  postData(sh, data)
-
-  # prepRedditPost(sh)
-
   prepWeeklyRedditPost(sh)
+
+if __name__ == "__main__":
+  post()
