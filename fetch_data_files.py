@@ -217,7 +217,7 @@ def getOriginalMap():
   print('screenshot of original map')
   try:
     browser = getBrowser(urls.argisMap, timeout=SLEEP_DURATION)
-    time.sleep(20)
+    time.sleep(40)
     saveScreenshot(browser, file_names.mapScreenshot)
     closeBrowser(browser)
   except:
