@@ -497,6 +497,72 @@ def getDeathData():
     return data
 
 
+def getVaccineData():
+    print('Vaccine Data')
+    data = {}
+    fileName = file_names.vaccineScreenshot
+    img = cv2.imread(fileName)
+
+    crop_img = img[1300:2200, 100:-100]
+    cv2.imwrite(os.path.join(file_names.screenshotDir,
+                              'Vaccine_Crop.png'), crop_img)
+
+    try:
+        total_img = crop_img[10:200, 250:600]
+        cv2.imwrite(os.path.join(file_names.screenshotDir,
+                                 'Vaccine_total.png'), total_img)
+        text = pytesseract.image_to_string(total_img)
+        text = text.replace('\n', ' ')
+        textList = sanitizeText(text)
+        vals = convertVals(textList[0].split())
+        data['Total Vaccine Doses Given'] = vals[-1]
+    except Exception as e:
+        print('issue reading total doses given {}'.format(e))
+
+    try:
+        init_img = crop_img[200:350, 250:600]
+        cv2.imwrite(os.path.join(file_names.screenshotDir,
+                                 'Vaccine_initiated.png'), init_img)
+        text = pytesseract.image_to_string(init_img)
+        text = text.replace('\n', ' ')
+        textList = sanitizeText(text)
+        vals = convertVals(textList[0].split())
+        data['Vaccine Series Started'] = vals[-1]
+    except Exception as e:
+        print('issue reading total series started {}'.format(e))
+
+    try:
+        comp_img = crop_img[450:600, 250:600]
+        cv2.imwrite(os.path.join(file_names.screenshotDir,
+                                 'Vaccine_completed.png'), comp_img)
+        text = pytesseract.image_to_string(comp_img)
+        text = text.replace('\n', ' ')
+        textList = sanitizeText(text)
+        vals = convertVals(textList[0].split())
+        data['Vaccine Series Completed'] = vals[-1]
+    except Exception as e:
+        print('issue reading total series completed {}'.format(e))
+
+    try:
+        brand_img = crop_img[750:-10, 1500:-1]
+        cv2.imwrite(os.path.join(file_names.screenshotDir,
+                                 'Vaccine_manufacturers.png'), brand_img)
+        text = pytesseract.image_to_string(brand_img)
+        text = text.replace('.', '')
+        textList = sanitizeText(text)
+
+        data.update({
+          'Pfizer Doses Given': textList[0],
+          'Janssen Doses Given': textList[1],
+          'Moderna Doses Given': textList[2],
+        })
+    except Exception as e:
+        print('issue reading vaccine brands {}'.format(e))
+
+    print(data)
+    return data
+
+
 def getRecoveryData():
     print('Reovery Data')
     data = {}

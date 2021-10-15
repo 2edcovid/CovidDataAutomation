@@ -202,6 +202,7 @@ def load_image_data():
 
   data.update(readImages.getCaseData())
   data.update(readImages.getRMCCData())
+  data.update(readImages.getVaccineData())
 
   data.update(readImages.getDeathData())
   data.update(readImages.getNewSummaryData())
