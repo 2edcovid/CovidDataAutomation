@@ -147,15 +147,15 @@ def getNewAccessData():
 def getNewSummaryData():
     print('New Summary Data')
     data = {}
+    fileName = file_names.newSummaryScreenshot
+    img = cv2.imread(fileName)
+
+    crop_img = img[850:-150, 400:-400]
+    cv2.imwrite(os.path.join(file_names.screenshotDir,
+                              'Summary_crop.png'), crop_img)
 
     try:
-        fileName = file_names.newSummaryScreenshot
-        img = cv2.imread(fileName)
-
-        crop_img = img[850:-150, 400:-400]
-        cv2.imwrite(os.path.join(file_names.screenshotDir,
-                                 'Summary_crop.png'), crop_img)
-        ltc_img = crop_img[-100:-10, 450:-450]
+        ltc_img = crop_img[-150:-10, 450:-450]
         cv2.imwrite(os.path.join(file_names.screenshotDir,
                                  'Summary_ltc.png'), ltc_img)
 
@@ -163,7 +163,10 @@ def getNewSummaryData():
         sanitizedText = sanitizeText(text)
         sanitizedText = convertVals(sanitizedText)
         data['Current LTC Outbreaks'] = sanitizedText[0]
+    except Exception as e:
+        print('issue reading new summary ltc {}'.format(e))
 
+    try:
         unvaxxed_img = crop_img[-400:-270, 10:-10]
         cv2.imwrite(os.path.join(file_names.screenshotDir,
                                  'Summary_unvaxxed.png'), unvaxxed_img)
@@ -174,18 +177,45 @@ def getNewSummaryData():
         sanitizedText = sanitizedText[0].split()
         data['UnVaxxed Usage of ICU'] = sanitizedText[0]
         data['UnVaxxed Usage Of Hospital Bed'] = sanitizedText[1]
+    except Exception as e:
+        print('issue reading new summary unvaxxed {}'.format(e))
 
-
-        hospital_img = crop_img[0:400, 400:-400]
+    try:
+        hospital_img = crop_img[0:150, 400:-400]
         cv2.imwrite(os.path.join(file_names.screenshotDir,
-                                 'Summary_hospital.png'), hospital_img)
+                                 'Summary_hospital1.png'), hospital_img)
         text = pytesseract.image_to_string(hospital_img)
         sanitizedText = sanitizeText(text)
         sanitizedText = convertVals(sanitizedText)
+        print(sanitizedText)
         data['Currently Hospitalized'] = sanitizedText[0]
-        data['In ICU'] = sanitizedText[2]
-        data['Newly Admitted'] = sanitizedText[4]
+    except Exception as e:
+        print('issue reading new summary hospital1 {}'.format(e))
 
+    try:
+        hospital_img = crop_img[150:280, 400:-400]
+        cv2.imwrite(os.path.join(file_names.screenshotDir,
+                                 'Summary_hospital2.png'), hospital_img)
+        text = pytesseract.image_to_string(hospital_img)
+        sanitizedText = sanitizeText(text)
+        sanitizedText = convertVals(sanitizedText)
+        data['In ICU'] = sanitizedText[0]
+    except Exception as e:
+        print('issue reading new summary hospital2 {}'.format(e))
+
+
+    try:
+        hospital_img = crop_img[270:400, 400:-400]
+        cv2.imwrite(os.path.join(file_names.screenshotDir,
+                                 'Summary_hospital3.png'), hospital_img)
+        text = pytesseract.image_to_string(hospital_img)
+        sanitizedText = sanitizeText(text)
+        sanitizedText = convertVals(sanitizedText)
+        data['Newly Admitted'] = sanitizedText[0]
+    except Exception as e:
+        print('issue reading new summary hospital3 {}'.format(e))
+
+    try:
         vaccine_img = crop_img[450:545, 400:-10]
         cv2.imwrite(os.path.join(file_names.screenshotDir,
                                  'Summary_vaccine.png'), vaccine_img)
@@ -492,6 +522,72 @@ def getDeathData():
         })
     except Exception as e:
         print('issue reading death breakdown {}'.format(e))
+
+    print(data)
+    return data
+
+
+def getVaccineData():
+    print('Vaccine Data')
+    data = {}
+    fileName = file_names.vaccineScreenshot
+    img = cv2.imread(fileName)
+
+    crop_img = img[1300:2200, 100:-100]
+    cv2.imwrite(os.path.join(file_names.screenshotDir,
+                              'Vaccine_Crop.png'), crop_img)
+
+    try:
+        total_img = crop_img[10:200, 250:600]
+        cv2.imwrite(os.path.join(file_names.screenshotDir,
+                                 'Vaccine_total.png'), total_img)
+        text = pytesseract.image_to_string(total_img)
+        text = text.replace('\n', ' ')
+        textList = sanitizeText(text)
+        vals = convertVals(textList[0].split())
+        data['Total Vaccine Doses Given'] = vals[-1]
+    except Exception as e:
+        print('issue reading total doses given {}'.format(e))
+
+    try:
+        init_img = crop_img[200:350, 250:600]
+        cv2.imwrite(os.path.join(file_names.screenshotDir,
+                                 'Vaccine_initiated.png'), init_img)
+        text = pytesseract.image_to_string(init_img)
+        text = text.replace('\n', ' ')
+        textList = sanitizeText(text)
+        vals = convertVals(textList[0].split())
+        data['Vaccine Series Started'] = vals[-1]
+    except Exception as e:
+        print('issue reading total series started {}'.format(e))
+
+    try:
+        comp_img = crop_img[450:600, 250:600]
+        cv2.imwrite(os.path.join(file_names.screenshotDir,
+                                 'Vaccine_completed.png'), comp_img)
+        text = pytesseract.image_to_string(comp_img)
+        text = text.replace('\n', ' ')
+        textList = sanitizeText(text)
+        vals = convertVals(textList[0].split())
+        data['Vaccine Series Completed'] = vals[-1]
+    except Exception as e:
+        print('issue reading total series completed {}'.format(e))
+
+    try:
+        brand_img = crop_img[750:-10, 1500:-1]
+        cv2.imwrite(os.path.join(file_names.screenshotDir,
+                                 'Vaccine_manufacturers.png'), brand_img)
+        text = pytesseract.image_to_string(brand_img)
+        text = text.replace('.', '')
+        textList = sanitizeText(text)
+
+        data.update({
+          'Pfizer Doses Given': textList[0],
+          'Janssen Doses Given': textList[1],
+          'Moderna Doses Given': textList[2],
+        })
+    except Exception as e:
+        print('issue reading vaccine brands {}'.format(e))
 
     print(data)
     return data
