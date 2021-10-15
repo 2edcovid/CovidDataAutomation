@@ -122,9 +122,10 @@ def prepRedditPost(sh):
 
 
 def prepWeeklyRedditPost(sh):
-  today = datetime.datetime.now().strftime('%m/%d')
+  todayDate = datetime.datetime.now()
+  today = todayDate.strftime('%m/%d')
 
-  if datetime.datetime.now().weekday() == 3:
+  if todayDate.weekday() == 3:
     header = 'Month Summaries'
     wks = sh[2]
     df = wks.get_as_df(start='A1', end='L41', index_column=1)
@@ -142,17 +143,26 @@ def prepWeeklyRedditPost(sh):
 
     # Calculated
     wks = sh[1]
-    caseMatrix = wks.range('D2:D8', returnas='matrix')
+    rangeEnd = 8
+    dateA8 = datetime.datetime.strptime(wks.get_value('A{}'.format(rangeEnd)), "%d-%b")
+    dateA8 = datetime.datetime(todayDate.year, dateA8.month, dateA8.day)
+    difference = todayDate - dateA8
+    print(difference.days)
+    if difference.days > 6:
+      sub = difference.days - 6
+      rangeEnd = rangeEnd - sub
+
+    caseMatrix = wks.range('D2:D{}'.format(rangeEnd), returnas='matrix')
     newCases = 0
     for i in range(len(caseMatrix)):
       newCases = newCases + int(caseMatrix[i][0].replace(',', ''))
 
-    deathsMatrix = wks.range('I2:I8', returnas='matrix')
+    deathsMatrix = wks.range('I2:I{}'.format(rangeEnd), returnas='matrix')
     newDeaths = 0
     for i in range(len(deathsMatrix)):
       newDeaths = newDeaths + int(deathsMatrix[i][0].replace(',', ''))
 
-    vaccinesMatrix = wks.range('L2:L8', returnas='matrix')
+    vaccinesMatrix = wks.range('L2:L{}'.format(rangeEnd), returnas='matrix')
     vaccinesGiven = 0
     for i in range(len(vaccinesMatrix)):
       vaccinesGiven = vaccinesGiven + int(vaccinesMatrix[i][0].replace(',', ''))
@@ -161,7 +171,7 @@ def prepWeeklyRedditPost(sh):
     wks = sh[9]
     avgHospitalized = wks.get_value('B2') #-D8
 
-    hospitalMatrix = wks.range('B2:B8', returnas='matrix')
+    hospitalMatrix = wks.range('B2:B{}'.format(rangeEnd), returnas='matrix')
     avgHospitalized = 0
     for i in range(len(hospitalMatrix)):
       avgHospitalized = avgHospitalized + int(hospitalMatrix[i][0].replace(',', ''))
@@ -169,7 +179,7 @@ def prepWeeklyRedditPost(sh):
     avgHospitalized = math.ceil(avgHospitalized/7)
 
   
-    lastDay = (datetime.datetime.now() - datetime.timedelta(days=6)).strftime('%m/%d')
+    lastDay = (todayDate - datetime.timedelta(days=6)).strftime('%m/%d')
     redditPostTitle = "Covid Weekly Info {}-{}: {:,} New Cases, {:,} New Deaths, {:,} Vaccines Doses Given, {:,} Average Hospitalized per day".format(lastDay, today, newCases, newDeaths, vaccinesGiven, avgHospitalized)
     print(redditPostTitle)
     with open(file_names.redditTitle, 'w') as f:
