@@ -56,9 +56,6 @@ if __name__ == "__main__":
   fetch_data_files.getOriginalMap()
   gsheet_interaction.reddit()
   if datetime.datetime.now().weekday() == 3:
-    if post_time.shouldPost():
-      post(reddit)
-    else:
-      post(reddit, sub='test')
+    post(reddit)
   else:
     print('not posting')
