@@ -10,7 +10,7 @@ accessPage =  'https://coronavirus.iowa.gov/pages/access'
 # Domo pages
 # rmccPage = 'https://public.domo.com/embed/pages/ejyQ5'
 # serologyPage = 'https://public.domo.com/embed/pages/eV1x9'
-summaryPage = 'https://public.domo.com/embed/pages/XDYpV' # Tested, Positive, Recovered, Deaths,
+summaryPage = 'https://public.domo.com/embed/pages/L9lVX' # Tested, Positive, Recovered, Deaths,
 # vaccinePage = 'https://public.domo.com/embed/pages/1wB9j'
 #casePage = 'https://public.domo.com/embed/pages/aQVpq'  # Tested, Negative, Positive, preexisting condition, no condition, unknown
 # casePage = 'https://public.domo.com/embed/pages/VOJno' # Total Tested, Indivituals Tested, Total Negative, Individual Negative, Total Positive, Individual Positive, preexisting condition, no condition, unknown
