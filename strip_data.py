@@ -323,6 +323,10 @@ if __name__ == "__main__":
     print(vaccine_csv_file)
     print(summary_csv_file)
 
-    createGeoJson(summary_csv_file, hospital_pdf_data['Hospitalized By County'], vaccineCSV=vaccine_csv_file)
+    try:
+      countyHospitalized = hospital_pdf_data['Hospitalized By County']
+    except:
+      countyHospitalized = None
+    createGeoJson(summary_csv_file, countyHospitalized, vaccineCSV=vaccine_csv_file)
 
     print(image_data)
