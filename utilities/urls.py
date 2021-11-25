@@ -22,5 +22,5 @@ summaryPage = 'https://public.domo.com/embed/pages/L9lVX' # Tested, Positive, Re
 newVaccinePage = 'https://public.domo.com/embed/pages/1wzvV?pfilters=[{%22column%22:%22Source%22,%22operand%22:%22IN%22,%22values%22:[%22CDC%C2%B9%22]},{%22column%22:%22Vaccine%20Status%22,%22operand%22:%22IN%22,%22values%22:[%22Fully%20Vaccinated%22]},{%22column%22:%22metric_name%22,%22operand%22:%22IN%22,%22values%22:[%22%25%2018%2B%20Years%20of%20Age%22]}]'
 newCasePage = 'https://public.domo.com/embed/pages/zpNA2'
 newHospitalPage = 'https://public.domo.com/embed/pages/BB7po'
-newDeathPage = 'https://public.domo.com/embed/pages/AD7rj'
+newDeathPage = 'https://public.domo.com/embed/pages/NknoD'
 newVaccineDownload = 'https://public.domo.com/embed/pages/YEB9M'
