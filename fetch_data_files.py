@@ -275,7 +275,10 @@ if __name__ == "__main__":
 
   getOriginalMap()
   getRMCCData()
-  getHospitalData()
+  try:
+    getHospitalData()
+  except:
+    print('no hospital pdf')
   getDeaths()
   getCases()
   getNewSummaryData()
