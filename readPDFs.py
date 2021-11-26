@@ -225,15 +225,18 @@ def readHospitalPDF(pdfFile):
 
 
 def readHospitalData():
-    list_of_pdfs = glob.glob(os.path.join(
-        file_names.storageDir, 'countyHospital*.pdf'))
-    list_of_pdfs.sort()
-    pdfFile = list_of_pdfs[-1]
-
     hospitalData = None
-    hospitalData = readHospitalPDF(pdfFile)
-    verifyCounties(hospitalData['Hospitalized By County'])
-    print(hospitalData)
+    try:
+      list_of_pdfs = glob.glob(os.path.join(
+          file_names.storageDir, 'countyHospital*.pdf'))
+      list_of_pdfs.sort()
+      pdfFile = list_of_pdfs[-1]
+
+      hospitalData = readHospitalPDF(pdfFile)
+      verifyCounties(hospitalData['Hospitalized By County'])
+      print(hospitalData)
+    except:
+      print('no hospital data')
 
     return hospitalData
 
