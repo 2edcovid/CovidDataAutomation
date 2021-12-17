@@ -55,7 +55,7 @@ if __name__ == "__main__":
     os.makedirs(file_names.screenshotDir)
   fetch_data_files.getOriginalMap()
   gsheet_interaction.reddit()
-  if datetime.datetime.now().weekday() == 3:
-    post(reddit)
-  else:
-    print('not posting')
+ # if datetime.datetime.now().weekday() == 3:
+  post(reddit)
+#  else:
+ #   print('not posting')
