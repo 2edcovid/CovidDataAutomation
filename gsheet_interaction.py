@@ -125,7 +125,7 @@ def prepWeeklyRedditPost(sh):
   todayDate = datetime.datetime.now()
   today = todayDate.strftime('%m/%d')
 
-  if todayDate.weekday() == 4:
+  if todayDate.weekday() == 3:
     header = 'Month Summaries'
     wks = sh[2]
     df = wks.get_as_df(start='A1', end='L41', index_column=1)
