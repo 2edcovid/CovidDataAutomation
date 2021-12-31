@@ -7,7 +7,7 @@
 ### My stuff
 - [My County Maps](https://2edcovid.github.io/IowaCovidDataMap/)
 - [My Data Sheets](https://docs.google.com/spreadsheets/d/1AbV2twmELM7oyf5z_osyN5XdHb0nxoYCC3Qnsv2Pk7Q/edit?usp=sharing)
-- [Buy me a beer](https://imgur.com/a/RtKShGA), Venmo: @covid2eD
+- [Buy me a beer](https://imgur.com/a/RtKShGA), [Venmo](https://venmo.com/u/covid2ed)
 
 ### Other Tracking Resources
 - [ActNow](https://covidactnow.org/us/iowa-ia?s=1147275)
