@@ -470,20 +470,20 @@ def getCaseData():
         'Total Individuals Positive': int(data['Individual Antigen Positives']) + int(data['Individual PCR Positives']),
     })
 
-    try:
-        breakDownImg = crop_img[-1550:-1350, 10:-10]
-        cv2.imwrite(os.path.join(file_names.screenshotDir,
-                                 'Cases_breakdown.png'), breakDownImg)
-        text = pytesseract.image_to_string(breakDownImg)
-        sanitizedText = sanitizeText(text)[1].split()
-        sanitizedText = convertVals(sanitizedText)
-        data.update({
-            'Cases With Preexisting Condition': sanitizedText[0],
-            'Cases With No Preexisting Condition': sanitizedText[1],
-            'Cases Preexisting Condition Unknown': sanitizedText[2],
-        })
-    except Exception as e:
-        print('issue reading case breakdown data {}'.format(e))
+    # try:
+    #     breakDownImg = crop_img[-1550:-1350, 10:-10]
+    #     cv2.imwrite(os.path.join(file_names.screenshotDir,
+    #                              'Cases_breakdown.png'), breakDownImg)
+    #     text = pytesseract.image_to_string(breakDownImg)
+    #     sanitizedText = sanitizeText(text)[1].split()
+    #     sanitizedText = convertVals(sanitizedText)
+    #     data.update({
+    #         'Cases With Preexisting Condition': sanitizedText[0],
+    #         'Cases With No Preexisting Condition': sanitizedText[1],
+    #         'Cases Preexisting Condition Unknown': sanitizedText[2],
+    #     })
+    # except Exception as e:
+    #     print('issue reading case breakdown data {}'.format(e))
 
     print(data)
     return data
@@ -533,7 +533,7 @@ def getVaccineData():
     fileName = file_names.vaccineScreenshot
     img = cv2.imread(fileName)
 
-    crop_img = img[1300:2200, 100:-100]
+    crop_img = img[1300:2300, 100:-100]
     cv2.imwrite(os.path.join(file_names.screenshotDir,
                               'Vaccine_Crop.png'), crop_img)
 
@@ -550,7 +550,7 @@ def getVaccineData():
         print('issue reading total doses given {}'.format(e))
 
     try:
-        init_img = crop_img[200:350, 250:600]
+        init_img = crop_img[200:400, 250:600]
         cv2.imwrite(os.path.join(file_names.screenshotDir,
                                  'Vaccine_initiated.png'), init_img)
         text = pytesseract.image_to_string(init_img)
@@ -562,7 +562,7 @@ def getVaccineData():
         print('issue reading total series started {}'.format(e))
 
     try:
-        comp_img = crop_img[450:600, 250:600]
+        comp_img = crop_img[550:700, 250:600]
         cv2.imwrite(os.path.join(file_names.screenshotDir,
                                  'Vaccine_completed.png'), comp_img)
         text = pytesseract.image_to_string(comp_img)
@@ -574,7 +574,7 @@ def getVaccineData():
         print('issue reading total series completed {}'.format(e))
 
     try:
-        brand_img = crop_img[750:-10, 1500:-1]
+        brand_img = crop_img[-150:-10, 1500:-1]
         cv2.imwrite(os.path.join(file_names.screenshotDir,
                                  'Vaccine_manufacturers.png'), brand_img)
         text = pytesseract.image_to_string(brand_img)
@@ -582,9 +582,9 @@ def getVaccineData():
         textList = sanitizeText(text)
 
         data.update({
-          'Pfizer Doses Given': textList[0],
           'Janssen Doses Given': textList[1],
           'Moderna Doses Given': textList[2],
+          'Pfizer Doses Given': int(textList[3]) + int(textList[4]),
         })
     except Exception as e:
         print('issue reading vaccine brands {}'.format(e))

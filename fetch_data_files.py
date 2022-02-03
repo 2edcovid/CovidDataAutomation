@@ -52,49 +52,49 @@ def getVaccineData():
     saveScreenshot(browser, file_names.vaccineScreenshot)
     closeBrowser(browser)
 
-    fileNames = [
-      os.path.join(file_names.storageDir, "cvs1{}.csv"),
-      os.path.join(file_names.storageDir, "SourceFilter{}.csv"),
-      os.path.join(file_names.storageDir, "VaccinePercentOfCountyFullyVaccinated{}.csv"),
-      os.path.join(file_names.storageDir, "StatusFilter{}.csv"),
-      os.path.join(file_names.storageDir, "PopulationFilter{}.csv"),
-      os.path.join(file_names.storageDir, "cvs6{}.csv"),
-      os.path.join(file_names.storageDir, "VaccineDosesAdministered{}.csv"),
-      os.path.join(file_names.storageDir, "VaccineIowanDoses{}.csv"),
-      os.path.join(file_names.storageDir, "VaccineIndividuals1stDose{}.csv"),
-      os.path.join(file_names.storageDir, "VaccineIndividuals2ndComplete{}.csv"),
-      os.path.join(file_names.storageDir, "cvs11{}.csv"),
-      os.path.join(file_names.storageDir, "cvs12{}.csv"),
-      os.path.join(file_names.storageDir, "VaccineIndividualsComplete{}.csv"), 
-      os.path.join(file_names.storageDir, "VaccineIndividualsSingleComplete{}.csv"), 
-      os.path.join(file_names.storageDir, "cvs15{}.csv"),
-      os.path.join(file_names.storageDir, "cvs16{}.csv"),
-      os.path.join(file_names.storageDir, "VaccineManufacturer{}.csv"), 
-      os.path.join(file_names.storageDir, "VaccineDosesDistinctPersons{}.csv"), 
-      os.path.join(file_names.storageDir, "VaccinePercentageClarification{}.csv"),
-      os.path.join(file_names.storageDir, "VaccineDosesByRace{}.csv"), 
-      os.path.join(file_names.storageDir, "VaccineDosesByAgeGroup{}.csv"), 
-      os.path.join(file_names.storageDir, "VaccineDosesByEthnicity{}.csv"), 
-      os.path.join(file_names.storageDir, "VaccineDosesByGender{}.csv"), 
-      os.path.join(file_names.storageDir, "VaccinePercentClarification{}.csv"), 
-      os.path.join(file_names.storageDir, "VaccinePercentageByRace{}.csv"), 
-      os.path.join(file_names.storageDir, "VaccinePercentageByAgeGroup{}.csv"), 
-      os.path.join(file_names.storageDir, "VaccinePercentageByEthnicity{}.csv"), 
-      os.path.join(file_names.storageDir, "VaccinePercentageByGender{}.csv"), 
-      os.path.join(file_names.storageDir, "VaccineDosesByDay{}.csv"), 
-      os.path.join(file_names.storageDir, "datanotes{}.csv"),
-    ]
+    # fileNames = [
+    #   None,
+    #   None,
+    #   None,
+    #   None,
+    #   None,
+    #   None,
+    #   os.path.join(file_names.storageDir, "VaccineDosesAdministered{}.csv"),
+    #   os.path.join(file_names.storageDir, "VaccineIowanDoses{}.csv"),
+    #   os.path.join(file_names.storageDir, "VaccineIndividuals1stDose{}.csv"),
+    #   os.path.join(file_names.storageDir, "VaccineIndividuals2ndComplete{}.csv"),
+    #   os.path.join(file_names.storageDir, "cvs11{}.csv"),
+    #   os.path.join(file_names.storageDir, "cvs12{}.csv"),
+    #   os.path.join(file_names.storageDir, "VaccineIndividualsComplete{}.csv"), 
+    #   os.path.join(file_names.storageDir, "VaccineIndividualsSingleComplete{}.csv"), 
+    #   os.path.join(file_names.storageDir, "cvs15{}.csv"),
+    #   os.path.join(file_names.storageDir, "cvs16{}.csv"),
+    #   os.path.join(file_names.storageDir, "VaccineManufacturer{}.csv"), 
+    #   os.path.join(file_names.storageDir, "VaccineDosesDistinctPersons{}.csv"), 
+    #   os.path.join(file_names.storageDir, "VaccinePercentageClarification{}.csv"),
+    #   os.path.join(file_names.storageDir, "VaccineDosesByRace{}.csv"), 
+    #   os.path.join(file_names.storageDir, "VaccineDosesByAgeGroup{}.csv"), 
+    #   os.path.join(file_names.storageDir, "VaccineDosesByEthnicity{}.csv"), 
+    #   os.path.join(file_names.storageDir, "VaccineDosesByGender{}.csv"), 
+    #   os.path.join(file_names.storageDir, "VaccinePercentClarification{}.csv"), 
+    #   os.path.join(file_names.storageDir, "VaccinePercentageByRace{}.csv"), 
+    #   os.path.join(file_names.storageDir, "VaccinePercentageByAgeGroup{}.csv"), 
+    #   os.path.join(file_names.storageDir, "VaccinePercentageByEthnicity{}.csv"), 
+    #   os.path.join(file_names.storageDir, "VaccinePercentageByGender{}.csv"), 
+    #   os.path.join(file_names.storageDir, "VaccineDosesByDay{}.csv"), 
+    #   os.path.join(file_names.storageDir, "datanotes{}.csv"),
+    # ]
   
     timeString = time.strftime("%Y-%m-%d %H%M") 
-    for i in range(len(elements)):
-      try:
-        if fileNames[i]:
-          browser = getBrowser(urls.newVaccinePage, height=1400, zoom=90, timeout=SHORT_SLEEP_DURATION)
-          localPath = fileNames[i].format(timeString) 
-          downloadFile(browser, i, localPath)
-          closeBrowser(browser)
-      except:
-        pass
+    # for i in range(len(elements)):
+    #   try:
+    #     if fileNames[i]:
+    #       browser = getBrowser(urls.newVaccinePage, height=1400, zoom=90, timeout=SHORT_SLEEP_DURATION)
+    #       localPath = fileNames[i].format(timeString) 
+    #       downloadFile(browser, i, localPath)
+    #       closeBrowser(browser)
+    #   except:
+    #     pass
 
     browser = getBrowser(urls.newVaccineDownload, height=6200, zoom=90, timeout=SLEEP_DURATION)
     elements = browser.find_elements_by_class_name(buttonContainer)
